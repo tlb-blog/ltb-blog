@@ -26,6 +26,12 @@ jobs:
           # Actions 実行環境ではリポジトリ名を base に設定
           BASE_URL: "/${{ github.event.repository.name }}/"
 
+      - name: Apply path patches
+        run: |
+          # PowerShell Core を使用してパッチスクリプトを実行
+          pwsh -File ./scripts/patch-dist.ps1
+        shell: bash
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
