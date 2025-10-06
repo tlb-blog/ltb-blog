@@ -11,7 +11,7 @@ module.exports = {
   description: "ライフスタイルとテクノロジーを横断する情報サイト",
   // テーマやカスタムヘッダが参照しやすいトップレベルのロゴ設定
   // public 配下のファイルはルート相対で指定し、ビルド時に base が付与されるようにする
-  logo: "/logo.png",
+  // logo: "/logo.png", // enhanceApp.jsで動的に追加するためコメントアウト
   theme: "vuepress-theme-blog-vuetify",
 
   // ヘッド要素の設定
@@ -42,7 +42,7 @@ module.exports = {
       },
     },
     // テーマ組み込みのロゴ（public 配下のファイルへのパス）
-    logo: "/logo.png",
+    // logo: "/logo.png", // enhanceApp.jsで動的に追加するためコメントアウト
 
     // カテゴリ別のディレクトリ設定
     directories: [
