@@ -14,11 +14,26 @@ foreach ($f in $files) {
     $new = $new -replace 'href="/rss.xml"','href="/ltb-blog/rss.xml"'
     $new = $new -replace 'href="/tag/"','href="/ltb-blog/tag/"'
     
+    # Category and post page links
+    $new = $new -replace 'href="/post/"','href="/ltb-blog/post/"'
+    $new = $new -replace 'href="/post/ai/"','href="/ltb-blog/post/ai/"'
+    $new = $new -replace 'href="/post/health/"','href="/ltb-blog/post/health/"'
+    $new = $new -replace 'href="/post/nba/"','href="/ltb-blog/post/nba/"'
+    
+    # Navigation links in enhanceApp.js generated content
+    $new = $new -replace 'href="/"','href="/ltb-blog/"'
+    
     # Image directory paths - src attributes
     $new = $new -replace 'src="/nba_images/','src="/ltb-blog/nba_images/'
     $new = $new -replace 'src="/article_images/','src="/ltb-blog/article_images/'
     $new = $new -replace 'src="/ai/','src="/ltb-blog/ai/'
     $new = $new -replace 'src="/health/','src="/ltb-blog/health/'
+    
+    # Vue component v-img src attributes (for thumbnails)
+    $new = $new -replace ':src="&quot;/ai/','src="/ltb-blog/ai/'
+    $new = $new -replace ':src="&quot;/health/','src="/ltb-blog/health/'
+    $new = $new -replace ':src="&quot;/article_images/','src="/ltb-blog/article_images/'
+    $new = $new -replace ':src="&quot;/nba_images/','src="/ltb-blog/nba_images/'
     
     # Content attribute paths (for meta tags)
     $new = $new -replace 'content="/ai/','content="/ltb-blog/ai/'
@@ -54,4 +69,51 @@ foreach ($f in $files) {
         Write-Output "Patched: $path"
     }
 }
+
+# JavaScriptファイルのパッチ処理を追加
+Write-Output "Patching JavaScript files under: $dist"
+$jsFiles = Get-ChildItem -Path $dist -Recurse -Filter '*.js' -File
+foreach ($f in $jsFiles) {
+    $path = $f.FullName
+    $text = Get-Content -Raw -LiteralPath $path -Encoding UTF8
+    
+    # JavaScriptファイル内のJSONデータの画像パスを修正
+    $new = $text -replace 'image:"/ai/','image:"/ltb-blog/ai/'
+    $new = $new -replace 'image:"/health/','image:"/ltb-blog/health/'
+    $new = $new -replace 'image:"/article_images/','image:"/ltb-blog/article_images/'
+    $new = $new -replace 'image:"/nba_images/','image:"/ltb-blog/nba_images/'
+    
+    # 各種JSON形式でのパス修正
+    $new = $new -replace '"image":"/ai/','"image":"/ltb-blog/ai/'
+    $new = $new -replace '"image":"/health/','"image":"/ltb-blog/health/'
+    $new = $new -replace '"image":"/article_images/','"image":"/ltb-blog/article_images/'
+    $new = $new -replace '"image":"/nba_images/','"image":"/ltb-blog/nba_images/'
+    
+    # シングルクォート版のJSON
+    $new = $new -replace "'image':'/ai/","'image':'/ltb-blog/ai/"
+    $new = $new -replace "'image':'/health/","'image':'/ltb-blog/health/"
+    $new = $new -replace "'image':'/article_images/","'image':'/ltb-blog/article_images/"
+    $new = $new -replace "'image':'/nba_images/","'image':'/ltb-blog/nba_images/"
+    
+    # og:image や twitter:image のcontent属性（JavaScript内）
+    $new = $new -replace 'content:"/ai/','content:"/ltb-blog/ai/'
+    $new = $new -replace 'content:"/health/','content:"/ltb-blog/health/'
+    $new = $new -replace 'content:"/article_images/','content:"/ltb-blog/article_images/'
+    $new = $new -replace 'content:"/nba_images/','content:"/ltb-blog/nba_images/'
+    
+    # プロパティキーに引用符がある場合
+    $new = $new -replace '"content":"/ai/','"content":"/ltb-blog/ai/'
+    $new = $new -replace '"content":"/health/','"content":"/ltb-blog/health/'
+    $new = $new -replace '"content":"/article_images/','"content":"/ltb-blog/article_images/'
+    $new = $new -replace '"content":"/nba_images/','"content":"/ltb-blog/nba_images/'
+    
+    # 重複パス修正
+    $new = $new -replace '/ltb-blog/ltb-blog','/ltb-blog'
+    
+    if ($new -ne $text) {
+        Set-Content -LiteralPath $path -Value $new -Encoding UTF8
+        Write-Output "Patched JS: $path"
+    }
+}
+
 Write-Output "Done."
