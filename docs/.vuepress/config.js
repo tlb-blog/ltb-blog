@@ -2,16 +2,21 @@ module.exports = {
   // base を環境変数 `BASE_URL` から読み取れるようにしておくと
   // - ローカル開発では '/' を使い、
   // - GitHub Actions 等でプロジェクトページを公開する際は '/<repo>/' を渡せます。
-  base: process.env.BASE_URL || "/",
+  // ビルド時に環境変数 BASE_URL を渡す運用のままにできますが、
+  // リポジトリのプロジェクトページとして公開しているため、
+  // デフォルトは '/ltb-blog/' にしておくとミスが少なくなります。
+  // ※ 必要ならローカル開発時に環境変数で '/' を渡して戻せます。
+  base: process.env.BASE_URL || "/ltb-blog/",
   title: "ライフスタイル & テクノロジーブログ",
   description: "ライフスタイルとテクノロジーを横断する情報サイト",
   // テーマやカスタムヘッダが参照しやすいトップレベルのロゴ設定
+  // public 配下のファイルはルート相対で指定し、ビルド時に base が付与されるようにする
   logo: "/logo.png",
   theme: "vuepress-theme-blog-vuetify",
 
   // ヘッド要素の設定
   head: [
-    ["link", { rel: "icon", href: "/avatar.svg" }],
+  ["link", { rel: "icon", href: "/avatar.svg" }],
     ["meta", { name: "theme-color", content: "#000000" }],
     ["meta", { name: "mobile-web-app-capable", content: "yes" }],
     [
@@ -69,7 +74,8 @@ module.exports = {
 
     sidebar: {
       profile: {
-        avatarUrl: "/avatar.svg",
+  // public 配下のアバターはルート相対で記述（ビルドで base が付与されます）
+  avatarUrl: "/avatar.svg",
         name: "LTB",
         subTitle: "ライフスタイル・テクノロジー・知見",
         descriptionHtml:

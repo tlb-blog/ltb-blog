@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{373:function(n,t,o){"use strict";o.r(t);var u=o(1),e=Object(u.a)({},(function(){var n=this,t=n._self._c;return t("BaseLayout",{scopedSlots:n._u([{key:"content",fn:function(){return[t("h1",[n._v("404 Not Found")])]},proxy:!0}])})}),[],!1,null,null,null);t.default=e.exports}}]);
