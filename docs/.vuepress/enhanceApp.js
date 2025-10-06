@@ -16,12 +16,13 @@ export default ({ Vue, options, router, siteData }) => {
         if (document.querySelector(".site-logo")) return;
         
         // テーマ自体にロゴがある場合は挿入しない
-        const existingLogo = document.querySelector('img[src*="logo"]') || 
-                            document.querySelector('.v-toolbar img') ||
-                            document.querySelector('.v-app-bar img');
-        if (existingLogo) {
+        // より厳密にチェックして、テーマのロゴと区別する
+        const existingThemeLogo = document.querySelector('.v-toolbar img:not(.site-logo img)') || 
+                                 document.querySelector('.v-app-bar img:not(.site-logo img)') ||
+                                 document.querySelector('.v-toolbar__content img:not(.site-logo img)');
+        if (existingThemeLogo) {
           try {
-            console.log("[enhanceApp] existing logo found, skipping header logo injection");
+            console.log("[enhanceApp] existing theme logo found, skipping header logo injection");
           } catch (e) {}
           return;
         }
@@ -60,7 +61,6 @@ export default ({ Vue, options, router, siteData }) => {
         a.className = "site-logo";
         a.style.display = "inline-flex";
         a.style.alignItems = "center";
-        a.style.marginRight = "12px";
         a.style.textDecoration = "none";
 
         const img = document.createElement("img");
@@ -136,15 +136,19 @@ export default ({ Vue, options, router, siteData }) => {
         // 既存のナビゲーションがあれば何もしない
         if (document.querySelector(".category-nav")) return;
 
+        // siteData.base を使用してベースパスを取得
+        const base = (siteData && siteData.base) || "/";
+        const basePath = base === "/" ? "/" : base;
+
         // カテゴリナビゲーションを作成（parentingリンクを削除）
         const nav = document.createElement("div");
         nav.className = "category-nav";
         nav.innerHTML = `
-            <a href="/"><i class="bi bi-house me-5" aria-hidden="true"></i><span>ホーム</span></a>
-            <a href="/post/ai/"><i class="bi bi-robot me-2" aria-hidden="true"></i><span>AI</span></a>
-            <a href="/post/health/"><i class="bi bi-activity me-2" aria-hidden="true"></i><span>健康</span></a>
-            <a href="/post/nba/"><i class="bi bi-trophy me-2" aria-hidden="true"></i><span>NBA</span></a>
-            <a href="/post/"><i class="bi bi-three-dots me-2" aria-hidden="true"></i><span>その他</span></a>
+            <a href="${basePath}"><i class="bi bi-house me-5" aria-hidden="true"></i><span>ホーム</span></a>
+            <a href="${basePath}post/ai/"><i class="bi bi-robot me-2" aria-hidden="true"></i><span>AI</span></a>
+            <a href="${basePath}post/health/"><i class="bi bi-activity me-2" aria-hidden="true"></i><span>健康</span></a>
+            <a href="${basePath}post/nba/"><i class="bi bi-trophy me-2" aria-hidden="true"></i><span>NBA</span></a>
+            <a href="${basePath}post/"><i class="bi bi-three-dots me-2" aria-hidden="true"></i><span>その他</span></a>
           `;
 
         // まず非表示状態で挿入しておき、次フレームでクラスを付与してフェードイン
