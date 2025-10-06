@@ -1,1 +1,1 @@
-﻿
+(window.webpackJsonp=window.webpackJsonp||[]).push([[40],{401:function(t,s,n){"use strict";n.r(s);var o=n(1),e=Object(o.a)({},(function(){var t=this._self._c;return t("ContentSlotsDistributor",{attrs:{"slot-key":this.$parent.slotKey}},[t("p",[this._v("NBAに関する記事一覧です。試合分析や選手情報をお届けします。")]),this._v(" "),t("HomePosts",{attrs:{category:"nba","grid-only":"true"}})],1)}),[],!1,null,null,null);s.default=e.exports}}]);

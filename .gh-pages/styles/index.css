@@ -1,1 +1,75 @@
-﻿
+/* ================================================================
+   Force Avatar and Sidebar Visibility - VuePress Development Fix
+   
+   This CSS forces the Vuetify navigation drawer to be visible
+   during development. The drawer is marked as temporary/closed
+   which hides the profile avatar and sidebar content.
+   ================================================================ */
+
+/* Step 1: Force the navigation drawer to be visible and positioned */
+/* Development-only: scope under .dev-sidebar-fix */
+.dev-sidebar-fix {
+  .v-navigation-drawer.v-navigation-drawer--temporary,
+  .v-navigation-drawer.v-navigation-drawer--close,
+  aside.v-navigation-drawer,
+  .theme--light.v-navigation-drawer {
+    visibility: visible !important;
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+    position: fixed !important;
+    right: 0 !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    width: 256px !important;
+    height: 100vh !important;
+    display: block !important;
+  }
+
+/* Step 2: Force all drawer content to be visible */
+.v-navigation-drawer__content,
+.v-navigation-drawer .v-navigation-drawer__content,
+.component-sidebar,
+.block.profile {
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+}
+
+/* Step 3: Force avatar image to be visible with maximum priority */
+.dev-sidebar-fix {
+  img[alt="avatar"],
+  .v-avatar img,
+  .component-sidebar img[alt="avatar"],
+  .component-sidebar .v-avatar img,
+  .v-navigation-drawer img[alt="avatar"],
+  .v-navigation-drawer .v-avatar img,
+  .v-navigation-drawer--close img[alt="avatar"],
+  .v-navigation-drawer--temporary img[alt="avatar"],
+  .v-navigation-drawer--close .v-avatar img,
+  .v-navigation-drawer--temporary .v-avatar img {
+    visibility: visible !important;
+    display: block !important;
+    opacity: 1 !important;
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  @media (min-width: 992px) {
+    aside.v-navigation-drawer#drawer,
+    aside.v-navigation-drawer.v-navigation-drawer--temporary {
+      display: none !important;
+      visibility: hidden !important;
+      transform: translateX(0) !important;
+    }
+  }
+}
+
+/* Desktop: hide Vuetify overlay drawer when page has its own sidebar */
+@media (min-width: 992px) {
+  aside.v-navigation-drawer#drawer,
+  aside.v-navigation-drawer.v-navigation-drawer--temporary {
+    display: none !important;
+    visibility: hidden !important;
+    transform: translateX(0) !important;
+  }
+}
