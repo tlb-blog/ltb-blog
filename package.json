@@ -1,0 +1,17 @@
+{
+    "name": "vuepress-blog-vuetify-sample",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "vuepress dev docs",
+        "build": "vuepress build docs"
+    },
+    "dependencies": {
+        "bootstrap-icons": "^1.13.1",
+        "vuepress": "^1.9.7",
+        "vuepress-theme-blog-vuetify": "github:ttskch/vuepress-theme-blog-vuetify"
+    },
+    "devDependencies": {
+        "puppeteer-core": "^24.22.3"
+    }
+}

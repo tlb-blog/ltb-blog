@@ -1,0 +1,383 @@
+// モダンブラック&ホワイトテーマ
+// カスタムスタイル
+
+// フォント設定
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap')
+// Bootstrap Icons
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css')
+
+html
+  font-family 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif
+
+// ダークテーマのグローバルスタイル
+.theme--dark
+  // メインコンテンツエリア
+  .v-main
+    background linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important
+  
+  // ナビゲーションバー
+  .v-app-bar
+    background rgba(0, 0, 0, 0.95) !important
+    backdrop-filter blur(10px)
+    border-bottom 1px solid rgba(255, 255, 255, 0.1)
+    // ここで文字色を明示
+    color #ffffff !important
+
+    // タイトルやリンク、ボタン、アイコンの色を個別に調整
+    .v-toolbar__title
+      color #ffffff !important
+    a, .v-btn, .v-icon, .v-btn__content, .v-btn > *
+      color #ffffff !important
+
+  // カード要素
+  .v-card
+    background rgba(30, 30, 30, 0.9) !important
+    border 1px solid rgba(255, 255, 255, 0.1)
+    box-shadow 0 8px 32px rgba(0, 0, 0, 0.3)
+    
+    &:hover
+      transform translateY(-2px)
+      transition all 0.3s ease
+      box-shadow 0 12px 40px rgba(0, 0, 0, 0.4)
+  
+  // サイドバー
+  .v-navigation-drawer
+    background rgba(18, 18, 18, 0.95) !important
+    border-right 1px solid rgba(255, 255, 255, 0.1)
+  
+  // テキスト
+  .v-card-title,
+  .v-card-subtitle
+    color #ffffff !important
+  
+  // リンク
+  a
+    color #ffffff
+    text-decoration none
+    border-bottom 1px solid transparent
+    transition all 0.3s ease
+    
+    &:hover
+      color #cccccc
+      border-bottom-color rgba(255, 255, 255, 0.3)
+
+// ライトテーマのスタイル
+.theme--light
+  // メインコンテンツエリア
+  .v-main
+    background linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%) !important
+  
+  // ナビゲーションバー
+  .v-app-bar
+    background rgba(255, 255, 255, 0.95) !important
+    backdrop-filter blur(10px)
+    border-bottom 1px solid rgba(0, 0, 0, 0.1)
+    // ライトテーマでは黒に設定
+    color #000000 !important
+
+    .v-toolbar__title
+      color #000000 !important
+    a, .v-btn, .v-icon, .v-btn__content, .v-btn > *
+      color #000000 !important
+
+  // カード要素
+  .v-card
+    background rgba(255, 255, 255, 0.9) !important
+    border 1px solid rgba(0, 0, 0, 0.1)
+    box-shadow 0 4px 20px rgba(0, 0, 0, 0.08)
+    
+    &:hover
+      transform translateY(-2px)
+      transition all 0.3s ease
+      box-shadow 0 8px 30px rgba(0, 0, 0, 0.12)
+  
+  // サイドバー
+  .v-navigation-drawer
+    background rgba(250, 250, 250, 0.95) !important
+    border-right 1px solid rgba(0, 0, 0, 0.1)
+
+// 共通スタイル（テーマに関係なく適用）
+// アニメーション効果
+.v-card,
+.v-btn,
+.v-list-item
+  transition all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)
+
+/* --- 記事の H2 に幅いっぱいの下線を追加 --- */
+.v-main h2,
+.theme-default-content h2,
+article h2
+  position relative
+  padding-bottom 0.55rem
+  margin-bottom 1rem
+  border-bottom 2px solid rgba(0,0,0,0.08)
+
+/* ダークテーマでは下線を白寄りに調整 */
+.theme--dark .v-main h2,
+.theme--dark .theme-default-content h2,
+.theme--dark article h2
+  border-bottom-color rgba(255,255,255,0.12)
+
+// ボタンスタイル
+.v-btn
+  text-transform none !important
+  font-weight 500
+  letter-spacing 0.02em
+
+// コード表示
+code
+  background rgba(0, 0, 0, 0.1)
+  padding 2px 6px
+  border-radius 4px
+  font-family 'JetBrains Mono', 'Fira Code', monospace
+
+// レスポンシブ調整
+@media (max-width: 768px)
+  .v-navigation-drawer
+    transform translateX(-100%) !important
+    
+    &.v-navigation-drawer--open
+      transform translateX(0) !important
+
+// カスタムクラス
+.modern-text
+  font-weight 300
+  letter-spacing 0.05em
+  line-height 1.6
+
+.accent-border
+  border-left 3px solid currentColor
+  padding-left 16px
+
+// ホバーエフェクト
+.hover-lift
+  &:hover
+    transform translateY(-4px)
+    transition transform 0.3s ease
+
+/* --- ヘッダーナビゲーションの追加 --- */
+// タイトルバーの下にカテゴリナビゲーションを追加
+// ::after 擬似要素はナビと重複してちらつくことがあるため無効化
+.v-app-bar::after
+  display none !important
+
+// ナビゲーションメニューのスタイル
+.category-nav
+  position fixed
+  top 64px
+  left 0
+  right 0
+  height 60px
+  /* 常にダーク背景にして、文字は白抜きで表示 */
+  background rgba(20,20,20,0.98) !important
+  backdrop-filter blur(8px)
+  border-bottom 1px solid rgba(255, 255, 255, 0.06)
+  z-index 1000
+  display flex
+  align-items center
+  justify-content center
+  gap 12px
+  padding 0 20px
+  color #ffffff !important
+  /* 初期は非表示・少し下にずらしておき、visible クラスでフェードイン */
+  opacity 0
+  transform translateY(6px)
+  pointer-events none
+  transition opacity 220ms ease, transform 220ms ease
+
+  &.category-nav--visible
+    opacity 1
+    transform translateY(0)
+    pointer-events auto
+
+  a
+    color #ffffff !important
+    text-decoration none
+    padding 8px 12px
+    border-radius 4px
+    transition background 180ms ease, transform 180ms ease
+    font-weight 500
+
+    &:hover
+      background rgba(255, 255, 255, 0.06)
+      transform translateY(-1px)
+
+  .bi
+    display inline-block
+    margin-right 10px
+    color #ffffff !important
+
+// メインコンテンツの上部余白を調整
+.v-main
+  padding-top 124px !important // 64px (header) + 60px (nav)
+
+// ...existing code...
+// ヘッダーのナビゲーションメニューを確実に表示
+.v-app-bar .v-toolbar__content,
+.v-toolbar .v-toolbar__content
+  display flex !important
+  align-items center !important
+  justify-content space-between !important
+
+// ナビゲーションアイテムの表示
+.v-toolbar__items,
+.navbar-nav,
+.nav-links
+  display flex !important
+  align-items center !important
+  gap 16px
+
+  a, .nav-link, .v-btn
+    padding 8px 16px !important
+    border-radius 4px !important
+    transition all 0.3s ease !important
+    text-decoration none !important
+    
+    &:hover
+      background rgba(255, 255, 255, 0.1) !important
+      transform translateY(-1px) !important
+
+// ドロップダウンメニューのスタイル
+.v-menu__content,
+.dropdown-menu
+  background rgba(30, 30, 30, 0.95) !important
+  border 1px solid rgba(255, 255, 255, 0.1) !important
+  border-radius 8px !important
+  backdrop-filter blur(10px) !important
+  
+  .v-list-item
+    color #ffffff !important
+    transition all 0.3s ease !important
+    
+    &:hover
+      background rgba(255, 255, 255, 0.1) !important
+
+// モバイル用ハンバーガーメニュー
+.v-app-bar__nav-icon,
+.mobile-menu-button
+  display block !important
+  color #ffffff !important
+
+@media (max-width: 768px)
+  .v-toolbar__items
+    display none !important
+  
+  .v-app-bar__nav-icon
+    display block !important
+
+// ...existing code...
+// ダークテーマのヘッダ内要素を白に
+.theme--dark .v-app-bar,
+.theme--dark .v-toolbar,
+.theme--dark header,
+.theme--dark .navbar,
+.theme--dark .site-header
+  color #ffffff !important
+
+  // タイトル（ツールバーのタイトル）を確実に表示
+  .v-toolbar__title,
+  .site-title,
+  .site-name,
+  .logo,
+  .brand
+    color #ffffff !important
+    opacity 1 !important
+    display block !important
+    font-weight 600 !important
+
+  // ヘッダ内のリンク・ボタン・アイコン
+  a, .v-btn, .v-icon, .v-btn__content, .v-toolbar__items a
+    color #ffffff !important
+    fill #ffffff !important
+
+// ライトテーマでは黒にする
+.theme--light .v-app-bar,
+.theme--light .v-toolbar,
+.theme--light header,
+.theme--light .navbar,
+.theme--light .site-header
+  color #000000 !important
+
+  .v-toolbar__title,
+  .site-title,
+  .site-name,
+  .logo,
+  .brand
+    color #000000 !important
+    opacity 1 !important
+    display block !important
+    font-weight 600 !important
+
+  a, .v-btn, .v-icon, .v-btn__content, .v-toolbar__items a
+    color #000000 !important
+    fill #000000 !important
+
+// ヘッダの表示領域が潰れている場合に備えて高さ・パディングを確保
+.v-app-bar, .v-toolbar
+  min-height 56px !important
+  padding 0 16px !important
+  align-items center !important
+
+// site-logo スタイル（enhanceApp.js で挿入するロゴ用）
+.site-logo
+  display inline-flex
+  align-items center
+  margin-right 12px
+  img
+    height 40px
+    width auto
+    display block
+
+// テーマ組み込みのロゴ（config.js の logo）に対応
+.logo,
+.site-logo
+  img
+    height 40px !important
+    width auto !important
+    display block !important
+
+// ロゴが先にある場合はタイトルテキストを隠す
+.site-logo + .v-toolbar__title,
+.logo + .v-toolbar__title,
+.v-app-bar img + .v-toolbar__title
+  display none !important
+
+/* モバイルでヘッダアイテムが隠れる場合の対策 */
+@media (max-width: 600px)
+  .v-toolbar__title
+    font-size 1.05rem !important
+    white-space nowrap
+    overflow hidden
+    text-overflow ellipsis
+
+/* --- 記事内画像の高さ制限を解除（テーマの global rule を上書き） --- */
+#content img,
+.theme-default-content img,
+article img,
+.post-image img
+  max-height none !important
+  height auto !important
+  width auto !important
+  max-width 100% !important
+
+/* さらに強調したい場合のユーティリティ */
+.header-visible-strong
+  .v-toolbar__title, a, .v-btn
+    text-shadow 0 1px 0 rgba(0,0,0,0.25) !important
+    letter-spacing 0.01em
+
+/* Ensure image-zoom overlay and zoomed image appear above header / nav */
+.medium-zoom-overlay
+  z-index 3000 !important
+  pointer-events auto !important
+
+.medium-zoom-image,
+.medium-zoom-image--opened,
+.medium-zoom-image--hidden
+  z-index 3001 !important
+  /* keep transform/position rules provided by plugin but ensure stacking */
+
+/* When zoom is opened, the overlay should cover header and nav */
+.medium-zoom--opened .medium-zoom-overlay
+  pointer-events auto !important
+  z-index 3000 !important
