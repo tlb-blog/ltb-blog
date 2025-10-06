@@ -15,11 +15,9 @@ export default ({ Vue, options, router, siteData }) => {
         // 既に挿入済みなら何もしない
         if (document.querySelector(".site-logo")) return;
         
-        // テーマ自体にロゴがある場合は挿入しない
-        // より厳密にチェックして、テーマのロゴと区別する
-        const existingThemeLogo = document.querySelector('.v-toolbar img:not(.site-logo img)') || 
-                                 document.querySelector('.v-app-bar img:not(.site-logo img)') ||
-                                 document.querySelector('.v-toolbar__content img:not(.site-logo img)');
+        // テーマ自体にロゴがある場合は挿入しない（site-logoクラスは除く）
+        const existingThemeLogo = document.querySelector('.v-toolbar img:not(.site-logo)') ||
+                                  document.querySelector('.v-app-bar img:not(.site-logo)');
         if (existingThemeLogo) {
           try {
             console.log("[enhanceApp] existing theme logo found, skipping header logo injection");
@@ -62,6 +60,9 @@ export default ({ Vue, options, router, siteData }) => {
         a.style.display = "inline-flex";
         a.style.alignItems = "center";
         a.style.textDecoration = "none";
+        // mr-autoクラスが適用されないように明示的にmarginを0に設定
+        a.style.margin = "0";
+        a.style.marginRight = "0";
 
         const img = document.createElement("img");
         // public 配下の logo.png を base を組み合わせて参照
