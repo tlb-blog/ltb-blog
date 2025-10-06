@@ -42,19 +42,19 @@ export default ({ Vue, options, router, siteData }) => {
         if (!contentEl) return; // 見つからなければ抜ける
 
         // ロゴ要素を作成
-  const a = document.createElement("a");
-  // siteData.base を使用して、プロジェクトページの base を考慮したリンクを生成
-  const base = (siteData && siteData.base) || "/";
-  a.href = base;
+        const a = document.createElement("a");
+        // siteData.base を使用して、プロジェクトページの base を考慮したリンクを生成
+        const base = (siteData && siteData.base) || "/";
+        a.href = base;
         a.className = "site-logo";
         a.style.display = "inline-flex";
         a.style.alignItems = "center";
         a.style.marginRight = "12px";
         a.style.textDecoration = "none";
 
-    const img = document.createElement("img");
-    // public 配下の logo.png を base を組み合わせて参照
-  img.src = (base === "/" ? "/" : base) + "logo.png";
+        const img = document.createElement("img");
+        // public 配下の logo.png を base を組み合わせて参照
+        img.src = (base === "/" ? "/" : base) + "logo.png";
         img.alt = document.title || "logo";
         img.style.height = "40px";
         img.style.width = "auto";

@@ -16,7 +16,7 @@ module.exports = {
 
   // ヘッド要素の設定
   head: [
-  ["link", { rel: "icon", href: "/avatar.svg" }],
+    ["link", { rel: "icon", href: "/avatar.svg" }],
     ["meta", { name: "theme-color", content: "#000000" }],
     ["meta", { name: "mobile-web-app-capable", content: "yes" }],
     [
@@ -74,8 +74,8 @@ module.exports = {
 
     sidebar: {
       profile: {
-  // public 配下のアバターはルート相対で記述（ビルドで base が付与されます）
-  avatarUrl: "/avatar.svg",
+        // public 配下のアバターはルート相対で記述（ビルドで base が付与されます）
+        avatarUrl: "/avatar.svg",
         name: "LTB",
         subTitle: "ライフスタイル・テクノロジー・知見",
         descriptionHtml:
