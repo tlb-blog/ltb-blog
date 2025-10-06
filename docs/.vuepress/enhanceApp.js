@@ -14,6 +14,17 @@ export default ({ Vue, options, router, siteData }) => {
       const addHeaderLogo = () => {
         // 既に挿入済みなら何もしない
         if (document.querySelector(".site-logo")) return;
+        
+        // テーマ自体にロゴがある場合は挿入しない
+        const existingLogo = document.querySelector('img[src*="logo"]') || 
+                            document.querySelector('.v-toolbar img') ||
+                            document.querySelector('.v-app-bar img');
+        if (existingLogo) {
+          try {
+            console.log("[enhanceApp] existing logo found, skipping header logo injection");
+          } catch (e) {}
+          return;
+        }
 
         // まずは toolbar content を優先して探す（現在のテーマ構造に合わせる）
         let contentEl =

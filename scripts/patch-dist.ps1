@@ -26,6 +26,12 @@ foreach ($f in $files) {
     $new = $new -replace 'content="/nba_images/','content="/ltb-blog/nba_images/'
     $new = $new -replace 'content="/article_images/','content="/ltb-blog/article_images/'
     
+    # CSS background-image paths in style attributes
+    $new = $new -replace 'background-image:url\("/ai/','background-image:url("/ltb-blog/ai/'
+    $new = $new -replace 'background-image:url\("/health/','background-image:url("/ltb-blog/health/'
+    $new = $new -replace 'background-image:url\("/article_images/','background-image:url("/ltb-blog/article_images/'
+    $new = $new -replace 'background-image:url\("/nba_images/','background-image:url("/ltb-blog/nba_images/'
+    
     # Additional patterns for thumbnails and images in JSON-LD and meta data
     $new = $new -replace '"url":"/ai/','"url":"/ltb-blog/ai/'
     $new = $new -replace '"url":"/health/','"url":"/ltb-blog/health/'
