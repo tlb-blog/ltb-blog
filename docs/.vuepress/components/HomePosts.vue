@@ -227,7 +227,7 @@ export default {
       console.log("Pages with images count:", pagesWithImages.length);
     }
     
-    // プロダクション環境でも重要な情報をログ出力
+    // プロダクション環境でも確実に確認できるように
     console.log("[HomePosts] Environment:", process.env.NODE_ENV);
     console.log("[HomePosts] Total pages:", this.$site?.pages?.length || 0);
     
@@ -235,6 +235,14 @@ export default {
       (p) => p.frontmatter?.image || p.frontmatter?.thumbnail
     ) || [];
     console.log("[HomePosts] Pages with images:", pagesWithImages.length);
+    
+    // プロダクション環境での確認用アラート（一時的）
+    if (process.env.NODE_ENV === "production") {
+      setTimeout(() => {
+        const recentWithImages = this.recentPosts.filter(p => p.image).length;
+        alert(`HomePosts Debug: ${this.recentPosts.length} recent posts, ${recentWithImages} with images`);
+      }, 1000);
+    }
     
     // Recent Postsに表示される記事をログ出力
     setTimeout(() => {
