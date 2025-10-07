@@ -219,6 +219,26 @@ export default {
     console.log("gridOnly:", this.gridOnly);
     console.log("grid-only:", this.$props["grid-only"]);
     console.log("category:", this.category);
+    
+    // VuePressのページデータをデバッグ
+    console.log("$site.pages:", this.$site?.pages);
+    console.log("Number of pages:", this.$site?.pages?.length);
+    
+    // 画像を持つページをフィルター
+    const pagesWithImages = this.$site?.pages?.filter(p => 
+      p.frontmatter?.image || p.frontmatter?.thumbnail
+    ) || [];
+    console.log("Pages with images count:", pagesWithImages.length);
+    
+    // AI記事の画像パスを特に確認
+    const aiPages = this.$site?.pages?.filter(p => 
+      p.frontmatter?.category === 'ai' && (p.frontmatter?.image || p.frontmatter?.thumbnail)
+    ) || [];
+    console.log("AI pages with images:", aiPages.map(p => ({
+      path: p.path,
+      image: p.frontmatter?.image,
+      thumbnail: p.frontmatter?.thumbnail
+    })));
   },
   computed: {
     allPages() {
@@ -270,18 +290,45 @@ export default {
   },
   methods: {
     normalizePage(p) {
-      return {
+      // 画像パスを取得
+      let imagePath = (p.frontmatter && (p.frontmatter.image || p.frontmatter.thumbnail)) || null;
+      
+      // デバッグ：画像パスがある場合のみログ出力
+      if (imagePath) {
+        console.log("normalizePage - page with image:", p.path, "original image:", imagePath);
+      }
+      
+      // 既にベースパスが含まれている場合は何もしない
+      if (imagePath && imagePath.startsWith('/ltb-blog/')) {
+        console.log("normalizePage - already has base path, keeping as is:", imagePath);
+      }
+      // VuePressの$withBaseヘルパーを使用（ベースパスがない場合のみ）
+      else if (imagePath && imagePath.startsWith('/') && this.$withBase) {
+        const originalPath = imagePath;
+        imagePath = this.$withBase(imagePath);
+        console.log("normalizePage - $withBase applied:", originalPath, "→", imagePath);
+      }
+      // フォールバック：手動でベースパスを追加
+      else if (imagePath && imagePath.startsWith('/') && !imagePath.startsWith('/ltb-blog/')) {
+        console.log("normalizePage - manual base path:", imagePath, "→", `/ltb-blog${imagePath}`);
+        imagePath = `/ltb-blog${imagePath}`;
+      }
+      
+      const normalizedPage = {
         title: p.title || (p.frontmatter && p.frontmatter.title) || "無題",
         path: p.path || (p.frontmatter && p.frontmatter.path) || "/",
         description: (p.frontmatter && p.frontmatter.description) || "",
         excerpt: p.excerpt || "",
         date: (p.frontmatter && p.frontmatter.date) || p.date || null,
-        image:
-          (p.frontmatter && (p.frontmatter.image || p.frontmatter.thumbnail)) ||
-          null,
+        image: imagePath,
         tags: (p.frontmatter && p.frontmatter.tags) || [],
         category: (p.frontmatter && p.frontmatter.category) || null,
       };
+      
+      if (imagePath) {
+        console.log("normalizePage - final image path:", normalizedPage.image);
+      }
+      return normalizedPage;
     },
     formatDate(date) {
       if (!date) return "";
