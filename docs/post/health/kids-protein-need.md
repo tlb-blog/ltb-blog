@@ -3,7 +3,7 @@ title: "子供にプロテインは必要？ 体の専門家がウソとホン�
 date: 2025-10-06
 tags: [栄養, プロテイン, 子供, スポーツ, 健康]
 category: health
-image: /a-blog/article_images/health/kids-protein.png
+image: /ltb-blog/article_images/health/kids-protein.png
 description: "スポーツをする子どもにプロテインは必要か――専門家の視点で誤解を解き、食事での対応方法をわかりやすく解説します。"
 ---
 

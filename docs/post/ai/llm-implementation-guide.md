@@ -3,7 +3,7 @@ title: LLM構築の最前線：ビジネスを加速する大規模言語モデ�
 date: 2025-10-02
 tags: [AI, LLM, 大規模言語モデル, ビジネス活用, 機械学習]
 category: ai
-image: /a-blog/ai/llm-implementation-guide.png
+image: /ltb-blog/ai/llm-implementation-guide.png
 description: "LLM を導入・活用するための基本設計と運用のポイントを実務視点で解説します。"
 ---
 

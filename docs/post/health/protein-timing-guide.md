@@ -3,7 +3,7 @@ title: プロテインを飲むタイミング：効果を最大化する摂取�
 date: 2025-10-02
 tags: [健康, プロテイン, サプリメント, トレーニング, ダイエット]
 category: health
-image: /a-blog/health/protein-timing-guide.png
+image: /ltb-blog/health/protein-timing-guide.png
 description: "プロテインを効果的に使うための最適な摂取タイミング、種類、目的別の摂取量と選び方をわかりやすく解説します。"
 ---
 

@@ -3,7 +3,7 @@ title: AI画像生成サービスの最前線：あなたのクリエイティ�
 date: 2025-10-02
 tags: [AI, 画像生成, Midjourney, DALL-E, Stable Diffusion, クリエイティブ]
 category: ai
-image: /a-blog/ai/ai-image-generation-services.png
+image: /ltb-blog/ai/ai-image-generation-services.png
 description: "主要な画像生成AIサービス（Midjourney, DALL-E, Stable Diffusion等）の特徴比較と活用例を紹介します。"
 ---
 

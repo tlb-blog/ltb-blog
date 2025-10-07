@@ -3,7 +3,7 @@ title: "「永遠にナゲッツの一員でいたい」- ニコラ・ヨキッ�
 date: 2025-10-06
 tags: [NBA, ニコラ・ヨキッチ, ナゲッツ, 契約]
 category: nba
-image: /a-blog/nba_images/Jokic-Commits-to-Nuggets-Forever.png
+image: /ltb-blog/nba_images/Jokic-Commits-to-Nuggets-Forever.png
 description: "ニコラ・ヨキッチがデンバーへの忠誠を表明。契約延長の判断とチームへの影響を現場視点で解説します。"
 ---
 *写真: NBA.com*

@@ -3,7 +3,7 @@ title: "30代・40代から始める！自律神経を整える「質の良い�
 date: 2025-10-04
 tags: [睡眠, 自律神経, 健康]
 category: health
-image: /a-blog/article_images/sleep_quality_thumbnail.png
+image: /ltb-blog/article_images/sleep_quality_thumbnail.png
 description: "睡眠と自律神経のつながりをわかりやすく解説。睡眠解析サービスやマットレス選びなど、質の良い睡眠を作る具体的な方法を紹介します。"
 ---
 

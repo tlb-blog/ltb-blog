@@ -3,7 +3,7 @@ title: "30代・40代のための自律神経ケア特集"
 date: 2025-10-04
 tags: [自律神経, 特集, 健康]
 category: health
-image: /a-blog/article_images/health/autonomic_overview_thumbnail.png
+image: /ltb-blog/article_images/health/autonomic_overview_thumbnail.png
 description: "自律神経と年齢の関係を解説し、30代・40代が取り入れたいケア方法と最新サービスを紹介する特集です。"
 ---
 

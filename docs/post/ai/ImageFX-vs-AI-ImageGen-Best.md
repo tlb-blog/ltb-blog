@@ -3,7 +3,7 @@ title: "Google ImageFX vs. 主要AI画像生成サービス：最適なツール
 date: 2025-10-06
 tags: [AI, 画像生成, ImageFX, Midjourney, DALL-E, StableDiffusion]
 category: ai
-image: "/a-blog/ai/ImageFX-vs-AI-ImageGen-Best.png"
+image: "/ltb-blog/ai/ImageFX-vs-AI-ImageGen-Best.png"
 description: "Google ImageFX と Midjourney、DALL-E、Stable Diffusion を用途別に比較。画質、操作性、編集機能、コスト、商用利用の観点から最適な選択を提示します。"
 ---
 

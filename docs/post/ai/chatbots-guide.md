@@ -3,7 +3,7 @@ title: 生成AIチャットボットの選び方と活用術：ChatGPT, Claude, 
 date: 2025-10-02
 tags: [AI, チャットボット]
 category: ai
-image: /a-blog/ai/chatbots-guide.png
+image: /ltb-blog/ai/chatbots-guide.png
 description: "ChatGPT, Claude, Gemini の特徴と実務での選び方、活用方法を比較して解説します。"
 ---
 

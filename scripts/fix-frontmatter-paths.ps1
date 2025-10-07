@@ -4,7 +4,7 @@ param(
     [string]$DocsPath
 )
 
-$basePath = "/a-blog"
+$basePath = "/ltb-blog"
 Write-Host "Fixing frontmatter image paths in: $DocsPath" -ForegroundColor Green
 
 # Get all markdown files
@@ -23,19 +23,19 @@ foreach ($file in $mdFiles) {
     $originalContent = $content
     
     # Fix frontmatter image paths that start with / but don't have base path
-    # Pattern: image: "/ai/something.png" → image: "/a-blog/ai/something.png"
-    $content = $content -replace '(image:\s*["`''])/(?!a-blog/)([^"`'']+)(["`''])', "`$1$basePath/`$2`$3"
+    # Pattern: image: "/ai/something.png" → image: "/ltb-blog/ai/something.png"
+    $content = $content -replace '(image:\s*["`''])/(?!ltb-blog/)([^"`'']+)(["`''])', "`$1$basePath/`$2`$3"
     
-    # Fix image paths without quotes: image: /ai/file.png → image: /a-blog/ai/file.png
-    $content = $content -replace '(image:\s*)/(?!a-blog/)([^\s\r\n]+)', "`$1$basePath/`$2"
+    # Fix image paths without quotes: image: /ai/file.png → image: /ltb-blog/ai/file.png
+    $content = $content -replace '(image:\s*)/(?!ltb-blog/)([^\s\r\n]+)', "`$1$basePath/`$2"
     
     # Fix thumbnail paths
-    $content = $content -replace '(thumbnail:\s*["`''])/(?!a-blog/)([^"`'']+)(["`''])', "`$1$basePath/`$2`$3"
-    $content = $content -replace '(thumbnail:\s*)/(?!a-blog/)([^\s\r\n]+)', "`$1$basePath/`$2"
+    $content = $content -replace '(thumbnail:\s*["`''])/(?!ltb-blog/)([^"`'']+)(["`''])', "`$1$basePath/`$2`$3"
+    $content = $content -replace '(thumbnail:\s*)/(?!ltb-blog/)([^\s\r\n]+)', "`$1$basePath/`$2"
     
     # Fix other image references in frontmatter
-    $content = $content -replace '(cover_image:\s*["`''])/(?!a-blog/)([^"`'']+)(["`''])', "`$1$basePath/`$2`$3"
-    $content = $content -replace '(featured_image:\s*["`''])/(?!a-blog/)([^"`'']+)(["`''])', "`$1$basePath/`$2`$3"
+    $content = $content -replace '(cover_image:\s*["`''])/(?!ltb-blog/)([^"`'']+)(["`''])', "`$1$basePath/`$2`$3"
+    $content = $content -replace '(featured_image:\s*["`''])/(?!ltb-blog/)([^"`'']+)(["`''])', "`$1$basePath/`$2`$3"
     
     if ($content -ne $originalContent) {
         # Write with UTF8 BOM to preserve Japanese characters

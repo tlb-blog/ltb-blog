@@ -3,7 +3,7 @@ title: "王の帰還：ヤニス・アンテトクンポ、COVIDから回復し�
 date: 2025-10-06
 tags: [NBA, ヤニス・アンテトクンポ, バックス]
 category: nba
-image: /a-blog/nba_images/Giannis-Returns-to-Bucks-After-COVID.png
+image: /ltb-blog/nba_images/Giannis-Returns-to-Bucks-After-COVID.png
 description: "ヤニス・アンテトクンポがCOVIDから回復してチームに復帰。復帰の背景とチームへの影響を現場の視点で解説します。"
 ---
 （写真: Getty Images）

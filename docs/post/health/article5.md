@@ -3,7 +3,7 @@ title: 姿勢改善で見た目も体調も若返る！猫背・肩こり解消�
 date: 2025-09-18
 tags: [姿勢改善, 猫背, 肩こり, ストレッチ, デスクワーク, tips]
 category: health
-image: /a-blog/article_images/article5/posture_correction.png
+image: /ltb-blog/article_images/article5/posture_correction.png
 description: "猫背や肩こりを改善する簡単ストレッチと日常の工夫で、姿勢と体調を若返らせる実践ガイド。"
 ---
 
