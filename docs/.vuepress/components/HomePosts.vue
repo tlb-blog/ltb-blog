@@ -216,15 +216,34 @@ export default {
   },
   mounted() {
     // 開発環境でのみコンソールログを出力
-    if (process.env.NODE_ENV === 'development') {
+    if (process.env.NODE_ENV === "development") {
       console.log("HomePosts mounted with props:", this.$props);
       console.log("Number of pages:", this.$site?.pages?.length);
-      
-      const pagesWithImages = this.$site?.pages?.filter(p => 
-        p.frontmatter?.image || p.frontmatter?.thumbnail
-      ) || [];
+
+      const pagesWithImages =
+        this.$site?.pages?.filter(
+          (p) => p.frontmatter?.image || p.frontmatter?.thumbnail
+        ) || [];
       console.log("Pages with images count:", pagesWithImages.length);
     }
+    
+    // プロダクション環境でも重要な情報をログ出力
+    console.log("[HomePosts] Environment:", process.env.NODE_ENV);
+    console.log("[HomePosts] Total pages:", this.$site?.pages?.length || 0);
+    
+    const pagesWithImages = this.$site?.pages?.filter(
+      (p) => p.frontmatter?.image || p.frontmatter?.thumbnail
+    ) || [];
+    console.log("[HomePosts] Pages with images:", pagesWithImages.length);
+    
+    // Recent Postsに表示される記事をログ出力
+    setTimeout(() => {
+      console.log("[HomePosts] Recent posts data:", this.recentPosts.map(p => ({
+        title: p.title,
+        image: p.image,
+        path: p.path
+      })));
+    }, 100);
   },
   computed: {
     allPages() {
@@ -277,21 +296,29 @@ export default {
   methods: {
     normalizePage(p) {
       // 画像パスを取得
-      let imagePath = (p.frontmatter && (p.frontmatter.image || p.frontmatter.thumbnail)) || null;
-      
+      let imagePath =
+        (p.frontmatter && (p.frontmatter.image || p.frontmatter.thumbnail)) ||
+        null;
+
+      const originalImagePath = imagePath;
+
       // 既にベースパスが含まれている場合は何もしない
-      if (imagePath && imagePath.startsWith('/ltb-blog/')) {
+      if (imagePath && imagePath.startsWith("/ltb-blog/")) {
         // そのまま使用
       }
       // VuePressの$withBaseヘルパーを使用（ベースパスがない場合のみ）
-      else if (imagePath && imagePath.startsWith('/') && this.$withBase) {
+      else if (imagePath && imagePath.startsWith("/") && this.$withBase) {
         imagePath = this.$withBase(imagePath);
       }
       // フォールバック：手動でベースパスを追加
-      else if (imagePath && imagePath.startsWith('/') && !imagePath.startsWith('/ltb-blog/')) {
+      else if (
+        imagePath &&
+        imagePath.startsWith("/") &&
+        !imagePath.startsWith("/ltb-blog/")
+      ) {
         imagePath = `/ltb-blog${imagePath}`;
       }
-      
+
       const normalizedPage = {
         title: p.title || (p.frontmatter && p.frontmatter.title) || "無題",
         path: p.path || (p.frontmatter && p.frontmatter.path) || "/",
@@ -302,7 +329,16 @@ export default {
         tags: (p.frontmatter && p.frontmatter.tags) || [],
         category: (p.frontmatter && p.frontmatter.category) || null,
       };
-      
+
+      // 画像パスがある場合はログ出力（プロダクション環境でも）
+      if (originalImagePath) {
+        console.log(`[HomePosts] Image processing - ${p.path}:`, {
+          original: originalImagePath,
+          final: imagePath,
+          hasWithBase: !!this.$withBase
+        });
+      }
+
       return normalizedPage;
     },
     formatDate(date) {
