@@ -1,9 +1,9 @@
----
+﻿---
 title: "30代・40代の「痩せにくい」を解決！基礎代謝アップで効率的に痩せる方法"
 date: 2025-09-28
 tags: [ダイエット, 基礎代謝, エクササイズ, 筋トレ]
 category: health
-image: /article_images/health/exercise.png
+image: /a-blog/article_images/health/exercise.png
 description: "30代・40代向けに、基礎代謝を上げて効率的に痩せるための筋トレ・食事・睡眠の実践的な方法を、持続しやすい習慣に落とし込みます。"
 ---
 ## 要点まとめ（TL;DR）

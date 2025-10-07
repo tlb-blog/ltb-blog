@@ -1,9 +1,9 @@
----
+﻿---
 title: "30代・40代の「隠れ疲労」を科学的に解消する方法"
 date: 2025-10-06
 tags: [健康, 隠れ疲労, リカバリー, 睡眠]
 category: health
-image: /article_images/health/hidden_fatigue_thumbnail.png
+image: /a-blog/article_images/health/hidden_fatigue_thumbnail.png
 description: "30代・40代向けの『隠れ疲労』解消ガイド。自律神経の整え方、リカバリーウェア、寝具、ウェアラブルデバイスの活用法を科学的に解説します。"
 ---
 

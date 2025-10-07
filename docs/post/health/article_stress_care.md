@@ -1,9 +1,9 @@
----
+﻿---
 title: "ストレスに負けない心と体へ！30代・40代のための「自律神経ケア」習慣"
 date: 2025-10-04
 tags: [ストレス, 自律神経, マインドフルネス]
 category: health
-image: /article_images/health/stress_care_thumbnail.png
+image: /a-blog/article_images/health/stress_care_thumbnail.png
 description: "忙しい30代・40代のためのストレス対策ガイド。瞑想やアプリ、デバイスを使った自律神経ケアの習慣化方法を紹介します。"
 ---
 

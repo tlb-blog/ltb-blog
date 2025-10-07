@@ -1,9 +1,9 @@
----
+﻿---
 title: 30代・40代の心と体の不調を改善！「自律神経を整える」生活習慣
 date: 2025-09-22
 tags: [ストレス, 自律神経, 睡眠, メンタルヘルス]
 category: health
-image: /article_images/article3/autonomic_nervous_system.jpg
+image: /a-blog/article_images/article3/autonomic_nervous_system.jpg
 description: "30代・40代の自律神経の乱れに対する睡眠・運動・食事の実践的な改善方法とリラックス習慣を紹介します。"
 ---
 

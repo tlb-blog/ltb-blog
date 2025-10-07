@@ -1,9 +1,9 @@
----
+﻿---
 title: "契約延長の裏で高まる緊張：ジョナサン・クミンガとウォリアーズの複雑な未来"
 date: 2025-10-06
 tags: [NBA, ジョナサン・クミンガ, ウォリアーズ, トレード]
 category: nba
-image: /nba_images/nba_20251006_Kuminga-Complex-Future1.png
+image: /a-blog/nba_images/nba_20251006_Kuminga-Complex-Future1.png
 description: "ジョナサン・クミンガの契約延長を巡る緊張と、ウォリアーズの今後への影響をわかりやすく整理します。"
 ---
 *写真: NBA.com*

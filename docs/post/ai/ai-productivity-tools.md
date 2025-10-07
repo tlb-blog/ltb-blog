@@ -1,9 +1,9 @@
----
+﻿---
 title: 業務効率化を叶えるAIツール：Copilot, Notion AI, Perplexity AI
 date: 2025-10-02
 tags: [AI]
 category: ai
-image: /ai/ai-productivity-tools.png
+image: /a-blog/ai/ai-productivity-tools.png
 description: "Copilot, Notion, Perplexityなど業務効率化AIツールの特徴と使い方を解説します。"
 ---
 

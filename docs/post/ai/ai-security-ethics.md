@@ -1,9 +1,9 @@
----
+﻿---
 title: AI時代のセキュリティと倫理：安心してAIを使うために
 date: 2025-10-02
 tags: [AI]
 category: ai
-image: /ai/ai-security-ethics.png
+image: /a-blog/ai/ai-security-ethics.png
 ---
 
 ## はじめに：AIの恩恵と潜むリスク

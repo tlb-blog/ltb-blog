@@ -1,9 +1,9 @@
----
+﻿---
 title: Google ImageFX徹底解説：あなたのアイデアを瞬時にビジュアル化するAI画像生成ツール
 date: 2025-10-03
 tags: "AI, 画像生成, ImageFX"
 category: ai
-image: /ai/google-imagefx-guide.png
+image: /a-blog/ai/google-imagefx-guide.png
 description: "Google ImageFX の概要と主要な機能、利用シーンをわかりやすく解説します。"
 ---
 

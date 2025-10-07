@@ -1,9 +1,9 @@
----
+﻿---
 title: 生成AIチャットボットの選び方と活用術：ChatGPT, Claude, Gemini
 date: 2025-10-02
 tags: [AI, チャットボット]
 category: ai
-image: /ai/chatbots-guide.png
+image: /a-blog/ai/chatbots-guide.png
 description: "ChatGPT, Claude, Gemini の特徴と実務での選び方、活用方法を比較して解説します。"
 ---
 

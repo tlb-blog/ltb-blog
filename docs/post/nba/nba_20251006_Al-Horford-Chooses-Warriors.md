@@ -1,9 +1,9 @@
----
+﻿---
 title: "ベテランの選択：アル・ホーフォードがウォリアーズを選んだ理由"
 date: 2025-10-06
 tags: [NBA, アル・ホーフォード, ウォリアーズ, 移籍]
 category: nba
-image: /nba_images/al-horford-warriors.png
+image: /a-blog/nba_images/al-horford-warriors.png
 description: "アル・ホーフォードがセルティックスからウォリアーズへ移籍した背景と、チーム構成に与える影響を解説します。"
 ---
 *写真: NBA.com*

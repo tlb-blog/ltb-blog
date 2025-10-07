@@ -1,9 +1,9 @@
----
+﻿---
 title: 画像生成AIでビジネスを加速：Midjourney, DALL-E, Stable Diffusion
 date: 2025-10-02
 tags: [AI, 画像生成]
 category: ai
-image: /ai/image-generation-ai.png
+image: /a-blog/ai/image-generation-ai.png
 description: "画像生成AIの概要と代表ツールの比較、ビジネスでの活用ポイントを解説します。"
 ---
 

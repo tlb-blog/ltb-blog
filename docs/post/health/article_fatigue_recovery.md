@@ -1,9 +1,9 @@
----
+﻿---
 title: "「疲れが取れない」は自律神経のSOS？30代・40代のための回復術"
 date: 2025-10-04
 tags: [疲労, 自律神経, 回復]
 category: health
-image: /article_images/health/fatigue_recovery_thumbnail.png
+image: /a-blog/article_images/health/fatigue_recovery_thumbnail.png
 description: "30代・40代で続く疲労の原因としての自律神経の乱れと、日常でできる回復法や最新サービスを紹介します。"
 ---
 

@@ -1,9 +1,9 @@
----
+﻿---
 title: "試練のデビュー：ブロニー・ジェームズ、初陣はほろ苦い結果も成長の兆し"
 date: 2025-10-06
 tags: [NBA, ブロニー・ジェームズ, レイカーズ]
 category: nba
-image: /nba_images/Bronny-James-Debut-Growing-Pains.png
+image: /a-blog/nba_images/Bronny-James-Debut-Growing-Pains.png
 description: "ブロニー・ジェームズのプレシーズンデビューを振り返り、課題と成長の兆しを分析します。"
 ---
 (写真: Getty Images)

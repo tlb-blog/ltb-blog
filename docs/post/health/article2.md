@@ -1,9 +1,9 @@
----
+﻿---
 title: 忙し〄30代・40代必見！ストレスフリーで続く「ユル糖質制限」ダイエット
 date: 2025-09-25
 tags: [ダイエット, 糖質制限, 食事, 健康]
 category: health
-image: /article_images/article2/low_carb_meal.png
+image: /a-blog/article_images/article2/low_carb_meal.png
 description: "忙しい30代・40代向けに、ストレスを抑えて続けられる『ゆる糖質制限』の実践方法と外食・作り置きアイデアを紹介します。"
 ---
 

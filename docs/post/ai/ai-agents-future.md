@@ -1,9 +1,9 @@
----
+﻿---
 title: AIエージェントの最前線：自律型AIが変える未来
 date: 2025-10-02
 tags: [AI]
 category: ai
-image: /ai/ai-agents-future.png
+image: /a-blog/ai/ai-agents-future.png
 description: "自律型AI（エージェント）の概念と進化、ビジネスや生活への影響を解説します。"
 ---
 
