@@ -115,6 +115,24 @@ foreach ($f in $jsFiles) {
     $new = $new -replace "'image':'/article_images/","'image':'/ltb-blog/article_images/"
     $new = $new -replace "'image':'/nba_images/","'image':'/ltb-blog/nba_images/"
     
+    # frontmatterの様々なフォーマットに対応
+    $new = $new -replace 'thumbnail:"/ai/','thumbnail:"/ltb-blog/ai/'
+    $new = $new -replace 'thumbnail:"/health/','thumbnail:"/ltb-blog/health/'
+    $new = $new -replace 'thumbnail:"/article_images/','thumbnail:"/ltb-blog/article_images/'
+    $new = $new -replace 'thumbnail:"/nba_images/','thumbnail:"/ltb-blog/nba_images/'
+    
+    # フロントマターのクオート付きパターン
+    $new = $new -replace '"thumbnail":"/ai/','"thumbnail":"/ltb-blog/ai/'
+    $new = $new -replace '"thumbnail":"/health/','"thumbnail":"/ltb-blog/health/'
+    $new = $new -replace '"thumbnail":"/article_images/','"thumbnail":"/ltb-blog/article_images/'
+    $new = $new -replace '"thumbnail":"/nba_images/','"thumbnail":"/ltb-blog/nba_images/'
+    
+    # VuePressページデータのimageプロパティ（よくある形式）
+    $new = $new -replace ',"image":"/ai/',',"image":"/ltb-blog/ai/'
+    $new = $new -replace ',"image":"/health/',',"image":"/ltb-blog/health/'
+    $new = $new -replace ',"image":"/article_images/',',"image":"/ltb-blog/article_images/'
+    $new = $new -replace ',"image":"/nba_images/',',"image":"/ltb-blog/nba_images/'
+    
     # og:image や twitter:image のcontent属性（JavaScript内）
     $new = $new -replace 'content:"/ai/','content:"/ltb-blog/ai/'
     $new = $new -replace 'content:"/health/','content:"/ltb-blog/health/'
