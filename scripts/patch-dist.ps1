@@ -72,6 +72,10 @@ foreach ($f in $files) {
     $new = $new -replace 'href="/ai/','href="/ltb-blog/ai/'
     $new = $new -replace 'href="/health/','href="/ltb-blog/health/'
     
+    # Fix empty background-image styles that cause thumbnail issues
+    $new = $new -replace 'style="background-image:;([^"]*)"', 'style="$1"'
+    $new = $new -replace 'style="background-image:;"', 'style=""'
+    
     # Fix duplicate base paths
     $new = $new -replace '/ltb-blog/ltb-blog','/ltb-blog'
     
