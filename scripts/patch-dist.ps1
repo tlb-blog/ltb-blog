@@ -73,6 +73,11 @@ foreach ($f in $files) {
     $new = $new -replace 'href="/health/','href="/ltb-blog/health/'
     
     # Fix empty background-image styles that cause thumbnail issues
+    # Instead of removing the style, we need to populate it with the correct image path
+    # This is more complex as we need to match the empty background-image with the corresponding image data
+    
+    # For now, remove the empty background-image styles to prevent broken thumbnails
+    # The JavaScript will handle the image display dynamically on the client side
     $new = $new -replace 'style="background-image:;([^"]*)"', 'style="$1"'
     $new = $new -replace 'style="background-image:;"', 'style=""'
     
