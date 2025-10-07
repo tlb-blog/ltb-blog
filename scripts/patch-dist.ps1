@@ -1,6 +1,17 @@
+# PowerShell script to patch path issues in VuePress build output
+param(
+    [string]$distPath = ""
+)
+
 $ErrorActionPreference = 'Stop'
 $root = Join-Path $PSScriptRoot '..' | Resolve-Path
-$dist = Join-Path $root 'docs\.vuepress\dist'
+
+if ($distPath -eq "") {
+    $dist = Join-Path $root 'docs\.vuepress\dist'
+} else {
+    $dist = Join-Path $root $distPath | Resolve-Path
+}
+
 Write-Output "Patching HTML files under: $dist"
 $files = Get-ChildItem -Path $dist -Recurse -Filter '*.html' -File
 foreach ($f in $files) {
