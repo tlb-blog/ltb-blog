@@ -16,12 +16,7 @@
               <v-card class="post-card" :to="post.path" flat>
                 <!-- サムネイル画像部分 -->
                 <div class="post-image-container">
-                  <v-img
-                    v-if="post.image"
-                    :src="post.image"
-                    class="post-image"
-                    cover
-                  ></v-img>
+                  <img v-if="post.image" :src="post.image" class="post-image" alt="" />
                   <div v-else class="post-image placeholder-image"></div>
                 </div>
 
@@ -78,12 +73,7 @@
               <v-card class="post-card" :to="post.path" flat>
                 <!-- サムネイル画像部分 -->
                 <div class="post-image-container">
-                  <v-img
-                    v-if="post.image"
-                    :src="post.image"
-                    class="post-image"
-                    cover
-                  ></v-img>
+                  <img v-if="post.image" :src="post.image" class="post-image" alt="" />
                   <div v-else class="post-image placeholder-image"></div>
                 </div>
 
@@ -139,12 +129,7 @@
               <v-card class="post-card" :to="post.path" flat>
                 <!-- サムネイル画像部分 -->
                 <div class="post-image-container">
-                  <v-img
-                    v-if="post.image"
-                    :src="post.image"
-                    class="post-image"
-                    cover
-                  ></v-img>
+                  <img v-if="post.image" :src="post.image" class="post-image" alt="" />
                   <div v-else class="post-image placeholder-image"></div>
                 </div>
 
