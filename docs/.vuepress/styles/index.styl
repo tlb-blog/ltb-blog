@@ -397,6 +397,27 @@ article img,
   z-index 3000 !important
   pointer-events auto !important
 
+/* Published date / time styling: normalize icon size and baseline */
+.published-at
+  display inline-flex
+  align-items center
+  gap 8px
+  /* ensure it doesn't force larger line-height */
+  line-height 1
+
+.published-at svg,
+.published-at .svg-inline--fa,
+.published-at .fa-clock
+  width 20px !important
+  height 20px !important
+  flex 0 0 20px
+  display inline-block !important
+
+.published-at time
+  font-size 0.95rem
+  color rgba(0,0,0,0.55)
+  vertical-align middle
+
 .medium-zoom-image,
 .medium-zoom-image--opened,
 .medium-zoom-image--hidden
