@@ -315,9 +315,18 @@ code
 
 // ヘッダの表示領域が潰れている場合に備えて高さ・パディングを確保
 .v-app-bar, .v-toolbar
-  min-height 56px !important
+  /* Normalize toolbar height across environments to avoid 1px/8px differences */
+  min-height 64px !important
   padding 0 16px !important
   align-items center !important
+
+/* Ensure toolbar content uses the same height so injected elements align */
+.v-app-bar .v-toolbar__content,
+.v-toolbar .v-toolbar__content
+  min-height 64px !important
+  height 64px !important
+  padding-top 0 !important
+  padding-bottom 0 !important
 
 // site-logo スタイル（enhanceApp.js で挿入するロゴ用）
 .site-logo
