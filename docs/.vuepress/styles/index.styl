@@ -324,10 +324,14 @@ code
   display inline-flex
   align-items center
   margin-right 12px
+  /* Ensure the injected logo aligns to the toolbar center */
+  align-self center !important
   img
     height 40px
     width auto
     display block
+    margin 0 !important
+    vertical-align middle
 
 // テーマ組み込みのロゴ（config.js の logo）に対応
 .logo,
@@ -342,6 +346,16 @@ code
 .logo + .v-toolbar__title,
 .v-app-bar img + .v-toolbar__title
   display none !important
+
+/* Ensure toolbar title aligns vertically with injected site-logo */
+.v-toolbar__title,
+.site-title,
+.site-name
+  margin 0 !important
+  padding 0 !important
+  display inline-flex !important
+  align-items center !important
+  align-self center !important
 
 /* モバイルでヘッダアイテムが隠れる場合の対策 */
 @media (max-width: 600px)
