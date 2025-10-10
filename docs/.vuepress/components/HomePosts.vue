@@ -16,7 +16,12 @@
               <v-card class="post-card" :to="post.path" flat>
                 <!-- サムネイル画像部分 -->
                 <div class="post-image-container">
-                  <img v-if="post.image" :src="post.image" class="post-image" alt="" />
+                  <img
+                    v-if="post.image"
+                    :src="post.image"
+                    class="post-image"
+                    alt=""
+                  />
                   <div v-else class="post-image placeholder-image"></div>
                 </div>
 
@@ -73,14 +78,19 @@
               <v-card class="post-card" :to="post.path" flat>
                 <!-- サムネイル画像部分 -->
                 <div class="post-image-container">
-                  <img v-if="post.image" :src="post.image" class="post-image" alt="" />
+                  <img
+                    v-if="post.image"
+                    :src="post.image"
+                    class="post-image"
+                    alt=""
+                  />
                   <div v-else class="post-image placeholder-image"></div>
                 </div>
 
                 <!-- コンテンツ部分 -->
                 <v-card-text class="post-content">
                   <v-card-title class="post-title">{{
-                    post.image
+                    post.title
                   }}</v-card-title>
                   <!-- tags -->
                   <div
@@ -129,7 +139,12 @@
               <v-card class="post-card" :to="post.path" flat>
                 <!-- サムネイル画像部分 -->
                 <div class="post-image-container">
-                  <img v-if="post.image" :src="post.image" class="post-image" alt="" />
+                  <img
+                    v-if="post.image"
+                    :src="post.image"
+                    class="post-image"
+                    alt=""
+                  />
                   <div v-else class="post-image placeholder-image"></div>
                 </div>
 
@@ -382,11 +397,13 @@ export default {
   width: 100%;
   height: 160px;
   position: relative;
+  overflow: hidden;
 }
 
 .post-image {
   width: 100%;
   height: 100%;
+  display: block;
   object-fit: cover;
 }
 
