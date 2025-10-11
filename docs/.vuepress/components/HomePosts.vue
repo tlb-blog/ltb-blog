@@ -395,7 +395,8 @@ export default {
 
 .post-image-container {
   width: 100%;
-  height: 160px;
+  /* Enlarged thumbnails: desktop */
+  height: 200px;
   position: relative;
   overflow: hidden;
 }
@@ -472,7 +473,8 @@ export default {
 
 @media (max-width: 960px) {
   .post-image-container {
-    height: 130px;
+    /* tablet */
+    height: 170px;
   }
 
   .post-title {
@@ -486,7 +488,8 @@ export default {
 
 @media (max-width: 600px) {
   .post-image-container {
-    height: 120px;
+    /* mobile */
+    height: 150px;
   }
 
   .post-content {

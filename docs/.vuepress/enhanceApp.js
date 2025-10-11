@@ -1,11 +1,13 @@
 import CategoryNavigation from "./components/CategoryNavigation.vue";
 import HomePosts from "./components/HomePosts.vue";
 import CategoryPage from "./components/CategoryPage.vue";
+import Breadcrumb from "./components/Breadcrumb.vue";
 
 export default ({ Vue, options, router, siteData }) => {
   Vue.component("CategoryNavigation", CategoryNavigation);
   Vue.component("HomePosts", HomePosts);
   Vue.component("CategoryPage", CategoryPage);
+  Vue.component("Breadcrumb", Breadcrumb);
 
   // ヘッダーナビゲーションを動的に追加
   if (typeof window !== "undefined") {

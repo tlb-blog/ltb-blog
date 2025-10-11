@@ -14,6 +14,19 @@ module.exports = {
   // logo: "/logo.png", // enhanceApp.jsで動的に追加するためコメントアウト
   theme: "vuepress-theme-blog-vuetify",
 
+  // Configure plugins at the top level so VuePress recognizes them.
+  // Limit medium-zoom to article/content images and explicitly exclude
+  // card thumbnails which use the `.post-image` class.
+  plugins: [
+    [
+      "@vuepress/plugin-medium-zoom",
+      {
+        selector:
+          ".theme-default-content img:not(.post-image), article img:not(.post-image), .theme-default-content picture img:not(.post-image)",
+      },
+    ],
+  ],
+
   // ヘッド要素の設定
   head: [
     ["link", { rel: "icon", href: "/avatar.svg" }],

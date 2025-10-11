@@ -5,6 +5,4 @@ description: NBAに関する記事一覧です。試合分析や選手情報を�
 permalink: /post/nba/
 ---
 
-NBAに関する記事一覧です。試合分析や選手情報をお届けします。
-
 <HomePosts category="nba" grid-only="true" />
