@@ -1,14 +1,12 @@
 ---
 title: "今夜、スターが生まれる：トップ3ルーキーがセンターステージに"
-date: 2025-10-13
+date: 2025-10-14
 tags: [NBA, Rookies, Cooper Flagg, Ace Bailey, Dylan Harper]
 category: nba
 image: /article_images/nba_20251013_top3_rookies_center_stage.png
 description: "Cooper Flagg、Ace Bailey、Dylan Harperのプレシーズン活躍と今夜の注目対決をレポート。"
-author: Manus AI
 ---
 
-![Ace Bailey](https://private-us-east-1.manuscdn.com/sessionFile/uYllpqk68mAyJ8zl87dX2s/sandbox/DikXoQVrkbgL0u5kLk5NC4-images_1760396640923_na1fn_L2hvbWUvdWJ1bnR1L25iYV9hcnRpY2xlL2FjZV9iYWlsZXlfYWN0aW9u.png?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvdVlsbHBxazY4bUF5Sjh6bDg3ZFgycy9zYW5kYm94L0Rpa1hvUVZya2JnTDB1NWtMazVOQzQtaW1hZ2VzXzE3NjAzOTY2NDA5MjNfbmExZm5fTDJodmJXVXZkV0oxYm5SMUwyNWlZVjloY25ScFkyeGxMMkZqWlY5aVlXbHNaWGxmWVdOMGFXOXUucG5nIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=knUxURQ-~OJUKCzhD7iUwWesNDMBQ6k6gu8iE6yRpXCx0EOBs9axJTu2sfT2SQkFQlG5LMPLa9F0ehBrMvbgldfm9kwKLQiUiCbfvPSTi9~Ok~RrjPDR3qWSatZSnCZs44bxrXTczVMBryeIs7azpb0LH8v5VL8EQ9-nSTlbS2dYNxfj7WneNdmk3k4c8u9uYYLl3zIeGqErINipwvRoaCmyp~0JkbMMXwtZfaSc0RAiWMx0GD-ReSdIo0Sap3ksiAzyro2rF8OkbbcqOzLIXUrX-rols-g8kYIk8r4I71hTyw-K4ugpjb3I8mxKlx9e7R52pmUP5sUjYW~2Pn-1Qw__)
 *写真: NBA.com*
 
 2025年10月13日の夜、NBA世界は今年のドラフトのトップ3指名選手を目撃する準備ができている。Cooper Flagg、Ace Bailey、Dylan Harper——4ヶ月前、彼らは見込み選手として知られていた。今、彼らはNBAレベルで、なぜトップ指名されたのかを証明している。
@@ -43,11 +41,11 @@ NBA.comのスカウティングレポートは、Baileyを以下のように評�
 
 #### プレシーズンの成績：期待を超える活躍
 
-| 項目 | 成績 | ランキング |
-|------|------|-----------|
+| 項目         | 成績   | ランキング             |
+| ------------ | ------ | ---------------------- |
 | **平均得点** | 22.5点 | ルーキー1位、全選手3位 |
-| **FG成功率** | 65.5% | - |
-| **3P成功率** | 40.0% | - |
+| **FG成功率** | 65.5%  | -                      |
+| **3P成功率** | 40.0%  | -                      |
 
 Baileyのシュートストロークは、まさに宣伝通りだ。彼は、ジャンパーに過剰にコミットするディフェンダーに、すでに代償を払わせている。
 
@@ -81,14 +79,14 @@ Flaggは、プレシーズンで以下のような活躍を見せた。
 
 #### プレシーズンデビューの成績
 
-| 項目 | 成績 |
-|------|------|
-| **得点** | 10点 |
-| **リバウンド** | 6本 |
-| **アシスト** | 3本 |
-| **ブロック** | 1本 |
-| **ターンオーバー** | 0 |
-| **プレー時間** | 14分 |
+| 項目               | 成績 |
+| ------------------ | ---- |
+| **得点**           | 10点 |
+| **リバウンド**     | 6本  |
+| **アシスト**       | 3本  |
+| **ブロック**       | 1本  |
+| **ターンオーバー** | 0    |
+| **プレー時間**     | 14分 |
 
 Flaggは、わずか14分間で、ディフェンス、プレーメイキング、得点のすべてを見せた。Jason Kiddコーチは「本当に、本当に良かった」と評価している。
 
@@ -102,10 +100,10 @@ NBA.comのスカウティングレポートは、Harperを以下のように評�
 
 #### プレシーズンデビュー（金曜日）
 
-| 項目 | 成績 |
-|------|------|
-| **得点** | 9点 |
-| **アシスト** | 3本 |
+| 項目         | 成績 |
+| ------------ | ---- |
+| **得点**     | 9点  |
+| **アシスト** | 3本  |
 
 #### ハイライト：完璧なパス
 
@@ -128,11 +126,11 @@ Harperの最も印象的なプレーは、以下のようなものだった。
 
 今、彼らはプレシーズンで、なぜトップ指名されたのかを示している。彼らのスキルセットは、スカウトと幹部を興奮させたものだ。
 
-| 選手名 | ドラフト順位 | チーム | 証明したスキル |
-|--------|-------------|--------|---------------|
-| **Cooper Flagg** | 1位 | マーベリックス | ディフェンス、プレーメイキング、得点 |
-| **Dylan Harper** | 2位 | スパーズ | プレーメイキング、ゲーム感覚 |
-| **Ace Bailey** | 3位 | ジャズ | シューティング、クローズアウト攻撃 |
+| 選手名           | ドラフト順位 | チーム         | 証明したスキル                       |
+| ---------------- | ------------ | -------------- | ------------------------------------ |
+| **Cooper Flagg** | 1位          | マーベリックス | ディフェンス、プレーメイキング、得点 |
+| **Dylan Harper** | 2位          | スパーズ       | プレーメイキング、ゲーム感覚         |
+| **Ace Bailey**   | 3位          | ジャズ         | シューティング、クローズアウト攻撃   |
 
 ## 昨夜のハイライト：Sarr兄弟の対決
 
