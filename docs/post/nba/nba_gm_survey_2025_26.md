@@ -1,7 +1,7 @@
 ---
 title: "NBA GMサーベイ2025-26：サンダー連覇予想、ヨキッチが圧倒的MVP支持"
 date: 2025-10-11
-tags: ["NBA","GMサーベイ","MVP","サンダー","ヨキッチ"]
+tags: ["NBA","MVP","サンダー","ヨキッチ"]
 category: nba
 image: /article_images/okc_thunder.jpg
 description: "NBA GMによる2025-26シーズン予想。サンダーの連覇予想とヨキッチのMVP支持が注目を集める。"

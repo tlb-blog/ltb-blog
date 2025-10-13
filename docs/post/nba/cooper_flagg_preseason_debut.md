@@ -1,7 +1,6 @@
 ---
 title: "「本当に良かった」：クーパー・フラッグ、NBAプレシーズンデビューで万能性を発揮"
 date: 2025-10-13
-author: "Manus AI"
 tags: [NBA, Cooper Flagg, Rookie]
 category: nba
 image: /article_images/cooper_flagg.png
