@@ -128,3 +128,7 @@ Xなどのツイートからでおもかまいません
 ## YouTubeからの記事起こし
 
 https://notebooklm.google.com/
+
+## Googleアナリティクス
+
+https://analytics.google.com/analytics/web/provision/#/a371073136p508279689/reports/intelligenthome

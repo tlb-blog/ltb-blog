@@ -3,13 +3,15 @@ param(
 )
 
 function Run-Git {
-    param([string]$Args)
-    Write-Host "git $Args"
-    $proc = Start-Process -FilePath git -ArgumentList $Args -NoNewWindow -PassThru -Wait -RedirectStandardOutput stdout.txt -RedirectStandardError stderr.txt
-    $out = Get-Content stdout.txt -Raw
-    $err = Get-Content stderr.txt -Raw
-    Remove-Item stdout.txt, stderr.txt -ErrorAction SilentlyContinue
-    return @{ ExitCode = $proc.ExitCode; Stdout = $out; Stderr = $err }
+    param([string]$Cmd)
+    # Use cmd /c to run git with a single command string for compatibility with PowerShell 5.1
+    Write-Host "git $Cmd"
+    $full = "git $Cmd"
+    $output = & cmd /c $full 2>&1
+    $exit = $LASTEXITCODE
+    $text = @()
+    if ($output) { $text = $output -join "`n" }
+    return @{ ExitCode = $exit; Stdout = $text; Stderr = "" }
 }
 
 Write-Host "Starting git-sync with message: '$Message'"

@@ -7,7 +7,6 @@ image: /article_images/cooper_flagg.png
 description: "クーパー・フラッグがプレシーズンデビューで示した万能性とデビュー戦の詳細をレポート。"
 ---
 
-![Cooper Flagg](https://private-us-east-1.manuscdn.com/sessionFile/uYllpqk68mAyJ8zl87dX2s/sandbox/g5vMorH7AVesPTdXfqolFv-images_1760340683853_na1fn_L2hvbWUvdWJ1bnR1L25iYV9hcnRpY2xlL2Nvb3Blcl9mbGFnZw.jpg)
 *写真: Bangor Daily News*
 
 2025年ドラフト1位指名のクーパー・フラッグが、ダラス・マーベリックスのプレシーズンデビューで、その万能性を遺憾なく発揮した。わずか18歳のルーキーは、14分間のプレーで10点、6リバウンド、3アシスト、1ブロックを記録し、コーチとファンを魅了した。
