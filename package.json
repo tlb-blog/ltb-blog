@@ -4,7 +4,8 @@
     "private": true,
     "scripts": {
         "dev": "vuepress dev docs",
-        "build": "vuepress build docs"
+        "build": "vuepress build docs",
+        "git:sync": "powershell -ExecutionPolicy Bypass -File ./scripts/git-sync.ps1 -Message"
     },
     "dependencies": {
         "bootstrap-icons": "^1.13.1",
