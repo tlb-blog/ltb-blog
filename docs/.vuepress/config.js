@@ -36,6 +36,19 @@ module.exports = {
       "meta",
       { name: "apple-mobile-web-app-status-bar-style", content: "black" },
     ],
+    // Google Analytics 4 (gtag.js) - Measurement ID added per user
+    [
+      "script",
+      {
+        async: true,
+        src: "https://www.googletagmanager.com/gtag/js?id=G-THN3TRJ81V",
+      },
+    ],
+    [
+      "script",
+      {},
+      "window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'G-THN3TRJ81V');",
+    ],
   ],
 
   themeConfig: {
