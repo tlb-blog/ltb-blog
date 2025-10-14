@@ -54,7 +54,11 @@ export default ({ Vue, options, router, siteData }) => {
           }
         }
 
-        if (!contentEl) return; // 見つからなければ抜ける
+        if (!contentEl) {
+          // 追加のフォールバック候補を探す
+          contentEl = document.querySelector('header, .site-header, .navbar, .v-app-bar, .v-toolbar');
+        }
+        if (!contentEl || contentEl.nodeType !== 1) return; // 見つからなければまた抜ける
 
         // ロゴ要素を作成
         const a = document.createElement("a");
@@ -83,16 +87,27 @@ export default ({ Vue, options, router, siteData }) => {
         a.classList.remove("mr-auto");
 
         // contentEl の中で .v-toolbar__title を見つけ、その前に挿入する。
-        const titleEl = contentEl.querySelector(".v-toolbar__title");
-        if (titleEl && titleEl.parentNode === contentEl) {
-          contentEl.insertBefore(a, titleEl);
-        } else if (titleEl) {
-          // title が深くネストされている場合は titleEl の親の前に挿入
-          titleEl.parentNode.insertBefore(a, titleEl.parentNode.firstChild);
-        } else if (contentEl.firstChild) {
-          contentEl.insertBefore(a, contentEl.firstChild);
-        } else {
-          contentEl.appendChild(a);
+        try {
+          const titleEl = contentEl.querySelector(".v-toolbar__title");
+          if (titleEl && titleEl.parentNode === contentEl && typeof contentEl.insertBefore === 'function') {
+            contentEl.insertBefore(a, titleEl);
+          } else if (titleEl && titleEl.parentNode && typeof titleEl.parentNode.insertBefore === 'function') {
+            // title が深くネストされている場合は titleEl の親の最初の子の前に挿入
+            titleEl.parentNode.insertBefore(a, titleEl.parentNode.firstChild || null);
+          } else if (contentEl.firstChild && typeof contentEl.insertBefore === 'function') {
+            contentEl.insertBefore(a, contentEl.firstChild);
+          } else if (typeof contentEl.appendChild === 'function') {
+            contentEl.appendChild(a);
+          } else {
+            // どのノードにも挿入できない場合は safest fallback として body に追加
+            if (document.body && typeof document.body.appendChild === 'function') {
+              document.body.insertBefore(a, document.body.firstChild || null);
+            }
+          }
+        } catch (e) {
+          try {
+            console.error('[enhanceApp] failed to insert header logo', e);
+          } catch (err) {}
         }
 
         // 挿入後に再度スタイルを確認し、必要に応じて修正
@@ -171,11 +186,25 @@ export default ({ Vue, options, router, siteData }) => {
           `;
 
         // まず非表示状態で挿入しておき、次フレームでクラスを付与してフェードイン
-        document.body.appendChild(nav);
-        // 強制レイアウトを避けるため requestAnimationFrame を使う
-        requestAnimationFrame(() => {
-          nav.classList.add("category-nav--visible");
-        });
+        if (document.body && typeof document.body.appendChild === 'function') {
+          document.body.appendChild(nav);
+          // 強制レイアウトを避けるため requestAnimationFrame を使う
+          requestAnimationFrame(() => {
+            nav.classList.add("category-nav--visible");
+          });
+        } else {
+          // body がまだない場合は load イベント後に追加
+          window.addEventListener('load', () => {
+            try {
+              document.body.appendChild(nav);
+              requestAnimationFrame(() => {
+                nav.classList.add("category-nav--visible");
+              });
+            } catch (e) {
+              try { console.error('[enhanceApp] failed to append category nav after load', e); } catch (err) {}
+            }
+          });
+        }
       };
 
       // 初回追加（遅延は除去して即時挿入）
