@@ -2,12 +2,14 @@ import CategoryNavigation from "./components/CategoryNavigation.vue";
 import HomePosts from "./components/HomePosts.vue";
 import CategoryPage from "./components/CategoryPage.vue";
 import Breadcrumb from "./components/Breadcrumb.vue";
+import ShareButtons from "./components/ShareButtons.vue";
 
 export default ({ Vue, options, router, siteData }) => {
   Vue.component("CategoryNavigation", CategoryNavigation);
   Vue.component("HomePosts", HomePosts);
   Vue.component("CategoryPage", CategoryPage);
   Vue.component("Breadcrumb", Breadcrumb);
+  Vue.component("ShareButtons", ShareButtons);
 
   // ヘッダーナビゲーションを動的に追加
   if (typeof window !== "undefined") {
@@ -56,7 +58,9 @@ export default ({ Vue, options, router, siteData }) => {
 
         if (!contentEl) {
           // 追加のフォールバック候補を探す
-          contentEl = document.querySelector('header, .site-header, .navbar, .v-app-bar, .v-toolbar');
+          contentEl = document.querySelector(
+            "header, .site-header, .navbar, .v-app-bar, .v-toolbar"
+          );
         }
         if (!contentEl || contentEl.nodeType !== 1) return; // 見つからなければまた抜ける
 
@@ -89,24 +93,41 @@ export default ({ Vue, options, router, siteData }) => {
         // contentEl の中で .v-toolbar__title を見つけ、その前に挿入する。
         try {
           const titleEl = contentEl.querySelector(".v-toolbar__title");
-          if (titleEl && titleEl.parentNode === contentEl && typeof contentEl.insertBefore === 'function') {
+          if (
+            titleEl &&
+            titleEl.parentNode === contentEl &&
+            typeof contentEl.insertBefore === "function"
+          ) {
             contentEl.insertBefore(a, titleEl);
-          } else if (titleEl && titleEl.parentNode && typeof titleEl.parentNode.insertBefore === 'function') {
+          } else if (
+            titleEl &&
+            titleEl.parentNode &&
+            typeof titleEl.parentNode.insertBefore === "function"
+          ) {
             // title が深くネストされている場合は titleEl の親の最初の子の前に挿入
-            titleEl.parentNode.insertBefore(a, titleEl.parentNode.firstChild || null);
-          } else if (contentEl.firstChild && typeof contentEl.insertBefore === 'function') {
+            titleEl.parentNode.insertBefore(
+              a,
+              titleEl.parentNode.firstChild || null
+            );
+          } else if (
+            contentEl.firstChild &&
+            typeof contentEl.insertBefore === "function"
+          ) {
             contentEl.insertBefore(a, contentEl.firstChild);
-          } else if (typeof contentEl.appendChild === 'function') {
+          } else if (typeof contentEl.appendChild === "function") {
             contentEl.appendChild(a);
           } else {
             // どのノードにも挿入できない場合は safest fallback として body に追加
-            if (document.body && typeof document.body.appendChild === 'function') {
+            if (
+              document.body &&
+              typeof document.body.appendChild === "function"
+            ) {
               document.body.insertBefore(a, document.body.firstChild || null);
             }
           }
         } catch (e) {
           try {
-            console.error('[enhanceApp] failed to insert header logo', e);
+            console.error("[enhanceApp] failed to insert header logo", e);
           } catch (err) {}
         }
 
@@ -186,7 +207,7 @@ export default ({ Vue, options, router, siteData }) => {
           `;
 
         // まず非表示状態で挿入しておき、次フレームでクラスを付与してフェードイン
-        if (document.body && typeof document.body.appendChild === 'function') {
+        if (document.body && typeof document.body.appendChild === "function") {
           document.body.appendChild(nav);
           // 強制レイアウトを避けるため requestAnimationFrame を使う
           requestAnimationFrame(() => {
@@ -194,18 +215,59 @@ export default ({ Vue, options, router, siteData }) => {
           });
         } else {
           // body がまだない場合は load イベント後に追加
-          window.addEventListener('load', () => {
+          window.addEventListener("load", () => {
             try {
               document.body.appendChild(nav);
               requestAnimationFrame(() => {
                 nav.classList.add("category-nav--visible");
               });
             } catch (e) {
-              try { console.error('[enhanceApp] failed to append category nav after load', e); } catch (err) {}
+              try {
+                console.error(
+                  "[enhanceApp] failed to append category nav after load",
+                  e
+                );
+              } catch (err) {}
             }
           });
         }
       };
+
+      // 記事本文の末尾にシェアボタンを挿入する
+      const addShareButtons = () => {
+        try {
+          // 記事本文を想定する要素（.content, .article, .page, .theme-default-content など）
+          const articleEl = document.querySelector('.page .content') || document.querySelector('.theme-default-content') || document.querySelector('article') || document.querySelector('.post');
+          if (!articleEl) return;
+
+          // 既に追加済みなら何もしない
+          if (articleEl.querySelector('.share-buttons')) return;
+
+          // Create wrapper and mount component markup
+          const wrapper = document.createElement('div');
+          wrapper.className = 'share-buttons-wrapper';
+          // Insert at the end of article
+          if (typeof articleEl.appendChild === 'function') articleEl.appendChild(wrapper);
+
+          // Use Vue to mount the component into the wrapper
+          try {
+            // eslint-disable-next-line no-undef
+            const Share = Vue.extend(ShareButtons);
+            const title = document.title || '';
+            const url = window.location.href;
+            new Share({ propsData: { title, url } }).$mount(wrapper);
+          } catch (e) {
+            // Fallback: insert simple links if Vue mounting fails
+            wrapper.innerHTML = `<div class="share-buttons"><a href="https://twitter.com/intent/tweet?text=${encodeURIComponent(document.title)}&url=${encodeURIComponent(window.location.href)}" target="_blank">Twitter</a></div>`;
+          }
+        } catch (e) {
+          try { console.error('[enhanceApp] addShareButtons failed', e); } catch (err) {}
+        }
+      };
+
+      // 初回と遷移後に差し込む
+      addShareButtons();
+      router.afterEach(() => requestAnimationFrame(() => addShareButtons()));
 
       // 初回追加（遅延は除去して即時挿入）
       addCategoryNav();
