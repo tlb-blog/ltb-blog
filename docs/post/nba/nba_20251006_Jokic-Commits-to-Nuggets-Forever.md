@@ -4,7 +4,7 @@ date: 2025-10-06
 tags: [NBA, ニコラ・ヨキッチ, ナゲッツ, 契約]
 category: nba
 image: /ltb-blog/nba_images/Jokic-Commits-to-Nuggets-Forever.png
-description: "ニコラ・ヨキッチがデンバーへの忠誠を表明。契約延長の判断とチームへの影響を現場視点で解説します。"
+description: "ニコラ・ヨキッチの契約延長を分析。デンバーの体制とリーグへの影響を整理して解説します。"
 ---
 *写真: NBA.com*
 

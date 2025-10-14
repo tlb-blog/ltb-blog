@@ -5,7 +5,7 @@ author: Manus AI
 tags: [NBA, ヤニス・アンテトクンボ, バックス, ニックス, トレード]
 category: nba
 image: /ltb-blog/article_images/giannis_nyknicks_thumbnail.png
-description: "報道によれば、ヤニスはニックス移籍を真剣に検討していた。バックスとニックスの交渉の経緯とインパクトを整理する。"
+description: "ヤニス・アンテトクンポのニックス移籍報道を検証。交渉経緯とチーム編成への影響を詳しく分析。"
 ---
 
 *写真: Getty Images*

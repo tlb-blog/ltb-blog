@@ -4,7 +4,7 @@ date: 2025-09-20
 tags: [健康, 腸活, ダイエット, 腹部, 便秘改善, 発酵食品]
 category: health
 image: /ltb-blog/article_images/article4/gut_health_diet.png
-description: "腸内環境を整えてポッコリお腹や便秘を改善する、30代・40代向けの実践的な腸活ダイエットの方法を紹介します。"
+description: "腸活でポッコリお腹や便秘を改善する30代・40代向けの実践メソッド。簡単に続けられる食事と習慣を紹介。"
 ---
 
 ## はじめに：腸内環境がダイエットと健康のカギ

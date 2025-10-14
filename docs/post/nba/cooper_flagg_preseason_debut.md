@@ -4,7 +4,7 @@ date: 2025-10-13
 tags: [NBA, Cooper Flagg, Rookie]
 category: nba
 image: /article_images/cooper_flagg.png
-description: "クーパー・フラッグがプレシーズンデビューで示した万能性とデビュー戦の詳細をレポート。"
+description: "Cooper Flaggのプレシーズンデビューを詳報。万能性と今後の期待点を整理します。"
 ---
 
 *写真: Bangor Daily News*

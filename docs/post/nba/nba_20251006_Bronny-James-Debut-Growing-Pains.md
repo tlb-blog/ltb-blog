@@ -4,7 +4,7 @@ date: 2025-10-06
 tags: [NBA, ブロニー・ジェームズ, レイカーズ]
 category: nba
 image: /ltb-blog/nba_images/Bronny-James-Debut-Growing-Pains.png
-description: "ブロニー・ジェームズのプレシーズンデビューを振り返り、課題と成長の兆しを分析します。"
+description: "ブロニー・ジェームズのプレシーズンデビューを徹底分析。成長ポイントと課題をわかりやすく解説。"
 ---
 (写真: Getty Images)
 

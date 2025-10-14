@@ -4,7 +4,7 @@ date: 2025-10-11
 tags: [NBA, ゴールデンステート, プレビュー]
 category: nba
 image: /ltb-blog/nba_images/stephen_curry.jpg
-description: "ステフィン・カリーを中心に再び頂点を目指すウォリアーズの2025-26シーズンを展望する。補強、リスク、ベスト/ワーストシナリオを解説。"
+description: "ウォリアーズの2025-26シーズン展望。補強ポイントとシーズンリスクを解説し優勝シナリオを検証します。"
 ---
 
 *写真: NBC Sports Bay Area*

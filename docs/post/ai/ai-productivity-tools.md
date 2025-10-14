@@ -4,7 +4,7 @@ date: 2025-10-02
 tags: [AI]
 category: ai
 image: /ltb-blog/ai/ai-productivity-tools.png
-description: "Copilot, Notion, Perplexityなど業務効率化AIツールの特徴と使い方を解説します。"
+description: "Copilot、Notion、PerplexityなどのAIツールで業務効率化する方法と実践的な使い方を解説します。"
 ---
 
 ## はじめに：AIで変わるあなたの仕事術

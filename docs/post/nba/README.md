@@ -1,7 +1,7 @@
 ---
 title: NBA
 category: nba
-description: NBAに関する記事一覧です。試合分析や選手情報をお届けします。
+description: "NBA関連記事の一覧です。試合分析や選手情報、ニュース解説を掲載しています。"
 permalink: /post/nba/
 ---
 

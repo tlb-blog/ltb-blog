@@ -4,7 +4,7 @@ date: 2025-09-18
 tags: [姿勢改善, 猫背, 肩こり, ストレッチ, デスクワーク, tips]
 category: health
 image: /ltb-blog/article_images/article5/posture_correction.png
-description: "猫背や肩こりを改善する簡単ストレッチと日常の工夫で、姿勢と体調を若返らせる実践ガイド。"
+description: "猫背や肩こりを解消する短時間ストレッチと日常の工夫で姿勢改善を目指す実践ガイド。"
 ---
 
 ## はじめに：あなたの姿勢、大丈夫？

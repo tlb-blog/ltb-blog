@@ -4,7 +4,7 @@ date: 2025-10-11
 tags: ["NBA","MVP","サンダー","ヨキッチ"]
 category: nba
 image: /article_images/okc_thunder.jpg
-description: "NBA GMによる2025-26シーズン予想。サンダーの連覇予想とヨキッチのMVP支持が注目を集める。"
+description: "NBA GMの2025-26シーズン予想まとめ。優勝候補とMVP候補の動向を速報します。"
 ---
 
 *写真: Getty Images（ローカル保存）*

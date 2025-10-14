@@ -4,7 +4,7 @@ date: 2025-10-11
 tags: [NBA, ユタ・ジャズ, トレード]
 category: nba
 image: /ltb-blog/nba_images/markkanen.png
-description: "ラウリ・マルカネンとウォーカー・ケスラーを巡るトレード噂が加速。契約交渉の停滞やトレード先候補、ジャズの再建方針を整理する。"
+description: "マルカネン＆ケスラーのトレード噂を整理。交渉状況とジャズの再建戦略を読み解きます。"
 ---
 
 *写真: NBA.com*

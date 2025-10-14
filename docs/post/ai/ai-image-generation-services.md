@@ -4,7 +4,7 @@ date: 2025-10-02
 tags: [AI, 画像生成, Midjourney, DALL-E, Stable Diffusion, クリエイティブ]
 category: ai
 image: /ltb-blog/ai/ai-image-generation-services.png
-description: "主要な画像生成AIサービス（Midjourney, DALL-E, Stable Diffusion等）の特徴比較と活用例を紹介します。"
+description: "主要画像生成AIサービス（Midjourney、DALL·E、Stable Diffusion等）の特徴比較と実用例を紹介します。"
 ---
 
 ## はじめに：AI画像生成が変えるクリエイティブの世界

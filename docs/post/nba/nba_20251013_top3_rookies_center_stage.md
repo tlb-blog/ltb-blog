@@ -4,7 +4,7 @@ date: 2025-10-14
 tags: [NBA, Rookies, Cooper Flagg, Ace Bailey, Dylan Harper]
 category: nba
 image: /article_images/nba_20251013_top3_rookies_center_stage.png
-description: "Cooper Flagg、Ace Bailey、Dylan Harperのプレシーズン活躍と今夜の注目対決をレポート。"
+description: "注目ルーキー3名（Cooper Flagg、Ace Bailey、Dylan Harper）のプレシーズン活躍を詳報。"
 ---
 
 *写真: NBA.com*

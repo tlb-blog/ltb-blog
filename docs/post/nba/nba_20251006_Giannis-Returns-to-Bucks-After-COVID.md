@@ -4,7 +4,7 @@ date: 2025-10-06
 tags: [NBA, ヤニス・アンテトクンポ, バックス]
 category: nba
 image: /ltb-blog/nba_images/Giannis-Returns-to-Bucks-After-COVID.png
-description: "ヤニス・アンテトクンポがCOVIDから回復してチームに復帰。復帰の背景とチームへの影響を現場の視点で解説します。"
+description: "ヤニスの復帰がバックスに与える影響を現場視点で分析。復帰の背景と戦術的インパクトを解説。"
 ---
 （写真: Getty Images）
 

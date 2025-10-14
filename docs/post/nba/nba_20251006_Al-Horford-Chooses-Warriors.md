@@ -4,7 +4,7 @@ date: 2025-10-06
 tags: [NBA, アル・ホーフォード, ウォリアーズ, 移籍]
 category: nba
 image: /ltb-blog/nba_images/al-horford-warriors.png
-description: "アル・ホーフォードがセルティックスからウォリアーズへ移籍した背景と、チーム構成に与える影響を解説します。"
+description: "アル・ホーフォードの移籍決断を分析。ウォリアーズ加入がチーム戦術へ与える影響を解説。"
 ---
 *写真: NBA.com*
 

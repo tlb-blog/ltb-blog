@@ -4,7 +4,7 @@ date: 2025-10-11
 tags: [コーヒー, 健康, 美容, 生活習慣]
 category: health
 image: /ltb-blog/article_images/coffee_health_thumbnail.png
-description: "最新研究が示す、コーヒーの健康効果を5つに厳選。肝臓・口内・血管・血糖・頭皮など、日々の一杯がもたらす驚きのメリットをわかりやすく解説します。"
+description: "最新研究に基づくコーヒーの健康効果5選。肝臓や血糖、肌・頭皮への影響まで分かりやすく解説します。"
 ---
 
 ## Introduction
