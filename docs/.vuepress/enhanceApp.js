@@ -269,104 +269,47 @@ export default ({ Vue, options, router, siteData }) => {
       addShareButtons();
       router.afterEach(() => requestAnimationFrame(() => addShareButtons()));
 
-      // 記事上部にパンくずを挿入する（Vue コンポーネントの代替、DOMのみで実装）
-      const addBreadcrumb = () => {
+      // 記事上部にパンくずを挿入する（Breadcrumb.vue コンポーネントをマウント）
+      const mountBreadcrumbComponent = (rootVue) => {
         try {
           const articleEl = document.querySelector('.page .content') || document.querySelector('.theme-default-content') || document.querySelector('article') || document.querySelector('.post');
           if (!articleEl) return;
           // 既に追加済みなら何もしない
           if (articleEl.querySelector('.breadcrumb')) return;
 
-          // derive path relative to base
-          const base = (siteData && siteData.base) || '/';
-          let path = window.location.pathname || '/';
-          if (base !== '/' && path.startsWith(base)) {
-            path = path.slice(base.length - (base.endsWith('/') ? 1 : 0));
-          }
-          const segs = path.replace(/^\/+|\/+$/g, '').split('/').filter(Boolean);
-          let category = null;
-          const postIdx = segs.indexOf('post');
-          if (postIdx >= 0 && segs.length > postIdx + 1) {
-            category = segs[postIdx + 1];
-          } else if (segs.length >= 2) {
-            category = segs[0];
-          }
+          // wrapper を作成して記事先頭に挿入
+          const wrapper = document.createElement('div');
+          wrapper.className = 'breadcrumb-wrapper';
+          if (articleEl.firstChild) articleEl.insertBefore(wrapper, articleEl.firstChild);
+          else articleEl.appendChild(wrapper);
 
-          const CATEGORY_LABELS = { health: '健康', ai: 'AI', nba: 'NBA' };
-          const categoryText = category ? (CATEGORY_LABELS[category] || decodeURIComponent(category).replace(/-/g, ' ')) : null;
-
-          // file text: use document.title or last segment
-          let fileText = document.title || '';
-          if (!fileText) {
-            let last = segs[segs.length - 1] || '';
-            last = last.replace(/\.html?$|\.md$/i, '');
-            fileText = decodeURIComponent(last).replace(/-/g, ' ');
-          }
-
-          const ensureTrailingSlash = (s) => (s.endsWith('/') ? s : s + '/');
-          const catLink = category ? ((base === '/' ? '/' : ensureTrailingSlash(base)) + `post/${category}/`) : null;
-
-          // build breadcrumb HTML
-          const nav = document.createElement('nav');
-          nav.className = 'breadcrumb';
-          const ul = document.createElement('ul');
-          ul.className = 'breadcrumb-list';
-
-          const pushItem = (text, href, isLast) => {
-            const li = document.createElement('li');
-            li.className = 'breadcrumb-item';
-            if (href) {
-              const a = document.createElement('a');
-              a.href = href;
-              a.textContent = text;
-              li.appendChild(a);
-            } else {
-              li.textContent = text;
-            }
-            if (!isLast) {
-              const sep = document.createElement('span');
-              sep.className = 'sep';
-              sep.textContent = '/';
-              li.appendChild(sep);
-            }
-            ul.appendChild(li);
-          };
-
-          if (categoryText) {
-            pushItem('/' + categoryText, catLink, false);
-          }
-          if (fileText) {
-            pushItem('/' + fileText, null, true);
-          }
-
-          nav.appendChild(ul);
-
-          // insert at top of articleEl
-          if (articleEl.firstChild) articleEl.insertBefore(nav, articleEl.firstChild);
-          else articleEl.appendChild(nav);
-
-          // inject minimal global styles to match Breadcrumb.vue
-          if (!document.getElementById('breadcrumb-global-style')) {
-            const style = document.createElement('style');
-            style.id = 'breadcrumb-global-style';
-            style.textContent = `
-              .breadcrumb{font-size:14px;margin:8px 0 12px}
-              .breadcrumb-list{list-style:none;padding:0;margin:0;display:flex;align-items:center;flex-wrap:wrap}
-              .breadcrumb-item{display:inline-flex;align-items:center}
-              .breadcrumb-item a{color:#1976d2;text-decoration:none}
-              .breadcrumb-item a:hover{text-decoration:underline}
-              .sep{margin:0 8px;color:#999}
-            `;
-            document.head.appendChild(style);
+          // Breadcrumb コンポーネントを rootVue を親にしてマウントする
+          try {
+            const BreadcrumbCtor = Vue.extend(Breadcrumb);
+            new BreadcrumbCtor({ parent: rootVue }).$mount(wrapper);
+          } catch (e) {
+            // フォールバック: 単純なテキストを入れる
+            wrapper.innerHTML = '<nav class="breadcrumb"><ul class="breadcrumb-list"><li class="breadcrumb-item">/</li></ul></nav>';
           }
         } catch (e) {
-          try { console.error('[enhanceApp] addBreadcrumb failed', e); } catch (err) {}
+          try { console.error('[enhanceApp] mountBreadcrumbComponent failed', e); } catch (err) {}
         }
       };
 
-      // 初回と遷移後に埋め込む
-      addBreadcrumb();
-      router.afterEach(() => requestAnimationFrame(() => addBreadcrumb()));
+      // root Vue インスタンスがマウントされたタイミングでパンくずをマウントする
+      Vue.mixin({
+        mounted() {
+          try {
+            if (this.$root === this) {
+              // this は root Vue インスタンス
+              mountBreadcrumbComponent(this);
+              router.afterEach(() => requestAnimationFrame(() => mountBreadcrumbComponent(this)));
+            }
+          } catch (e) {
+            try { console.error('[enhanceApp] breadcrumb mixin error', e); } catch (err) {}
+          }
+        }
+      });
 
       // 初回追加（遅延は除去して即時挿入）
       addCategoryNav();
