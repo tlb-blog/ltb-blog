@@ -3,6 +3,7 @@
 ## Perplexity AI
 
 - 質問に対してWebや論文、ニュースなどから根拠付きで回答を返すリサーチAI。
+
 ## manus
 
 [manus](https://manus.im/app)

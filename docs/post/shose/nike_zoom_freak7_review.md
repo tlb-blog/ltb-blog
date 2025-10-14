@@ -2,7 +2,7 @@
 title: "ナイキ ズームフリーク7 レビュー：5つの予想外な変化と購入前に知るべきこと"
 date: 2025-10-13
 tags: ["レビュー","シューズ","ヤニス","Nike"]
-category: gear
+category: shose
 image: /article_images/nike_zoom_freak7.png
 description: "ズームフリーク7の主要変更点と使用感をレビュー。性能面の5つのチェックポイントをわかりやすく解説。"
 ---

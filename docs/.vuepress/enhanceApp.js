@@ -237,31 +237,42 @@ export default ({ Vue, options, router, siteData }) => {
       const addShareButtons = () => {
         try {
           // 記事本文を想定する要素（.content, .article, .page, .theme-default-content など）
-          const articleEl = document.querySelector('.page .content') || document.querySelector('.theme-default-content') || document.querySelector('article') || document.querySelector('.post');
+          const articleEl =
+            document.querySelector(".page .content") ||
+            document.querySelector(".theme-default-content") ||
+            document.querySelector("article") ||
+            document.querySelector(".post");
           if (!articleEl) return;
 
           // 既に追加済みなら何もしない
-          if (articleEl.querySelector('.share-buttons')) return;
+          if (articleEl.querySelector(".share-buttons")) return;
 
           // Create wrapper and mount component markup
-          const wrapper = document.createElement('div');
-          wrapper.className = 'share-buttons-wrapper';
+          const wrapper = document.createElement("div");
+          wrapper.className = "share-buttons-wrapper";
           // Insert at the end of article
-          if (typeof articleEl.appendChild === 'function') articleEl.appendChild(wrapper);
+          if (typeof articleEl.appendChild === "function")
+            articleEl.appendChild(wrapper);
 
           // Use Vue to mount the component into the wrapper
           try {
             // eslint-disable-next-line no-undef
             const Share = Vue.extend(ShareButtons);
-            const title = document.title || '';
+            const title = document.title || "";
             const url = window.location.href;
             new Share({ propsData: { title, url } }).$mount(wrapper);
           } catch (e) {
             // Fallback: insert simple links if Vue mounting fails
-            wrapper.innerHTML = `<div class="share-buttons"><a href="https://twitter.com/intent/tweet?text=${encodeURIComponent(document.title)}&url=${encodeURIComponent(window.location.href)}" target="_blank">Twitter</a></div>`;
+            wrapper.innerHTML = `<div class="share-buttons"><a href="https://twitter.com/intent/tweet?text=${encodeURIComponent(
+              document.title
+            )}&url=${encodeURIComponent(
+              window.location.href
+            )}" target="_blank">Twitter</a></div>`;
           }
         } catch (e) {
-          try { console.error('[enhanceApp] addShareButtons failed', e); } catch (err) {}
+          try {
+            console.error("[enhanceApp] addShareButtons failed", e);
+          } catch (err) {}
         }
       };
 
@@ -272,15 +283,20 @@ export default ({ Vue, options, router, siteData }) => {
       // 記事上部にパンくずを挿入する（Breadcrumb.vue コンポーネントをマウント）
       const mountBreadcrumbComponent = (rootVue) => {
         try {
-          const articleEl = document.querySelector('.page .content') || document.querySelector('.theme-default-content') || document.querySelector('article') || document.querySelector('.post');
+          const articleEl =
+            document.querySelector(".page .content") ||
+            document.querySelector(".theme-default-content") ||
+            document.querySelector("article") ||
+            document.querySelector(".post");
           if (!articleEl) return;
           // 既に追加済みなら何もしない
-          if (articleEl.querySelector('.breadcrumb')) return;
+          if (articleEl.querySelector(".breadcrumb")) return;
 
           // wrapper を作成して記事先頭に挿入
-          const wrapper = document.createElement('div');
-          wrapper.className = 'breadcrumb-wrapper';
-          if (articleEl.firstChild) articleEl.insertBefore(wrapper, articleEl.firstChild);
+          const wrapper = document.createElement("div");
+          wrapper.className = "breadcrumb-wrapper";
+          if (articleEl.firstChild)
+            articleEl.insertBefore(wrapper, articleEl.firstChild);
           else articleEl.appendChild(wrapper);
 
           // Breadcrumb コンポーネントを rootVue を親にしてマウントする
@@ -289,10 +305,13 @@ export default ({ Vue, options, router, siteData }) => {
             new BreadcrumbCtor({ parent: rootVue }).$mount(wrapper);
           } catch (e) {
             // フォールバック: 単純なテキストを入れる
-            wrapper.innerHTML = '<nav class="breadcrumb"><ul class="breadcrumb-list"><li class="breadcrumb-item">/</li></ul></nav>';
+            wrapper.innerHTML =
+              '<nav class="breadcrumb"><ul class="breadcrumb-list"><li class="breadcrumb-item">/</li></ul></nav>';
           }
         } catch (e) {
-          try { console.error('[enhanceApp] mountBreadcrumbComponent failed', e); } catch (err) {}
+          try {
+            console.error("[enhanceApp] mountBreadcrumbComponent failed", e);
+          } catch (err) {}
         }
       };
 
@@ -303,12 +322,16 @@ export default ({ Vue, options, router, siteData }) => {
             if (this.$root === this) {
               // this は root Vue インスタンス
               mountBreadcrumbComponent(this);
-              router.afterEach(() => requestAnimationFrame(() => mountBreadcrumbComponent(this)));
+              router.afterEach(() =>
+                requestAnimationFrame(() => mountBreadcrumbComponent(this))
+              );
             }
           } catch (e) {
-            try { console.error('[enhanceApp] breadcrumb mixin error', e); } catch (err) {}
+            try {
+              console.error("[enhanceApp] breadcrumb mixin error", e);
+            } catch (err) {}
           }
-        }
+        },
       });
 
       // 初回追加（遅延は除去して即時挿入）

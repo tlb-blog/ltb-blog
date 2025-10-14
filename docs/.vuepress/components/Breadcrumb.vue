@@ -1,11 +1,7 @@
 <template>
   <nav class="breadcrumb" v-if="crumbs && crumbs.length">
     <ul class="breadcrumb-list">
-      <li
-        v-for="(c, i) in crumbs"
-        :key="i"
-        class="breadcrumb-item"
-      >
+      <li v-for="(c, i) in crumbs" :key="i" class="breadcrumb-item">
         <span v-if="c.link">
           <a :href="c.link">{{ c.text }}</a>
         </span>
@@ -49,7 +45,7 @@ export default {
         health: "健康",
         ai: "AI",
         nba: "NBA",
-        gear: "shose（シューズ）",
+        shose: "shose（シューズ）",
       };
 
       // Determine display name for category (use mapping if possible)

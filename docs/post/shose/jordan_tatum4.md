@@ -2,7 +2,7 @@
 title: "Jordan Tatum 4 製品分析レポート"
 date: 2025-10-12
 tags: ["レビュー","シューズ","Jordan","Tatum4"]
-category: gear
+category: shose
 image: /article_images/jordan_tatum4.png
 description: "Jordan Tatum 4 の性能、技術、ターゲット層を簡潔にまとめた分析レポート。"
 ---

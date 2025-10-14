@@ -8,4 +8,4 @@
 保存先パス (サイト内での参照):
 `/article_images/adidas_ae2_attached.jpg`
 
-注意: 既に別の画像ファイルを使用する場合は、`docs/post/gear/adidas_ae2_review.md` の frontmatter の `image` を該当ファイル名に書き換えてください。
+注意: 既に別の画像ファイルを使用する場合は、`docs/post/shose/adidas_ae2_review.md` の frontmatter の `image` を該当ファイル名に書き換えてください。

@@ -2,7 +2,7 @@
 title: "アディダス AE 2 徹底レビュー：前作からの進化と課題を分析"
 date: 2025-10-11
 tags: ["レビュー","バッシュ","バスケットボール","アディダス","AE2"]
-category: gear
+category: shose
 image: /article_images/adidas_ae2_attached.jpg
 description: "アディダス AE 2 のデザイン、グリップ、フィット感、サポート性、重量、クッショニングを細かく検証し、どのようなプレイヤーに向くかを総合評価します。"
 ---
