@@ -5,13 +5,12 @@
         v-for="(c, i) in crumbs"
         :key="i"
         class="breadcrumb-item"
-        aria-current="page"
       >
         <span v-if="c.link">
           <a :href="c.link">{{ c.text }}</a>
         </span>
         <span v-else>{{ c.text }}</span>
-        <span v-if="i < crumbs.length - 1" class="sep">/</span>
+        <span v-if="i < crumbs.length - 1" class="sep">&gt;</span>
       </li>
     </ul>
   </nav>
@@ -87,13 +86,11 @@ export default {
 
       const crumbs = [];
 
-      // Desired display: prefix slashes and show like /カテゴリ/ファイル名
-      // We'll keep internal data as items but render with leading slash in template
+      // Always show Home first, then Category (no title)
+      const homeLink = base === "/" ? "/" : base;
+      crumbs.push({ text: "ホーム", link: homeLink });
       if (categoryText) {
-        crumbs.push({ text: `/${categoryText}`, link: catLink });
-      }
-      if (!isCategoryIndex && fileText) {
-        crumbs.push({ text: `/${fileText}`, link: null });
+        crumbs.push({ text: categoryText, link: catLink });
       }
 
       return crumbs;
