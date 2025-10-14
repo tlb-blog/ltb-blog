@@ -49,6 +49,7 @@ export default {
         health: "健康",
         ai: "AI",
         nba: "NBA",
+        gear: "shose（シューズ）",
       };
 
       // Determine display name for category (use mapping if possible)
