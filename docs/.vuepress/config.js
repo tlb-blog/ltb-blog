@@ -25,6 +25,17 @@ module.exports = {
           ".theme-default-content img:not(.post-image), article img:not(.post-image), .theme-default-content picture img:not(.post-image)",
       },
     ],
+    // Mermaid プラグインを追加して Markdown の ```mermaid ブロックを図として描画
+    [
+      "vuepress-plugin-mermaidjs",
+      {
+        // mermaid のテーマ。'default' / 'forest' / 'dark' など
+        theme: 'default',
+        mermaidOptions: {
+          startOnLoad: true
+        }
+      }
+    ],
   ],
 
   // ヘッド要素の設定
