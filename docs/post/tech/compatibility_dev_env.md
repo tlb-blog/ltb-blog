@@ -1,9 +1,9 @@
 ---
 title: "【2025年10月】互換性を保った開発環境（推奨バージョンとサポート情報）"
 date: 2025-10-15
-tags: ["技術", "インフラ", "互換性"]
+tags: ["技術", "インフラ", "互換性", "開発"]
 description: "AlmaLinux / Vue.js / Spring Boot / OpenJDK / MySQL / Apache / Tomcat の推奨バージョンとサポート期間、延長サポート情報をまとめた運用ガイド。"
-image: ../.vuepress/public/article_images/compatibility_dev_env.png
+image: /article_images/compatibility_dev_env.png
 ---
 
 ## 概要
@@ -16,15 +16,15 @@ image: ../.vuepress/public/article_images/compatibility_dev_env.png
 
 下表は各コンポーネントについて、推奨バージョン、公式サポート期限（EOL）、延長サポートの有無と参考情報を整理したものです。
 
-| 項目 | 推奨バージョン | サポート期限 / EOL | 有償・延長サポート情報等 | 主な参考URL |
-|---|---:|---|---|---|
-| OS | AlmaLinux 9.4 | 2032/05（RHEL9と同等） | 企業向け有償サポートは CloudLinux 等で提供 | AlmaLinux 公式 / 参考 |
-| フロントエンド | Vue.js 3.4.x | 2026/02（公式サポート） | HeroDevs などが商用延長サポートを提供 | EOL日程 / 参考 |
-| バックエンド | Spring Boot 3.4.x | 3.4.x は 2026/11 頃（3.3.x 比）予想 | VMware Tanzu 等で最大 +5 年の延長サポート | リリース情報 / サポート |
-| Java | OpenJDK 21 LTS | 2029/09（無償公式） | Red Hat / Azul / Oracle 等が有償延長可（Azul は 2036 年まで等） | EOL 日程 / RedHat |
-| DB | MySQL 8.4 LTS | 2031/04（LTS） | Oracle 有償サポート『Premier / Extended』あり | EOL 日程 / 参考 |
-| WB | Apache HTTP Server 2.4.x | 明確な EOL はなし（開発継続中） | Red Hat 等のディストリ経由で有償サポートあり | EOL 日程 / 参考 |
-| AP | Apache Tomcat 10.1.x | 2030/03（10.1.x） | 有償サポートは外部パートナー各社で提供 | EOL 日程 / 参考 |
+| 項目           |           推奨バージョン | サポート期限 / EOL                  | 有償・延長サポート情報等                                        | 主な参考URL             |
+| -------------- | -----------------------: | ----------------------------------- | --------------------------------------------------------------- | ----------------------- |
+| OS             |            AlmaLinux 9.4 | 2032/05（RHEL9と同等）              | 企業向け有償サポートは CloudLinux 等で提供                      | [AlmaLinux 公式](https://almalinux.org/) |
+| フロントエンド |             Vue.js 3.4.x | 2026/02（公式サポート）             | HeroDevs などが商用延長サポートを提供                           | [Vue.js 公式](https://vuejs.org/) |
+| バックエンド   |        Spring Boot 3.4.x | 3.4.x は 2026/11 頃（3.3.x 比）予想 | VMware Tanzu 等で最大 +5 年の延長サポート                       | [Spring Boot (公式)](https://spring.io/projects/spring-boot) / [Tanzu](https://tanzu.vmware.com/) |
+| Java           |           OpenJDK 21 LTS | 2029/09（無償公式）                 | Red Hat / Azul / Oracle 等が有償延長可（Azul は 2036 年まで等） | [OpenJDK 21](https://openjdk.org/projects/jdk/21/) / [Adoptium](https://adoptium.net/) |
+| DB             |            MySQL 8.4 LTS | 2031/04（LTS）                      | Oracle 有償サポート『Premier / Extended』あり                   | [MySQL 公式](https://www.mysql.com/) |
+| WB             | Apache HTTP Server 2.4.x | 明確な EOL はなし（開発継続中）     | Red Hat 等のディストリ経由で有償サポートあり                    | [Apache HTTP Server](https://httpd.apache.org/) |
+| AP             |     Apache Tomcat 10.1.x | 2030/03（10.1.x）                   | 有償サポートは外部パートナー各社で提供                          | [Apache Tomcat](https://tomcat.apache.org/) |
 
 ---
 
@@ -42,14 +42,18 @@ image: ../.vuepress/public/article_images/compatibility_dev_env.png
 2. コスト分析: 延長サポートは短期的にはコスト増ですが、移行期間のリスク低減に寄与します。複数年契約の割引やバンドルサポートを確認してください。
 3. 運用負荷: 自社で長期パッチ管理を行うリソースが乏しい場合は、アウトソーシング（マネージドサービス）を検討する。
 
-## 参考（簡易一覧）
+## 参考（公式リンク）
 
-- AlmaLinux 公式ドキュメント
-- Vue.js EOL / リリーススケジュール
-- Spring Boot リリースノート、Tanzu サポート情報
-- OpenJDK（Oracle / Red Hat / Azul）サポート情報
-- MySQL LTS と Oracle のサポートプラン
-- Apache HTTP Server / Apache Tomcat のリリース情報
+- [AlmaLinux 公式サイト](https://almalinux.org/)
+- [Vue.js 公式サイト（ドキュメント）](https://vuejs.org/)
+- [Spring Boot（公式プロジェクト）](https://spring.io/projects/spring-boot)
+- [VMware Tanzu（サポート情報）](https://tanzu.vmware.com/)
+- [OpenJDK 21（OpenJDK プロジェクト）](https://openjdk.org/projects/jdk/21/)
+- [Eclipse Adoptium（OpenJDK ビルド配布）](https://adoptium.net/)
+- [MySQL（公式）](https://www.mysql.com/)
+- [Oracle - MySQL サポート情報（Life Cycle）](https://www.oracle.com/support/lifetime-support/products/mysql.html)
+- [Apache HTTP Server（公式）](https://httpd.apache.org/)
+- [Apache Tomcat（公式）](https://tomcat.apache.org/)
 
 ---
 
