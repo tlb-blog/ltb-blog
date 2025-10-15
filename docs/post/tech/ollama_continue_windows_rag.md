@@ -11,6 +11,27 @@ description: "Windows Server 上に Ollama と Continue を導入し、クライ
 
 このガイドでは、Windows Server（2016/2022）上に Ollama を立て、Continue を連携してRAG（Retrieval-Augmented Generation）を実運用レベルで利用する手順をまとめます。クライアントは Windows 11 上の VSCode＋Continue 拡張を利用して、サーバに蓄積した設計書やソースを参照しながらAI支援を行います。
 
+```mermaid
+%% サーバ側を枠で囲むために「box」記法を利用
+sequenceDiagram
+    participant Client as クライアントPC<br>(Windows 11 / VSCode + Continue)
+    box サーバ (Windows Server)
+        participant Server as Ollama + Continue
+        participant LLM as LLM Model<br>(Llama3, Qwen2.5-coder 等)
+        participant RAG as RAG Knowledge Base<br>(設計書・ソース)
+    end
+
+    Client->>Server: LLM API接続要求<br>(http://サーバIP:11434)
+    Server->>LLM: モデル起動・推論要求
+    Server->>RAG: RAG Knowledge検索<br>(設計書・ソース参照)
+    RAG-->>Server: 関連情報返却<br>(ベクトル検索結果)
+    LLM-->>Server: コード補完/生成結果返却
+    Server-->>Client: AI補完・チャット・マイグレーション結果返却
+
+    Note over Server,RAG: サーバ側に設計書・ソース蓄積<br>ContinueのKnowledge/RAG機能で利用
+    Note over Client: クライアントはVSCodeで<br>AI補完・チャット・QA等を利用
+```
+
 ## 1. サーバ側（Windows Server 2016/2022）
 
 ### (1) 推奨スペックと前提

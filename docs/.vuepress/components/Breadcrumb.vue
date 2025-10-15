@@ -83,7 +83,8 @@ export default {
 
       // Hide breadcrumb on the site's home page (root)
       const path = (page.path || "").replace(/^\/+|\/+$/g, "");
-      const isHome = path === "" || path === "README.html" || path === "index.html";
+      const isHome =
+        path === "" || path === "README.html" || path === "index.html";
       if (isHome) return [];
 
       const crumbs = [];
