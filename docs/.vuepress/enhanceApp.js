@@ -346,3 +346,55 @@ export default ({ Vue, options, router, siteData }) => {
     });
   }
 };
+```
+
+// Mermaid のクライアント初期化フォールバック
+if (typeof window !== "undefined") {
+  (function loadMermaidFallback() {
+    // 既に初期化済みなら何もしない
+    if (window.__mermaid_initialized__) return;
+
+    // mermaid が既に読み込まれていれば初期化のみ行う
+    const tryInit = () => {
+      if (window.mermaid && typeof window.mermaid.initialize === "function") {
+        try {
+          window.mermaid.initialize({ startOnLoad: false, theme: "default" });
+          window.__mermaid_initialized__ = true;
+          // 既存の mermaid コードブロックを変換
+          document.querySelectorAll('pre language-mermaid, code.language-mermaid, pre code.language-mermaid').forEach((el) => {
+            try {
+              // 既に変換済みかをチェック
+              if (el.dataset.mermaidProcessed) return;
+              const parent = el.closest('pre') || el.parentElement;
+              const text = el.textContent || el.innerText || '';
+              const container = document.createElement('div');
+              container.className = 'mermaid';
+              container.textContent = text;
+              parent.parentNode.replaceChild(container, parent);
+              el.dataset.mermaidProcessed = '1';
+            } catch (e) {}
+          });
+          // mermaid に処理を任せる
+          try { window.mermaid.init(undefined, document.querySelectorAll('.mermaid')); } catch (e) {}
+        } catch (e) {
+          // ignore
+        }
+        return true;
+      }
+      return false;
+    };
+
+    if (!tryInit()) {
+      // CDN から mermaid を動的に読み込む
+      const s = document.createElement('script');
+      s.src = 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js';
+      s.onload = () => {
+        tryInit();
+      };
+      s.onerror = () => {
+        console.error('[enhanceApp] failed to load mermaid from CDN');
+      };
+      document.head.appendChild(s);
+    }
+  })();
+}

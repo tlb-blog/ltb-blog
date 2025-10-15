@@ -30,9 +30,10 @@ module.exports = {
       "vuepress-plugin-mermaidjs",
       {
         // mermaid のテーマ。'default' / 'forest' / 'dark' など
-        theme: 'default',
+        theme: "default",
+        // プラグイン側の自動初期化はオフにして、クライアント側で確実に初期化する（フォールバック）
         mermaidOptions: {
-          startOnLoad: true
+          startOnLoad: false
         }
       }
     ],
