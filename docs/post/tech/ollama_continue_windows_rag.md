@@ -11,62 +11,6 @@ description: "Windows Server 上に Ollama と Continue を導入し、クライ
 
 このガイドでは、Windows Server（2016/2022）上に Ollama を立て、Continue を連携してRAG（Retrieval-Augmented Generation）を実運用レベルで利用する手順をまとめます。クライアントは Windows 11 上の VSCode＋Continue 拡張を利用して、サーバに蓄積した設計書やソースを参照しながらAI支援を行います。
 
----
-
-## 1. サーバ側（Windows Server 2016/2022）
-
-### (1) 推奨スペックと前提
-
-- 推奨: RAM 16GB 以上、CPU 4コア以上
-- GPU があれば応答速度が大幅に向上（NVIDIA, VRAM 8GB 以上推奨）
-- 管理者（Administrator）権限で作業すること
-
-### (2) Ollama のインストール
-
-1. Ollama の Windows インストーラーをダウンロード
-2. インストーラーを右クリック → 管理者として実行
-3. インストール後、コマンドプロンプトでバージョン確認:
-
-```powershell
-ollama --version
-```
-
-### (3) モデルの準備
-
-- 利用するモデルをサーバに pull しておきます。例:
-
-```powershell
-ollama pull llama3:8b
-ollama pull qwen2:7b
-```
-
-- コード生成特化モデル（例: Qwen2.5-coder）を加えると開発支援が強化されます。
-
-### (4) サーバ公開設定（LAN/社内限定を推奨）
-
-- デフォルトは localhost:11434。外部（LAN）からアクセスさせる場合は以下を設定します。
-  - Windows ファイアウォールで TCP 11434 を許可
-  - 環境変数で `OLLAMA_HOST=0.0.0.0` を設定して全インターフェースで待ち受け
-
-起動例:
-
-```powershell
-set OLLAMA_HOST=0.0.0.0
-ollama serve
-```
----
-title: "Windows Server に Ollama + Continue を構築して VSCode から RAG を運用する手順"
-date: 2025-10-15
-tags: [AI, LLM, Ollama, Continue, RAG, Windows]
-category: ai
-image: /article_images/ollama_continue_rag.png
-description: "Windows Server 上に Ollama と Continue を導入し、クライアント（Windows 11）の VSCode から Continue を使って RAG（設計書・ソースの蓄積）を実運用するための詳細手順を解説します。"
----
-
-## 概要
-
-このガイドでは、Windows Server（2016/2022）上に Ollama を立て、Continue を連携してRAG（Retrieval-Augmented Generation）を実運用レベルで利用する手順をまとめます。クライアントは Windows 11 上の VSCode＋Continue 拡張を利用して、サーバに蓄積した設計書やソースを参照しながらAI支援を行います。
-
 ## 1. サーバ側（Windows Server 2016/2022）
 
 ### (1) 推奨スペックと前提
