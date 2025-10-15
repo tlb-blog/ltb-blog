@@ -81,8 +81,12 @@ export default {
           .replace(/\/$/, "")
           .match(new RegExp("/post/" + (category || "") + "$"));
 
-      const crumbs = [];
+      // Hide breadcrumb on the site's home page (root)
+      const path = (page.path || "").replace(/^\/+|\/+$/g, "");
+      const isHome = path === "" || path === "README.html" || path === "index.html";
+      if (isHome) return [];
 
+      const crumbs = [];
       // Always show Home first, then Category (no title)
       const homeLink = base === "/" ? "/" : base;
       crumbs.push({ text: "ホーム", link: homeLink });
