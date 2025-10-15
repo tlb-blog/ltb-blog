@@ -343,6 +343,39 @@ export default ({ Vue, options, router, siteData }) => {
           addCategoryNav();
         }
       });
+
+      // SPA 遷移時に mermaid があれば再初期化する（コードブロックを図に変換）
+      router.afterEach(() => {
+        try {
+          requestAnimationFrame(() => {
+            const runMermaid = () => {
+              if (!window || !window.mermaid) return;
+              try {
+                document.querySelectorAll('pre code.language-mermaid, code.language-mermaid').forEach(el => {
+                  if (el.dataset.mermaidProcessed) return;
+                  const parent = el.closest('pre') || el.parentElement;
+                  const text = el.textContent || el.innerText || '';
+                  const container = document.createElement('div');
+                  container.className = 'mermaid';
+                  container.textContent = text;
+                  if (parent && parent.parentNode) parent.parentNode.replaceChild(container, parent);
+                  el.dataset.mermaidProcessed = '1';
+                });
+                try { window.mermaid.init(undefined, document.querySelectorAll('.mermaid')); } catch (e) {}
+              } catch (e) {
+                /* ignore */
+              }
+            };
+
+            if (window && window.__mermaid_initialized__) {
+              runMermaid();
+            } else {
+              // 少し遅らせて試行
+              setTimeout(runMermaid, 200);
+            }
+          });
+        } catch (e) {}
+      });
     });
   }
 };
