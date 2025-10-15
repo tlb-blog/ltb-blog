@@ -10,6 +10,7 @@
     "dependencies": {
         "bootstrap-icons": "^1.13.1",
         "vuepress": "^1.9.7",
+        "vuepress-plugin-mermaidjs": "^2.0.0-beta.2",
         "vuepress-theme-blog-vuetify": "github:ttskch/vuepress-theme-blog-vuetify"
     },
     "devDependencies": {
