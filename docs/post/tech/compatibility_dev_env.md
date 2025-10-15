@@ -1,12 +1,9 @@
 ---
-title: "互換性を保った開発環境（推奨バージョンとサポート情報）"
+title: "【2025年10月】互換性を保った開発環境（推奨バージョンとサポート情報）"
 date: 2025-10-15
-tags:
-  - tech
-  - infrastructure
-  - compatibility
+tags: ["技術", "インフラ", "互換性"]
 description: "AlmaLinux / Vue.js / Spring Boot / OpenJDK / MySQL / Apache / Tomcat の推奨バージョンとサポート期間、延長サポート情報をまとめた運用ガイド。"
-image: /.vuepress/public/article_images/compatibility_dev_env.png
+image: ../.vuepress/public/article_images/compatibility_dev_env.png
 ---
 
 ## 概要
