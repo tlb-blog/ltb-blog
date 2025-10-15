@@ -16,15 +16,15 @@ image: /article_images/compatibility_dev_env.png
 
 下表は各コンポーネントについて、推奨バージョン、公式サポート期限（EOL）、延長サポートの有無と参考情報を整理したものです。
 
-| 項目           |           推奨バージョン | サポート期限 / EOL                  | 有償・延長サポート情報等                                        | 主な参考URL             |
-| -------------- | -----------------------: | ----------------------------------- | --------------------------------------------------------------- | ----------------------- |
-| OS             |            AlmaLinux 9.4 | 2032/05（RHEL9と同等）              | 企業向け有償サポートは CloudLinux 等で提供                      | [AlmaLinux 公式](https://almalinux.org/) |
-| フロントエンド |             Vue.js 3.4.x | 2026/02（公式サポート）             | HeroDevs などが商用延長サポートを提供                           | [Vue.js 公式](https://vuejs.org/) |
+| 項目           |           推奨バージョン | サポート期限 / EOL                  | 有償・延長サポート情報等                                        | 主な参考URL                                                                                       |
+| -------------- | -----------------------: | ----------------------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| OS             |            AlmaLinux 9.4 | 2032/05（RHEL9と同等）              | 企業向け有償サポートは CloudLinux 等で提供                      | [AlmaLinux 公式](https://almalinux.org/)                                                          |
+| フロントエンド |             Vue.js 3.4.x | 2026/02（公式サポート）             | HeroDevs などが商用延長サポートを提供                           | [Vue.js 公式](https://vuejs.org/)                                                                 |
 | バックエンド   |        Spring Boot 3.4.x | 3.4.x は 2026/11 頃（3.3.x 比）予想 | VMware Tanzu 等で最大 +5 年の延長サポート                       | [Spring Boot (公式)](https://spring.io/projects/spring-boot) / [Tanzu](https://tanzu.vmware.com/) |
-| Java           |           OpenJDK 21 LTS | 2029/09（無償公式）                 | Red Hat / Azul / Oracle 等が有償延長可（Azul は 2036 年まで等） | [OpenJDK 21](https://openjdk.org/projects/jdk/21/) / [Adoptium](https://adoptium.net/) |
-| DB             |            MySQL 8.4 LTS | 2031/04（LTS）                      | Oracle 有償サポート『Premier / Extended』あり                   | [MySQL 公式](https://www.mysql.com/) |
-| WB             | Apache HTTP Server 2.4.x | 明確な EOL はなし（開発継続中）     | Red Hat 等のディストリ経由で有償サポートあり                    | [Apache HTTP Server](https://httpd.apache.org/) |
-| AP             |     Apache Tomcat 10.1.x | 2030/03（10.1.x）                   | 有償サポートは外部パートナー各社で提供                          | [Apache Tomcat](https://tomcat.apache.org/) |
+| Java           |           OpenJDK 21 LTS | 2029/09（無償公式）                 | Red Hat / Azul / Oracle 等が有償延長可（Azul は 2036 年まで等） | [OpenJDK 21](https://openjdk.org/projects/jdk/21/) / [Adoptium](https://adoptium.net/)            |
+| DB             |            MySQL 8.4 LTS | 2031/04（LTS）                      | Oracle 有償サポート『Premier / Extended』あり                   | [MySQL 公式](https://www.mysql.com/)                                                              |
+| WB             | Apache HTTP Server 2.4.x | 明確な EOL はなし（開発継続中）     | Red Hat 等のディストリ経由で有償サポートあり                    | [Apache HTTP Server](https://httpd.apache.org/)                                                   |
+| AP             |     Apache Tomcat 10.1.x | 2030/03（10.1.x）                   | 有償サポートは外部パートナー各社で提供                          | [Apache Tomcat](https://tomcat.apache.org/)                                                       |
 
 ---
 
