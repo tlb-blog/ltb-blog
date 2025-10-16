@@ -1,6 +1,6 @@
 # ナレッジ
 
-## Perplexity AI
+## [Perplexity AI](https://www.perplexity.ai/)
 
 - 質問に対してWebや論文、ニュースなどから根拠付きで回答を返すリサーチAI。
 
