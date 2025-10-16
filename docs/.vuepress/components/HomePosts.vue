@@ -237,12 +237,13 @@ export default {
       ) || [];
     console.log("[HomePosts] Pages with images:", pagesWithImages.length);
 
-    // プロダクション環境での確認用アラート（一時的）
+    // 本番環境ではモーダルダイアログを表示しない（過去の一時的デバッグ）。
+    // 代わりにログを残すことで稼働確認できるようにする。
     if (process.env.NODE_ENV === "production") {
       setTimeout(() => {
         const recentWithImages = this.recentPosts.filter((p) => p.image).length;
-        alert(
-          `HomePosts Debug: ${this.recentPosts.length} recent posts, ${recentWithImages} with images`
+        console.log(
+          `HomePosts Debug (production): ${this.recentPosts.length} recent posts, ${recentWithImages} with images`
         );
       }, 1000);
     }
