@@ -11,7 +11,9 @@ module.exports = {
   description: "ライフスタイルとテクノロジーを横断する情報サイト",
   // テーマやカスタムヘッダが参照しやすいトップレベルのロゴ設定
   // public 配下のファイルはルート相対で指定し、ビルド時に base が付与されるようにする
-  // logo: "/logo.png", // enhanceApp.jsで動的に追加するためコメントアウト
+  // テーマの logo とサイドバー avatar のパスを明示的に base を付けて指定
+  // （GitHub Pages のプロジェクトページで /<repo>/ 配下に公開しているため）
+  logo: "/ltb-blog/logo.png",
   theme: "vuepress-theme-blog-vuetify",
 
   // Configure plugins at the top level so VuePress recognizes them.
@@ -112,8 +114,8 @@ module.exports = {
 
     sidebar: {
       profile: {
-        // public 配下のアバターはルート相対で記述（ビルドで base が付与されます）
-        avatarUrl: "/avatar.svg",
+  // public 配下のアバターはプロジェクト base を含めて指定（404 を防ぐ）
+  avatarUrl: "/ltb-blog/avatar.svg",
         name: "LTB",
         subTitle: "ライフスタイル・テクノロジー・知見",
         descriptionHtml:
