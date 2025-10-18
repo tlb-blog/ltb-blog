@@ -14,6 +14,20 @@ export default ({ Vue, options, router, siteData }) => {
   // ヘッダーナビゲーションを動的に追加
   if (typeof window !== "undefined") {
     Vue.nextTick(() => {
+        // Helper: check parent is element and namespaces match to avoid HierarchyRequestError
+        const isSafeParent = (parent, node) => {
+          try {
+            if (!parent || parent.nodeType !== 1) return false;
+            // If parent is an SVG or other non-HTML namespace, avoid inserting HTML nodes into it.
+            const pNs = parent.namespaceURI || null;
+            // Treat nodes without namespace as HTML (XHTML) by default
+            const nNs = (node && node.namespaceURI) || "http://www.w3.org/1999/xhtml";
+            if (pNs && nNs && pNs !== nNs) return false;
+            return true;
+          } catch (e) {
+            return false;
+          }
+        };
       // ヘッダにロゴを挿入する（クライアントサイドのみ）
       const addHeaderLogo = () => {
         // 既に挿入済みなら何もしない
@@ -85,7 +99,16 @@ export default ({ Vue, options, router, siteData }) => {
         img.style.width = "auto";
         img.style.display = "block";
 
-        a.appendChild(img);
+        // img is an HTML element; appending to anchor is normally safe
+        try {
+          if (isSafeParent(a, img) && typeof a.appendChild === "function") {
+            a.appendChild(img);
+          }
+        } catch (e) {
+          try {
+            console.error("[enhanceApp] failed to append logo image to anchor", e);
+          } catch (err) {}
+        }
 
         // mr-autoクラスを明示的に削除（存在する場合）
         a.classList.remove("mr-auto");
@@ -96,13 +119,15 @@ export default ({ Vue, options, router, siteData }) => {
           if (
             titleEl &&
             titleEl.parentNode === contentEl &&
-            typeof contentEl.insertBefore === "function"
+            typeof contentEl.insertBefore === "function" &&
+            isSafeParent(contentEl, a)
           ) {
             contentEl.insertBefore(a, titleEl);
           } else if (
             titleEl &&
             titleEl.parentNode &&
-            typeof titleEl.parentNode.insertBefore === "function"
+            typeof titleEl.parentNode.insertBefore === "function" &&
+            isSafeParent(titleEl.parentNode, a)
           ) {
             // title が深くネストされている場合は titleEl の親の最初の子の前に挿入
             titleEl.parentNode.insertBefore(
@@ -111,17 +136,18 @@ export default ({ Vue, options, router, siteData }) => {
             );
           } else if (
             contentEl.firstChild &&
-            typeof contentEl.insertBefore === "function"
+            typeof contentEl.insertBefore === "function" &&
+            isSafeParent(contentEl, a)
           ) {
             contentEl.insertBefore(a, contentEl.firstChild);
-          } else if (typeof contentEl.appendChild === "function") {
+          } else if (
+            typeof contentEl.appendChild === "function" &&
+            isSafeParent(contentEl, a)
+          ) {
             contentEl.appendChild(a);
           } else {
             // どのノードにも挿入できない場合は safest fallback として body に追加
-            if (
-              document.body &&
-              typeof document.body.appendChild === "function"
-            ) {
+            if (document.body && isSafeParent(document.body, a) && typeof document.body.appendChild === "function") {
               document.body.insertBefore(a, document.body.firstChild || null);
             }
           }
@@ -209,7 +235,7 @@ export default ({ Vue, options, router, siteData }) => {
         // まず非表示状態で挿入しておき、次フレームでクラスを付与してフェードイン
         const safeAppend = (parent, node) => {
           try {
-            if (!parent || parent.nodeType !== 1) return false;
+            if (!isSafeParent(parent, node)) return false;
             if (typeof parent.appendChild === "function") {
               parent.appendChild(node);
               return true;
@@ -281,7 +307,7 @@ export default ({ Vue, options, router, siteData }) => {
           // Insert at the end of article using safeAppend
           const safeAppendLocal = (parent, node) => {
             try {
-              if (!parent || parent.nodeType !== 1) return false;
+              if (!isSafeParent(parent, node)) return false;
               if (typeof parent.appendChild === "function") {
                 parent.appendChild(node);
                 return true;
@@ -338,19 +364,19 @@ export default ({ Vue, options, router, siteData }) => {
           const wrapper = document.createElement("div");
           wrapper.className = "breadcrumb-wrapper";
           // safe insert at beginning
-          try {
-            if (articleEl && articleEl.nodeType === 1) {
-              if (articleEl.firstChild && typeof articleEl.insertBefore === "function") {
-                articleEl.insertBefore(wrapper, articleEl.firstChild);
-              } else if (typeof articleEl.appendChild === "function") {
-                articleEl.appendChild(wrapper);
-              }
-            }
-          } catch (e) {
             try {
-              console.error("[enhanceApp] failed to insert breadcrumb wrapper", e);
-            } catch (err) {}
-          }
+              if (articleEl && articleEl.nodeType === 1 && isSafeParent(articleEl, wrapper)) {
+                if (articleEl.firstChild && typeof articleEl.insertBefore === "function" && isSafeParent(articleEl, wrapper)) {
+                  articleEl.insertBefore(wrapper, articleEl.firstChild);
+                } else if (typeof articleEl.appendChild === "function" && isSafeParent(articleEl, wrapper)) {
+                  articleEl.appendChild(wrapper);
+                }
+              }
+            } catch (e) {
+              try {
+                console.error("[enhanceApp] failed to insert breadcrumb wrapper", e);
+              } catch (err) {}
+            }
 
           // Breadcrumb コンポーネントを rootVue を親にしてマウントする
           try {
