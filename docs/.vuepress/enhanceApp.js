@@ -259,7 +259,7 @@ export default ({ Vue, options, router, siteData }) => {
         const base = (siteData && siteData.base) || "/";
         const basePath = base === "/" ? "/" : base;
 
-        // カテゴリナビゲーションを作成（parentingリンクを削除）
+        // カテゴリナビゲーションを作成
         const nav = document.createElement("div");
         nav.className = "category-nav";
         nav.innerHTML = `
@@ -267,7 +267,7 @@ export default ({ Vue, options, router, siteData }) => {
             <a href="${basePath}post/ai/"><i class="bi bi-robot me-2" aria-hidden="true"></i><span>AI</span></a>
             <a href="${basePath}post/health/"><i class="bi bi-activity me-2" aria-hidden="true"></i><span>健康</span></a>
             <a href="${basePath}post/nba/"><i class="bi bi-trophy me-2" aria-hidden="true"></i><span>NBA</span></a>
-            <a href="${basePath}post/"><i class="bi bi-three-dots me-2" aria-hidden="true"></i><span>その他</span></a>
+            <a href="${basePath}post/shose/"><i class="bi bi-shoe-prints me-2" aria-hidden="true"></i><span>シューズ</span></a>
           `;
 
         // まず非表示状態で挿入しておき、次フレームでクラスを付与してフェードイン

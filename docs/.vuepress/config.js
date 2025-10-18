@@ -101,10 +101,16 @@ module.exports = {
         title: "AI",
       },
       {
-        id: "post",
-        dirname: "post",
-        path: "/post/",
-        title: "その他",
+        id: "shose",
+        dirname: "post/shose",
+        path: "/post/shose/",
+        title: "シューズ",
+      },
+      {
+        id: "tech",
+        dirname: "post/tech",
+        path: "/post/tech/",
+        title: "テクノロジー",
       },
     ],
 
