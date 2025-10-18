@@ -1,3 +1,8 @@
-# テクノロジー
+---
+title: テクノロジー
+description: プログラミング、開発環境、最新テクノロジーに関する記事を掲載しています。
+permalink: /post/tech/
+layout: Page
+---
 
-プログラミング、開発環境、最新テクノロジーに関する記事を掲載しています。
+<HomePosts category="tech" grid-only="true" />

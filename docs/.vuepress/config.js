@@ -88,6 +88,8 @@ module.exports = {
         path: "/post/health/",
         title: "健康",
         itemPermalink: "/post/health/:slug",
+        layout: "IndexPost",
+        itemLayout: "Post",
       },
       {
         id: "nba",
@@ -95,6 +97,8 @@ module.exports = {
         path: "/post/nba/",
         title: "NBA",
         itemPermalink: "/post/nba/:slug",
+        layout: "IndexPost",
+        itemLayout: "Post",
       },
       {
         id: "ai",
@@ -102,6 +106,8 @@ module.exports = {
         path: "/post/ai/",
         title: "AI",
         itemPermalink: "/post/ai/:slug",
+        layout: "IndexPost",
+        itemLayout: "Post",
       },
       {
         id: "shose",
@@ -109,6 +115,8 @@ module.exports = {
         path: "/post/shose/",
         title: "シューズ",
         itemPermalink: "/post/shose/:slug",
+        layout: "IndexPost",
+        itemLayout: "Post",
       },
       {
         id: "tech",
@@ -116,6 +124,8 @@ module.exports = {
         path: "/post/tech/",
         title: "テクノロジー",
         itemPermalink: "/post/tech/:slug",
+        layout: "IndexPost",
+        itemLayout: "Post",
       },
     ],
 
