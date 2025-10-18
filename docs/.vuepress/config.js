@@ -31,6 +31,48 @@ module.exports = {
           ".theme-default-content img:not(.post-image), article img:not(.post-image), .theme-default-content picture img:not(.post-image)",
       },
     ],
+    [
+      "@vuepress/blog",
+      {
+        directories: [
+          {
+            id: "health",
+            dirname: "post/health",
+            path: "/post/health/",
+            title: "健康",
+            itemPermalink: "/post/health/:slug",
+          },
+          {
+            id: "nba",
+            dirname: "post/nba",
+            path: "/post/nba/",
+            title: "NBA",
+            itemPermalink: "/post/nba/:slug",
+          },
+          {
+            id: "ai",
+            dirname: "post/ai",
+            path: "/post/ai/",
+            title: "AI",
+            itemPermalink: "/post/ai/:slug",
+          },
+          {
+            id: "shose",
+            dirname: "post/shose",
+            path: "/post/shose/",
+            title: "シューズ",
+            itemPermalink: "/post/shose/:slug",
+          },
+          {
+            id: "tech",
+            dirname: "post/tech",
+            path: "/post/tech/",
+            title: "テクノロジー",
+            itemPermalink: "/post/tech/:slug",
+          },
+        ],
+      },
+    ],
   ],
 
   // ヘッド要素の設定
@@ -79,40 +121,6 @@ module.exports = {
     },
     // テーマ組み込みのロゴ（public 配下のファイルへのパス）
     // logo: "/logo.png", // enhanceApp.jsで動的に追加するためコメントアウト
-
-    // カテゴリ別のディレクトリ設定
-    directories: [
-      {
-        id: "health",
-        dirname: "post/health",
-        path: "/post/health/",
-        title: "健康",
-      },
-      {
-        id: "nba",
-        dirname: "post/nba",
-        path: "/post/nba/",
-        title: "NBA",
-      },
-      {
-        id: "ai",
-        dirname: "post/ai",
-        path: "/post/ai/",
-        title: "AI",
-      },
-      {
-        id: "shose",
-        dirname: "post/shose",
-        path: "/post/shose/",
-        title: "シューズ",
-      },
-      {
-        id: "tech",
-        dirname: "post/tech",
-        path: "/post/tech/",
-        title: "テクノロジー",
-      },
-    ],
 
     sidebar: {
       profile: {
