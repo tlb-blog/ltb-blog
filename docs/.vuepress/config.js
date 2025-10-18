@@ -81,51 +81,43 @@ module.exports = {
     // logo: "/logo.png", // enhanceApp.jsで動的に追加するためコメントアウト
 
     // カテゴリ別のディレクトリ設定
+    // カテゴリインデックスページはREADME.mdで制御するため、
+    // directoriesは記事の分類とパーマリンク設定のみに使用
     directories: [
       {
         id: "health",
         dirname: "post/health",
-        path: "/post/health/",
+        path: "/_health/", // インデックスページを生成しないよう別パスに
         title: "健康",
         itemPermalink: "/post/health/:slug",
-        layout: "IndexPost",
-        itemLayout: "Post",
       },
       {
         id: "nba",
         dirname: "post/nba",
-        path: "/post/nba/",
+        path: "/_nba/",
         title: "NBA",
         itemPermalink: "/post/nba/:slug",
-        layout: "IndexPost",
-        itemLayout: "Post",
       },
       {
         id: "ai",
         dirname: "post/ai",
-        path: "/post/ai/",
+        path: "/_ai/",
         title: "AI",
         itemPermalink: "/post/ai/:slug",
-        layout: "IndexPost",
-        itemLayout: "Post",
       },
       {
         id: "shose",
         dirname: "post/shose",
-        path: "/post/shose/",
+        path: "/_shose/",
         title: "シューズ",
         itemPermalink: "/post/shose/:slug",
-        layout: "IndexPost",
-        itemLayout: "Post",
       },
       {
         id: "tech",
         dirname: "post/tech",
-        path: "/post/tech/",
+        path: "/_tech/",
         title: "テクノロジー",
         itemPermalink: "/post/tech/:slug",
-        layout: "IndexPost",
-        itemLayout: "Post",
       },
     ],
 
