@@ -13,14 +13,14 @@ export default ({ Vue, options, router, siteData }) => {
 
   // グローバルエラーハンドラでSSRエラーを抑制
   Vue.config.errorHandler = (err, vm, info) => {
-    // HierarchyRequestErrorを無視（SSR互換性の問題）
+    // HierarchyRequestErrorのみを無視（SSR互換性の問題）
     if (err.name === 'HierarchyRequestError' || 
-        err.message?.includes('appendChild') ||
-        err.message?.includes('This node type does not support this method')) {
-      // エラーを完全に抑制（コンソールに表示しない）
+        (err.message?.includes('appendChild') && 
+         err.message?.includes('This node type does not support this method'))) {
+      // SSRエラーを完全に抑制（コンソールに表示しない）
       return;
     }
-    // その他のエラーは通常通り処理
+    // その他のエラーは通常通り処理（検索機能など）
     console.error('[Vue Error]', err, info);
   };
 
