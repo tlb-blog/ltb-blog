@@ -11,6 +11,27 @@ export default ({ Vue, options, router, siteData }) => {
   Vue.component("Breadcrumb", Breadcrumb);
   Vue.component("ShareButtons", ShareButtons);
 
+  // グローバルエラーハンドラでSSRエラーを抑制
+  Vue.config.errorHandler = (err, vm, info) => {
+    // HierarchyRequestErrorを無視（SSR互換性の問題）
+    if (err.name === 'HierarchyRequestError' || 
+        err.message?.includes('appendChild') ||
+        err.message?.includes('This node type does not support this method')) {
+      console.warn('[SSR Compatibility] Suppressed error:', err.message);
+      return;
+    }
+    // その他のエラーは通常通り処理
+    console.error('[Vue Error]', err, info);
+  };
+
+  // Vue警告ハンドラも設定
+  Vue.config.warnHandler = (msg, vm, trace) => {
+    if (msg.includes('appendChild') || msg.includes('HierarchyRequest')) {
+      return; // SSR関連の警告を抑制
+    }
+    console.warn('[Vue Warn]', msg, trace);
+  };
+
   // ヘッダーナビゲーションを動的に追加
   // SSR時には実行しない
   if (typeof window === "undefined") return;
