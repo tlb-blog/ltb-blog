@@ -17,7 +17,7 @@ export default ({ Vue, options, router, siteData }) => {
     if (err.name === 'HierarchyRequestError' || 
         err.message?.includes('appendChild') ||
         err.message?.includes('This node type does not support this method')) {
-      console.warn('[SSR Compatibility] Suppressed error:', err.message);
+      // エラーを完全に抑制（コンソールに表示しない）
       return;
     }
     // その他のエラーは通常通り処理
