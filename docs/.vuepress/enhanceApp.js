@@ -12,8 +12,15 @@ export default ({ Vue, options, router, siteData }) => {
   Vue.component("ShareButtons", ShareButtons);
 
   // ヘッダーナビゲーションを動的に追加
-  if (typeof window !== "undefined" && typeof document !== "undefined") {
-    Vue.nextTick(() => {
+  // SSR時には実行しない
+  if (typeof window === "undefined") return;
+  
+  // Vue.nextTickではなくmountedフックで実行してSSRエラーを回避
+  Vue.mixin({
+    mounted() {
+      // ルートインスタンスでのみ実行
+      if (this.$root !== this) return;
+      
       // Helper: check parent is element and namespaces match to avoid HierarchyRequestError
       const isSafeParent = (parent, node) => {
         try {
@@ -458,6 +465,6 @@ export default ({ Vue, options, router, siteData }) => {
           addCategoryNav();
         }
       });
-    });
-  }
+    }
+  });
 };
