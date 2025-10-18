@@ -84,19 +84,19 @@ module.exports = {
     directories: [
       {
         id: "health",
-        dirname: "health",
+        dirname: "post/health",
         path: "/post/health/",
         title: "健康",
       },
       {
         id: "nba",
-        dirname: "nba",
+        dirname: "post/nba",
         path: "/post/nba/",
         title: "NBA",
       },
       {
         id: "ai",
-        dirname: "ai",
+        dirname: "post/ai",
         path: "/post/ai/",
         title: "AI",
       },
