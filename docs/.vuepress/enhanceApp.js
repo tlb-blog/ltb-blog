@@ -278,9 +278,23 @@ export default ({ Vue, options, router, siteData }) => {
           // Create wrapper and mount component markup
           const wrapper = document.createElement("div");
           wrapper.className = "share-buttons-wrapper";
-          // Insert at the end of article
-          if (typeof articleEl.appendChild === "function")
-            articleEl.appendChild(wrapper);
+          // Insert at the end of article using safeAppend
+          const safeAppendLocal = (parent, node) => {
+            try {
+              if (!parent || parent.nodeType !== 1) return false;
+              if (typeof parent.appendChild === "function") {
+                parent.appendChild(node);
+                return true;
+              }
+            } catch (e) {
+              try {
+                console.error("[enhanceApp] safeAppendLocal failed", e);
+              } catch (err) {}
+            }
+            return false;
+          };
+
+          safeAppendLocal(articleEl, wrapper);
 
           // Use Vue to mount the component into the wrapper
           try {
@@ -323,9 +337,20 @@ export default ({ Vue, options, router, siteData }) => {
           // wrapper を作成して記事先頭に挿入
           const wrapper = document.createElement("div");
           wrapper.className = "breadcrumb-wrapper";
-          if (articleEl.firstChild)
-            articleEl.insertBefore(wrapper, articleEl.firstChild);
-          else articleEl.appendChild(wrapper);
+          // safe insert at beginning
+          try {
+            if (articleEl && articleEl.nodeType === 1) {
+              if (articleEl.firstChild && typeof articleEl.insertBefore === "function") {
+                articleEl.insertBefore(wrapper, articleEl.firstChild);
+              } else if (typeof articleEl.appendChild === "function") {
+                articleEl.appendChild(wrapper);
+              }
+            }
+          } catch (e) {
+            try {
+              console.error("[enhanceApp] failed to insert breadcrumb wrapper", e);
+            } catch (err) {}
+          }
 
           // Breadcrumb コンポーネントを rootVue を親にしてマウントする
           try {
