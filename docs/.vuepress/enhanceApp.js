@@ -207,20 +207,48 @@ export default ({ Vue, options, router, siteData }) => {
           `;
 
         // まず非表示状態で挿入しておき、次フレームでクラスを付与してフェードイン
-        if (document.body && typeof document.body.appendChild === "function") {
-          document.body.appendChild(nav);
-          // 強制レイアウトを避けるため requestAnimationFrame を使う
-          requestAnimationFrame(() => {
-            nav.classList.add("category-nav--visible");
-          });
+        const safeAppend = (parent, node) => {
+          try {
+            if (!parent || parent.nodeType !== 1) return false;
+            if (typeof parent.appendChild === "function") {
+              parent.appendChild(node);
+              return true;
+            }
+            if (typeof parent.insertBefore === "function") {
+              parent.insertBefore(node, parent.firstChild || null);
+              return true;
+            }
+          } catch (e) {
+            try {
+              console.error("[enhanceApp] safeAppend failed", e);
+            } catch (err) {}
+          }
+          return false;
+        };
+
+        if (document.body) {
+          const appended = safeAppend(document.body, nav);
+          if (appended) {
+            requestAnimationFrame(() => nav.classList.add("category-nav--visible"));
+          } else {
+            // body があるが append に失敗した場合は load イベントで再試行
+            window.addEventListener("load", () => {
+              try {
+                const ok = safeAppend(document.body, nav);
+                if (ok) requestAnimationFrame(() => nav.classList.add("category-nav--visible"));
+              } catch (e) {
+                try {
+                  console.error("[enhanceApp] failed to append category nav after load", e);
+                } catch (err) {}
+              }
+            });
+          }
         } else {
           // body がまだない場合は load イベント後に追加
           window.addEventListener("load", () => {
             try {
-              document.body.appendChild(nav);
-              requestAnimationFrame(() => {
-                nav.classList.add("category-nav--visible");
-              });
+              const ok = safeAppend(document.body, nav);
+              if (ok) requestAnimationFrame(() => nav.classList.add("category-nav--visible"));
             } catch (e) {
               try {
                 console.error(

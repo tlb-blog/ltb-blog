@@ -3,7 +3,7 @@ title: "【2025年10月】互換性を保った開発環境（推奨バージョ
 date: 2025-10-15
 tags: ["技術", "インフラ", "互換性", "開発"]
 description: "AlmaLinux / Vue.js / Spring Boot / OpenJDK / MySQL / Apache / Tomcat の推奨バージョンとサポート期間、延長サポート情報をまとめた運用ガイド。"
-image: /article_images/compatibility_dev_env.png
+image: /article_images/ollama_continue_rag.png
 ---
 
 ## 概要
