@@ -12,22 +12,23 @@ export default ({ Vue, options, router, siteData }) => {
   Vue.component("ShareButtons", ShareButtons);
 
   // ヘッダーナビゲーションを動的に追加
-  if (typeof window !== "undefined") {
+  if (typeof window !== "undefined" && typeof document !== "undefined") {
     Vue.nextTick(() => {
-        // Helper: check parent is element and namespaces match to avoid HierarchyRequestError
-        const isSafeParent = (parent, node) => {
-          try {
-            if (!parent || parent.nodeType !== 1) return false;
-            // If parent is an SVG or other non-HTML namespace, avoid inserting HTML nodes into it.
-            const pNs = parent.namespaceURI || null;
-            // Treat nodes without namespace as HTML (XHTML) by default
-            const nNs = (node && node.namespaceURI) || "http://www.w3.org/1999/xhtml";
-            if (pNs && nNs && pNs !== nNs) return false;
-            return true;
-          } catch (e) {
-            return false;
-          }
-        };
+      // Helper: check parent is element and namespaces match to avoid HierarchyRequestError
+      const isSafeParent = (parent, node) => {
+        try {
+          if (!parent || parent.nodeType !== 1) return false;
+          // If parent is an SVG or other non-HTML namespace, avoid inserting HTML nodes into it.
+          const pNs = parent.namespaceURI || null;
+          // Treat nodes without namespace as HTML (XHTML) by default
+          const nNs =
+            (node && node.namespaceURI) || "http://www.w3.org/1999/xhtml";
+          if (pNs && nNs && pNs !== nNs) return false;
+          return true;
+        } catch (e) {
+          return false;
+        }
+      };
       // ヘッダにロゴを挿入する（クライアントサイドのみ）
       const addHeaderLogo = () => {
         // 既に挿入済みなら何もしない
@@ -106,7 +107,10 @@ export default ({ Vue, options, router, siteData }) => {
           }
         } catch (e) {
           try {
-            console.error("[enhanceApp] failed to append logo image to anchor", e);
+            console.error(
+              "[enhanceApp] failed to append logo image to anchor",
+              e
+            );
           } catch (err) {}
         }
 
@@ -147,7 +151,11 @@ export default ({ Vue, options, router, siteData }) => {
             contentEl.appendChild(a);
           } else {
             // どのノードにも挿入できない場合は safest fallback として body に追加
-            if (document.body && isSafeParent(document.body, a) && typeof document.body.appendChild === "function") {
+            if (
+              document.body &&
+              isSafeParent(document.body, a) &&
+              typeof document.body.appendChild === "function"
+            ) {
               document.body.insertBefore(a, document.body.firstChild || null);
             }
           }
@@ -255,16 +263,24 @@ export default ({ Vue, options, router, siteData }) => {
         if (document.body) {
           const appended = safeAppend(document.body, nav);
           if (appended) {
-            requestAnimationFrame(() => nav.classList.add("category-nav--visible"));
+            requestAnimationFrame(() =>
+              nav.classList.add("category-nav--visible")
+            );
           } else {
             // body があるが append に失敗した場合は load イベントで再試行
             window.addEventListener("load", () => {
               try {
                 const ok = safeAppend(document.body, nav);
-                if (ok) requestAnimationFrame(() => nav.classList.add("category-nav--visible"));
+                if (ok)
+                  requestAnimationFrame(() =>
+                    nav.classList.add("category-nav--visible")
+                  );
               } catch (e) {
                 try {
-                  console.error("[enhanceApp] failed to append category nav after load", e);
+                  console.error(
+                    "[enhanceApp] failed to append category nav after load",
+                    e
+                  );
                 } catch (err) {}
               }
             });
@@ -274,7 +290,10 @@ export default ({ Vue, options, router, siteData }) => {
           window.addEventListener("load", () => {
             try {
               const ok = safeAppend(document.body, nav);
-              if (ok) requestAnimationFrame(() => nav.classList.add("category-nav--visible"));
+              if (ok)
+                requestAnimationFrame(() =>
+                  nav.classList.add("category-nav--visible")
+                );
             } catch (e) {
               try {
                 console.error(
@@ -364,19 +383,33 @@ export default ({ Vue, options, router, siteData }) => {
           const wrapper = document.createElement("div");
           wrapper.className = "breadcrumb-wrapper";
           // safe insert at beginning
-            try {
-              if (articleEl && articleEl.nodeType === 1 && isSafeParent(articleEl, wrapper)) {
-                if (articleEl.firstChild && typeof articleEl.insertBefore === "function" && isSafeParent(articleEl, wrapper)) {
-                  articleEl.insertBefore(wrapper, articleEl.firstChild);
-                } else if (typeof articleEl.appendChild === "function" && isSafeParent(articleEl, wrapper)) {
-                  articleEl.appendChild(wrapper);
-                }
+          try {
+            if (
+              articleEl &&
+              articleEl.nodeType === 1 &&
+              isSafeParent(articleEl, wrapper)
+            ) {
+              if (
+                articleEl.firstChild &&
+                typeof articleEl.insertBefore === "function" &&
+                isSafeParent(articleEl, wrapper)
+              ) {
+                articleEl.insertBefore(wrapper, articleEl.firstChild);
+              } else if (
+                typeof articleEl.appendChild === "function" &&
+                isSafeParent(articleEl, wrapper)
+              ) {
+                articleEl.appendChild(wrapper);
               }
-            } catch (e) {
-              try {
-                console.error("[enhanceApp] failed to insert breadcrumb wrapper", e);
-              } catch (err) {}
             }
+          } catch (e) {
+            try {
+              console.error(
+                "[enhanceApp] failed to insert breadcrumb wrapper",
+                e
+              );
+            } catch (err) {}
+          }
 
           // Breadcrumb コンポーネントを rootVue を親にしてマウントする
           try {
@@ -397,6 +430,9 @@ export default ({ Vue, options, router, siteData }) => {
       // root Vue インスタンスがマウントされたタイミングでパンくずをマウントする
       Vue.mixin({
         mounted() {
+          // 確実にクライアントサイドで実行されていることを確認
+          if (typeof window === "undefined" || typeof document === "undefined") return;
+          
           try {
             if (this.$root === this) {
               // this は root Vue インスタンス
