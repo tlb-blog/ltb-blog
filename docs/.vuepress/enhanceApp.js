@@ -14,34 +14,36 @@ export default ({ Vue, options, router, siteData }) => {
   // グローバルエラーハンドラでSSRエラーを抑制
   Vue.config.errorHandler = (err, vm, info) => {
     // HierarchyRequestErrorのみを無視（SSR互換性の問題）
-    if (err.name === 'HierarchyRequestError' || 
-        (err.message?.includes('appendChild') && 
-         err.message?.includes('This node type does not support this method'))) {
+    if (
+      err.name === "HierarchyRequestError" ||
+      (err.message?.includes("appendChild") &&
+        err.message?.includes("This node type does not support this method"))
+    ) {
       // SSRエラーを完全に抑制（コンソールに表示しない）
       return;
     }
     // その他のエラーは通常通り処理（検索機能など）
-    console.error('[Vue Error]', err, info);
+    console.error("[Vue Error]", err, info);
   };
 
   // Vue警告ハンドラも設定
   Vue.config.warnHandler = (msg, vm, trace) => {
-    if (msg.includes('appendChild') || msg.includes('HierarchyRequest')) {
+    if (msg.includes("appendChild") || msg.includes("HierarchyRequest")) {
       return; // SSR関連の警告を抑制
     }
-    console.warn('[Vue Warn]', msg, trace);
+    console.warn("[Vue Warn]", msg, trace);
   };
 
   // ヘッダーナビゲーションを動的に追加
   // SSR時には実行しない
   if (typeof window === "undefined") return;
-  
+
   // Vue.nextTickではなくmountedフックで実行してSSRエラーを回避
   Vue.mixin({
     mounted() {
       // ルートインスタンスでのみ実行
       if (this.$root !== this) return;
-      
+
       // Helper: check parent is element and namespaces match to avoid HierarchyRequestError
       const isSafeParent = (parent, node) => {
         try {
@@ -459,8 +461,9 @@ export default ({ Vue, options, router, siteData }) => {
       Vue.mixin({
         mounted() {
           // 確実にクライアントサイドで実行されていることを確認
-          if (typeof window === "undefined" || typeof document === "undefined") return;
-          
+          if (typeof window === "undefined" || typeof document === "undefined")
+            return;
+
           try {
             if (this.$root === this) {
               // this は root Vue インスタンス
@@ -486,6 +489,6 @@ export default ({ Vue, options, router, siteData }) => {
           addCategoryNav();
         }
       });
-    }
+    },
   });
 };

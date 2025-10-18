@@ -9,12 +9,12 @@ module.exports = {
   base: process.env.BASE_URL || "/ltb-blog/",
   title: "ライフスタイル & テクノロジーブログ",
   description: "ライフスタイルとテクノロジーを横断する情報サイト",
-  
+
   // SSRの設定 - Vuetifyコンポーネントの互換性向上
   ssr: {
     shouldPrefetch: () => false,
   },
-  
+
   // テーマやカスタムヘッダが参照しやすいトップレベルのロゴ設定
   // public 配下のファイルはルート相対で指定し、ビルド時に base が付与されるようにする
   // logo: "/logo.png", // enhanceApp.jsで動的に追加するためコメントアウト
@@ -61,7 +61,7 @@ module.exports = {
     // 検索機能の設定
     search: true,
     searchMaxSuggestions: 10,
-    
+
     // ダークテーマを有効化
     vuetify: {
       theme: {
