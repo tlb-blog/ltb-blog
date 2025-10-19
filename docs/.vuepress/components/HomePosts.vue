@@ -30,7 +30,21 @@
                   <v-card-title class="post-title">{{
                     post.title
                   }}</v-card-title>
-                  <!-- tags removed for Home view -->
+                  <!-- tags -->
+                  <div
+                    v-if="post.tags && post.tags.length"
+                    class="d-flex flex-wrap mb-2"
+                  >
+                    <v-chip
+                      v-for="(tag, idx) in post.tags"
+                      :key="idx"
+                      small
+                      class="ma-1"
+                      outlined
+                    >
+                      {{ tag }}
+                    </v-chip>
+                  </div>
                   <v-card-subtitle
                     v-if="post.description"
                     class="post-excerpt"
@@ -78,7 +92,21 @@
                   <v-card-title class="post-title">{{
                     post.title
                   }}</v-card-title>
-                  <!-- tags removed for Home view -->
+                  <!-- tags -->
+                  <div
+                    v-if="post.tags && post.tags.length"
+                    class="d-flex flex-wrap mb-2"
+                  >
+                    <v-chip
+                      v-for="(tag, idx) in post.tags"
+                      :key="idx"
+                      small
+                      class="ma-1"
+                      outlined
+                    >
+                      {{ tag }}
+                    </v-chip>
+                  </div>
                   <v-card-subtitle
                     v-if="post.description"
                     class="post-excerpt"
@@ -125,7 +153,21 @@
                   <v-card-title class="post-title">{{
                     post.title
                   }}</v-card-title>
-                  <!-- tags removed for Home view -->
+                  <!-- tags -->
+                  <div
+                    v-if="post.tags && post.tags.length"
+                    class="d-flex flex-wrap mb-2"
+                  >
+                    <v-chip
+                      v-for="(tag, idx) in post.tags"
+                      :key="idx"
+                      small
+                      class="ma-1"
+                      outlined
+                    >
+                      {{ tag }}
+                    </v-chip>
+                  </div>
                   <v-card-subtitle
                     v-if="post.description"
                     class="post-excerpt"
@@ -345,8 +387,6 @@ export default {
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin-bottom: 12px;
 }
 
 .post-card:hover {
@@ -359,12 +399,6 @@ export default {
   height: 200px;
   position: relative;
   overflow: hidden;
-}
-
-/* ensure image container doesn't overlap the content */
-.post-image-container {
-  margin-bottom: 0;
-  flex: 0 0 auto;
 }
 
 .post-image {
@@ -393,18 +427,14 @@ export default {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 18px !important;
-  background: #fff;
-  position: relative;
-  z-index: 1;
+  padding: 16px !important;
 }
 
 .post-title {
   font-size: 16px;
   line-height: 1.4;
   padding: 0 0 8px 0 !important;
-  margin-bottom: 6px;
-  margin-top: 8px;
+  margin-bottom: 0;
   font-weight: 600;
   color: #2c3e50;
   display: -webkit-box;
@@ -413,8 +443,6 @@ export default {
   line-clamp: 2;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-height: calc(1.4em * 2);
-  white-space: normal;
 }
 
 .post-excerpt {
@@ -430,7 +458,6 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
   flex: 1;
-  margin-top: 8px;
 }
 
 /* remove underline when v-card renders as an anchor */
