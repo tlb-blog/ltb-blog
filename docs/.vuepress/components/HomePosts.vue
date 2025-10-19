@@ -359,6 +359,12 @@ export default {
   overflow: hidden;
 }
 
+/* ensure image container doesn't overlap the content */
+.post-image-container {
+  margin-bottom: 12px;
+  flex: 0 0 auto;
+}
+
 .post-image {
   width: 100%;
   height: 100%;
@@ -386,6 +392,9 @@ export default {
   display: flex;
   flex-direction: column;
   padding: 16px !important;
+  background: #fff;
+  position: relative;
+  z-index: 1;
 }
 
 .post-title {
