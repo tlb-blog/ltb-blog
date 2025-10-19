@@ -203,7 +203,7 @@ export default {
     },
     limit: {
       type: Number,
-      default: 6,
+      default: 10,
     },
     gridOnly: {
       type: Boolean,
