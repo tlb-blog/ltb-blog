@@ -345,6 +345,7 @@ export default {
   height: 100%;
   display: flex;
   flex-direction: column;
+  gap: 16px;
 }
 
 .post-card:hover {
@@ -361,7 +362,7 @@ export default {
 
 /* ensure image container doesn't overlap the content */
 .post-image-container {
-  margin-bottom: 12px;
+  margin-bottom: 18px;
   flex: 0 0 auto;
 }
 
@@ -391,7 +392,7 @@ export default {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 16px !important;
+  padding: 18px !important;
   background: #fff;
   position: relative;
   z-index: 1;
@@ -401,7 +402,7 @@ export default {
   font-size: 16px;
   line-height: 1.4;
   padding: 0 0 8px 0 !important;
-  margin-bottom: 0;
+  margin-bottom: 6px;
   font-weight: 600;
   color: #2c3e50;
   display: -webkit-box;
@@ -425,6 +426,7 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
   flex: 1;
+  margin-top: 8px;
 }
 
 /* remove underline when v-card renders as an anchor */
