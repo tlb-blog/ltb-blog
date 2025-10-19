@@ -346,6 +346,7 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  margin-bottom: 12px;
 }
 
 .post-card:hover {
@@ -362,7 +363,7 @@ export default {
 
 /* ensure image container doesn't overlap the content */
 .post-image-container {
-  margin-bottom: 18px;
+  margin-bottom: 0;
   flex: 0 0 auto;
 }
 
@@ -403,6 +404,7 @@ export default {
   line-height: 1.4;
   padding: 0 0 8px 0 !important;
   margin-bottom: 6px;
+  margin-top: 8px;
   font-weight: 600;
   color: #2c3e50;
   display: -webkit-box;
@@ -411,6 +413,8 @@ export default {
   line-clamp: 2;
   overflow: hidden;
   text-overflow: ellipsis;
+  max-height: calc(1.4em * 2);
+  white-space: normal;
 }
 
 .post-excerpt {
