@@ -1,6 +1,7 @@
 ---
 title: "NIKE JA3"
 date: 2025-10-19
+description: "発売ごとに即完売のナイキ Ja 3を専門家がレビュー。ソフトな履き心地、幅広フィット、ZoomX搭載の高反発クッション、経年で変わる履き心地、破格のコスパという5つの魅力を解説。"
 category: shose
 tags: [ナイキ, Ja 3, バッシュ, レビュー, シューズ]
 image: /article_images/ja3_20251019.png
