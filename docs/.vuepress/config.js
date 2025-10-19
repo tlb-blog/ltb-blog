@@ -81,48 +81,40 @@ module.exports = {
     // logo: "/logo.png", // enhanceApp.jsで動的に追加するためコメントアウト
 
     // カテゴリ別のディレクトリ設定
-    // カテゴリインデックスページはREADME.mdで制御するため、
-    // directoriesは記事の分類とパーマリンク設定のみに使用
     directories: [
       {
         id: "health",
         dirname: "post/health",
-        path: "/_health/", // インデックスページを生成しないよう別パスに
+        path: "/post/health/",
         title: "健康",
-        itemPermalink: "/post/health/:slug",
       },
       {
         id: "nba",
         dirname: "post/nba",
-        path: "/_nba/",
+        path: "/post/nba/",
         title: "NBA",
-        itemPermalink: "/post/nba/:slug",
       },
       {
         id: "ai",
         dirname: "post/ai",
-        path: "/_ai/",
+        path: "/post/ai/",
         title: "AI",
-        itemPermalink: "/post/ai/:slug",
       },
       {
         id: "shose",
         dirname: "post/shose",
-        path: "/_shose/",
+        path: "/post/shose/",
         title: "シューズ",
-        itemPermalink: "/post/shose/:slug",
       },
       {
         id: "tech",
         dirname: "post/tech",
-        path: "/_tech/",
+        path: "/post/tech/",
         title: "テクノロジー",
-        itemPermalink: "/post/tech/:slug",
       },
     ],
 
     sidebar: {
-      directoryIds: ["health", "nba", "ai", "shose", "tech"],
       profile: {
         // public 配下のアバターはルート相対で記述（ビルドで base が付与されます）
         avatarUrl: "/avatar.svg",
