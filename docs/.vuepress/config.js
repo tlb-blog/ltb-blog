@@ -81,38 +81,9 @@ module.exports = {
     // logo: "/logo.png", // enhanceApp.jsで動的に追加するためコメントアウト
 
     // カテゴリ別のディレクトリ設定
-    directories: [
-      {
-        id: "health",
-        dirname: "post/health",
-        path: "/post/health/",
-        title: "健康",
-      },
-      {
-        id: "nba",
-        dirname: "post/nba",
-        path: "/post/nba/",
-        title: "NBA",
-      },
-      {
-        id: "ai",
-        dirname: "post/ai",
-        path: "/post/ai/",
-        title: "AI",
-      },
-      {
-        id: "shose",
-        dirname: "post/shose",
-        path: "/post/shose/",
-        title: "シューズ",
-      },
-      {
-        id: "tech",
-        dirname: "post/tech",
-        path: "/post/tech/",
-        title: "テクノロジー",
-      },
-    ],
+    // README.mdでカスタムカテゴリページを表示するため、directoriesは空にする
+    // 記事の分類は各記事のfrontmatterでcategoryを指定
+    directories: [],
 
     sidebar: {
       profile: {
