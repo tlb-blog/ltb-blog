@@ -59,7 +59,7 @@ module.exports = {
 
   themeConfig: {
     // 検索機能の設定
-    search: true,
+    search: false,
     searchMaxSuggestions: 10,
 
     // ダークテーマを有効化
