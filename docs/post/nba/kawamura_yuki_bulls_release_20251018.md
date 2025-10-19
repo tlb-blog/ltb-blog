@@ -3,7 +3,7 @@ title: "【最新速報】河村勇輝、シカゴ・ブルズとの契約解除
 date: 2025-10-18
 tags: ["NBA", "河村勇輝", "シカゴ・ブルズ", "日本代表", "契約解除"]
 category: nba
-image: /article_images/kawamura_yuki_bulls.jpg
+image: /article_images/kawamura_yuki_bulls.png
 description: "河村勇輝がブルズから契約解除。右脚負傷が主因、今後の動向に注目。"
 ---
 
