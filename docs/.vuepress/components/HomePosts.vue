@@ -30,21 +30,7 @@
                   <v-card-title class="post-title">{{
                     post.title
                   }}</v-card-title>
-                  <!-- tags -->
-                  <div
-                    v-if="post.tags && post.tags.length"
-                    class="d-flex flex-wrap mb-2"
-                  >
-                    <v-chip
-                      v-for="(tag, idx) in post.tags"
-                      :key="idx"
-                      small
-                      class="ma-1"
-                      outlined
-                    >
-                      {{ tag }}
-                    </v-chip>
-                  </div>
+                  <!-- tags removed for Home view -->
                   <v-card-subtitle
                     v-if="post.description"
                     class="post-excerpt"
@@ -92,21 +78,7 @@
                   <v-card-title class="post-title">{{
                     post.title
                   }}</v-card-title>
-                  <!-- tags -->
-                  <div
-                    v-if="post.tags && post.tags.length"
-                    class="d-flex flex-wrap mb-2"
-                  >
-                    <v-chip
-                      v-for="(tag, idx) in post.tags"
-                      :key="idx"
-                      small
-                      class="ma-1"
-                      outlined
-                    >
-                      {{ tag }}
-                    </v-chip>
-                  </div>
+                  <!-- tags removed for Home view -->
                   <v-card-subtitle
                     v-if="post.description"
                     class="post-excerpt"
@@ -153,21 +125,7 @@
                   <v-card-title class="post-title">{{
                     post.title
                   }}</v-card-title>
-                  <!-- tags -->
-                  <div
-                    v-if="post.tags && post.tags.length"
-                    class="d-flex flex-wrap mb-2"
-                  >
-                    <v-chip
-                      v-for="(tag, idx) in post.tags"
-                      :key="idx"
-                      small
-                      class="ma-1"
-                      outlined
-                    >
-                      {{ tag }}
-                    </v-chip>
-                  </div>
+                  <!-- tags removed for Home view -->
                   <v-card-subtitle
                     v-if="post.description"
                     class="post-excerpt"
