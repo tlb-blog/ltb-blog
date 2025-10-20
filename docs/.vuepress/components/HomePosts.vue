@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid>
+  <v-container fluid class="home-posts">
     <v-row>
       <v-col cols="12" md="12">
         <!-- gridOnlyの場合はシンプルなグリッド表示のみ -->
@@ -374,6 +374,15 @@ export default {
   font-weight: 500;
 }
 
+/* Reduce top spacing between category nav and Recent Posts */
+.home-posts {
+  padding-top: 0 !important;
+}
+.home-posts .modern-text {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
 .v-card {
   overflow: hidden;
 }
@@ -443,6 +452,11 @@ export default {
   line-clamp: 2;
   overflow: hidden;
   text-overflow: ellipsis;
+  /* Ensure third line cannot peek: set max-height based on line-height */
+  max-height: calc(1.4em * 2); /* 2 lines */
+  /* Fallback for browsers that don't support -webkit-line-clamp */
+  display: block;
+  display: -webkit-box;
 }
 
 .post-excerpt {
