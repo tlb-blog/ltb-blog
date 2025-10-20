@@ -7,7 +7,7 @@ image: /article_images/okc_thunder.jpg
 description: "NBA GMの2025-26シーズン予想まとめ。優勝候補とMVP候補の動向を速報します。"
 ---
 
-*写真: Getty Images（ローカル保存）*
+(写真: Getty Images)
 
 NBA全30チームのGMを対象とした年次サーベイで、オクラホマシティ・サンダーが連覇候補に選ばれ、ニコラ・ヨキッチがMVP候補で圧倒的な支持を集めました。
 
