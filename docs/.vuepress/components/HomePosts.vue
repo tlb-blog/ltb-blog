@@ -377,8 +377,17 @@ export default {
 /* Reduce top spacing between category nav and Recent Posts */
 .home-posts {
   padding-top: 0 !important;
+  /* pull it up slightly to close gap with category nav */
+  margin-top: -20px !important;
 }
 .home-posts .modern-text {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  margin-bottom: 6px !important;
+}
+
+/* In case the outer layout adds extra spacing, collapse immediate row spacing */
+.home-posts > .v-row {
   margin-top: 0 !important;
   padding-top: 0 !important;
 }
