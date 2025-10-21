@@ -22,7 +22,6 @@ description: "アル・ホーフォードの移籍決断を分析。ウォリア
 > "It's a great opportunity to compete and to win at a high level," Horford said. "When I think about the Warriors, I think about Steph [Curry] and Draymond [Green] and Steve Kerr... It wasn't an easy decision for me to leave Boston, but if there was the place, that was this one." [1]
 
 ![アル・ホーフォード](/nba_images/al-horford-warriors2.png)
-*写真: NBA.com*
 
 ステフィン・カリー、ドレイモンド・グリーンといった歴戦の勇士たちと、スティーブ・カーHCが築き上げた「勝利のカルチャー」が、39歳のベテランにとって最大の魅力だったのだ。
 

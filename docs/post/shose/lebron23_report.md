@@ -3,7 +3,7 @@ title: "ナイキ レブロン23"
 date: 2025-10-12
 tags: ["レビュー","シューズ","LeBron","Nike"]
 category: shose
-image: /article_images/lebron23_thumbnail.jpg
+image: /article_images/lebron23_thumbnail.png
 description: "レブロン23のパッケージ、デザイン、テクノロジー、市場性を短く分かりやすくまとめたレポート。"
 ---
 

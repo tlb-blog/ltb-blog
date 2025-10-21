@@ -7,8 +7,9 @@ image: /article_images/joel_embiid_recovery.png
 description: "ジョエル・エンビードの回復状況と、76ersが抱える期待と課題を整理して報告します。"
 ---
 
-*写真: NBA.com*
+---
 
+(写真: NBA.com)
 フィラデルフィア・76ersのスターセンター、ジョエル・エンビードにとって、怪我との戦いは決して終わらない物語だ。しかし、2025-26シーズンの開幕を前に、チームからは久しぶりに「楽観的」な声が聞こえてくる。
 
 ## Windhorstの報道：「楽観論」の真意
@@ -38,7 +39,6 @@ ESPNのベテラン記者、Brian Windhorstが月曜日、彼の「Hoop Collecti
 ### 2024-25シーズン：さらなる苦難
 
 ![Joel Embiid Injury](/article_images/joel_embiid_recovery2.png)
-*写真: 97.5 The Fanatic*
 
 | 項目             | 詳細                |
 | ---------------- | ------------------- |
@@ -122,9 +122,10 @@ ESPNのベテラン記者、Brian Windhorstが月曜日、彼の「Hoop Collecti
 
 76ersのファンにとって、今は希望を持つ時だ。しかし同時に、現実的な期待を持つことも重要だ。エンビードが「一貫してプレーする」という目標を達成できれば、76ersは優勝候補になる。しかし、その道のりは決して平坦ではない。
 
----
 
-### 参考文献
+(写真: NBA.com)
+
+(写真: 97.5 The Fanatic)
 
 [1] Peters, Andrew. (2025年10月13日). "Joel Embiid's Injury Recovery Reportedly Gives 'Optimism' to 76ers Ahead of NBA Season". *Bleacher Report*. https://bleacherreport.com/articles/25258514-joel-embiids-injury-recovery-reportedly-gives-optimism-76ers-ahead-nba-season
 

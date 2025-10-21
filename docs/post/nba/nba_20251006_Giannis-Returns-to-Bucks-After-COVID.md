@@ -25,7 +25,7 @@ description: "ヤニスの復帰がバックスに与える影響を現場視点
 
 ---
 
-（写真: Getty Images）
+(写真: Getty Images)
 
 ### 参考文献
 
