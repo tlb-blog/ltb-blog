@@ -58,8 +58,10 @@ module.exports = {
   ],
 
   themeConfig: {
-    // 検索機能の設定
-    search: false,
+  // 検索機能の設定
+  // ローカルでは検索が有効だったが、production 側で無効化されていたため
+  // GitHub Pages 側でも検索を動作させるために true に変更します。
+  search: true,
     searchMaxSuggestions: 10,
 
     // ダークテーマを有効化
