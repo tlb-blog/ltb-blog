@@ -5,7 +5,7 @@ category: nba
 tags: [レブロン・ジェームズ, レイカーズ, 怪我, 坐骨神経痛]
 image: /article_images/lebron_sciatica_20251021.png
 ---
-(写真: Getty Images)
+ 
 
 ## はじめに
 
@@ -19,7 +19,7 @@ image: /article_images/lebron_sciatica_20251021.png
 
 ![レブロン・ジェームズの怪我](/article_images/lebron_sciatica_20251021_2.png)
 
-(写真: Getty Images)
+ 
 
 ## 復帰の見通しとチームへの影響
 
@@ -37,3 +37,4 @@ image: /article_images/lebron_sciatica_20251021.png
 2. [ESPN - LeBron James Player Page](https://www.espn.com/nba/player/_/id/1966/lebron-james)
 3. [Shams Charania on X - Sciatica Injury](https://x.com/ShamsCharania/status/1976393093114200516)
 4. [Shams Charania on X - Nerve Injury](https://x.com/ShamsCharania/status/1976729836677996569)
+(写真: Getty Images)

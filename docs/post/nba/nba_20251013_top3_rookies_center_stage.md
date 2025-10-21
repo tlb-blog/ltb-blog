@@ -7,8 +7,6 @@ image: /article_images/nba_20251013_top3_rookies_center_stage.png
 description: "注目ルーキー3名（Cooper Flagg、Ace Bailey、Dylan Harper）のプレシーズン活躍を詳報。"
 ---
 
-*写真: NBA.com*
-
 2025年10月13日の夜、NBA世界は今年のドラフトのトップ3指名選手を目撃する準備ができている。Cooper Flagg、Ace Bailey、Dylan Harper——4ヶ月前、彼らは見込み選手として知られていた。今、彼らはNBAレベルで、なぜトップ指名されたのかを証明している。
 
 ## 今夜の注目試合
@@ -174,6 +172,8 @@ Dylan HarperとVictor Wembanyamaのコンビネーションも注目だ。Harper
 新シーズンは、クリーンスレートを提供する。そして、新しいスターは、すでに大きなポテンシャルを見せている。今夜の試合は、彼らのNBAキャリアの始まりに過ぎない。しかし、すでに明るい未来が見えている。
 
 ---
+
+(写真: NBA.com)
 
 ### 参考文献
 

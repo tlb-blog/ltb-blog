@@ -7,7 +7,7 @@ image: /article_images/joel_embiid_recovery.png
 description: "ジョエル・エンビードの回復状況と、76ersが抱える期待と課題を整理して報告します。"
 ---
 
-*写真: Philly Sports Network*
+*写真: NBA.com*
 
 フィラデルフィア・76ersのスターセンター、ジョエル・エンビードにとって、怪我との戦いは決して終わらない物語だ。しかし、2025-26シーズンの開幕を前に、チームからは久しぶりに「楽観的」な声が聞こえてくる。
 

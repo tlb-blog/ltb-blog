@@ -5,7 +5,6 @@ category: nba
 tags: [power rankings, 2025-26, NBA]
 image: /article_images/nba_power_rankings_20251021_okc_top.png
 ---
-(写真: Getty Images)
 
 ## はじめに
 
@@ -60,3 +59,5 @@ image: /article_images/nba_power_rankings_20251021_okc_top.png
 ## 参照
 
 * [NBC Sports - NBA power rankings 2025-26: Everyone starts the season chasing Oklahoma City](https://www.nbcsports.com/nba/news/nba-power-rankings-2025-26-everyone-else-starts-the-season-chasing-oklahoma-city)
+
+(写真: Getty Images)

@@ -6,7 +6,6 @@ category: nba
 image: /ltb-blog/nba_images/Giannis-Returns-to-Bucks-After-COVID.png
 description: "ヤニスの復帰がバックスに与える影響を現場視点で分析。復帰の背景と戦術的インパクトを解説。"
 ---
-（写真: Getty Images）
 
 ## 王の帰還：ヤニス・アンテトクンポ、COVIDから回復しバックスに合流
 
@@ -25,6 +24,8 @@ description: "ヤニスの復帰がバックスに与える影響を現場視点
 彼の復帰は単なる戦力回復に留まらず、チーム全体に精神的安定と自信をもたらすだろう。
 
 ---
+
+（写真: Getty Images）
 
 ### 参考文献
 
