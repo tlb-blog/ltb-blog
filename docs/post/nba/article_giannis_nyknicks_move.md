@@ -8,8 +8,6 @@ image: /ltb-blog/article_images/giannis_nyknicks_thumbnail.png
 description: "ヤニス・アンテトクンポのニックス移籍報道を検証。交渉経緯とチーム編成への影響を詳しく分析。"
 ---
 
----
-
 (写真: Getty Images)
 ミルウォーキー・バックスのスーパースター、ヤニス・アンテトクンボの将来に関する衝撃的なニュースが飛び込んできた。ESPNのトップインサイダー、Shams Charaniaによる最新レポートは、ヤニスがオフシーズン中にバックスを離れる可能性を真剣に検討していたこと、そして彼がプレーしたいと考えているチームがニューヨーク・ニックス**のみ**であることを明らかにした。この報道は、NBA界に大きな衝撃を与えている。
 
@@ -65,6 +63,6 @@ Charaniaのレポートは、8月にバックスとニックスの間で実際�
 
 ### 参考文献
 
-[1] Warren, Patrick. (2025年10月10日). "Giannis Antetokounmpo Only Has One Team He'd Play With Outside of Bucks in NBA". *Sports Illustrated*. https://www.si.com/nba/bucks/news/giannis-antetokounmpo-only-has-one-team-hed-play-with-outside-of-bucks-in-nba
+[1] Warren, Patrick. (2025年10月10日). "Giannis Antetokounmpo Only Has One Team He'd Play With Outside of Bucks in NBA". *[Sports Illustrated](https://www.si.com/nba/bucks/news/giannis-antetokounmpo-only-has-one-team-hed-play-with-outside-of-bucks-in-nba)*.
 
 [2] Charania, Shams. ESPN報道より

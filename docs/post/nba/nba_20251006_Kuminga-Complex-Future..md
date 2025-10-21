@@ -52,5 +52,3 @@ Yahoo SportsのJake L. Fischer記者は、この長期にわたる交渉が「�
 ### 参考文献
 
 [1] Fischer, Jake L. (2025年10月5日). "Warriors–Jonathan Kuminga Relationship Reportedly ‘Strained’ Despite Agreeing To Contract Extension". *Fadeaway World*. [記事リンク](https://fadeawayworld.net/nba-trade-rumors/golden-state-warriors/warriors-jonathan-kuminga-relationship-reportedly-strained-despite-agreeing-contract-extension)
-
-*この記事は、The Athletic、ESPN、Bleacher Report、その他の公開情報を基にManus AIが作成しました。*

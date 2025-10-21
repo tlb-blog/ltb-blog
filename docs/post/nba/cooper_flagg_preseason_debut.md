@@ -7,8 +7,6 @@ image: /article_images/cooper_flagg.png
 description: "Cooper Flaggのプレシーズンデビューを詳報。万能性と今後の期待点を整理します。"
 ---
 
----
-
 (写真: Bangor Daily News)
 2025年ドラフト1位指名のクーパー・フラッグが、ダラス・マーベリックスのプレシーズンデビューで、その万能性を遺憾なく発揮した。わずか18歳のルーキーは、14分間のプレーで10点、6リバウンド、3アシスト、1ブロックを記録し、コーチとファンを魅了した。
 
@@ -138,7 +136,7 @@ Jason Kiddコーチの「本当に、本当に良かった」という評価は�
 
 ### 参考文献
 
-[1] MacMahon, Tim. (2025年10月6日). "Cooper Flagg displays versatility in 'fun' preseason debut". *ESPN*. https://www.espn.com/nba/story/_/id/46515784/mavericks-flagg-displays-versatility-fun-preseason-debut
+[1] MacMahon, Tim. (2025年10月6日). "Cooper Flagg displays versatility in 'fun' preseason debut". *[ESPN](https://www.espn.com/nba/story/_/id/46515784/mavericks-flagg-displays-versatility-fun-preseason-debut)*.
 
 [2] NBA.com Preseason GM Survey
 
