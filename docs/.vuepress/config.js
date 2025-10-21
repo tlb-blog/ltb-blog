@@ -31,6 +31,19 @@ module.exports = {
           ".theme-default-content img:not(.post-image), article img:not(.post-image), .theme-default-content picture img:not(.post-image)",
       },
     ],
+    // Explicitly include the official search plugin to ensure index generation
+    [
+      "@vuepress/plugin-search",
+      {
+        locales: {
+          "/": {
+            placeholder: "検索",
+          },
+        },
+        // limit the maximum number of suggestions
+        maxSuggestions: 10,
+      },
+    ],
   ],
 
   // ヘッド要素の設定
