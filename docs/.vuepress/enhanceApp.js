@@ -213,6 +213,64 @@ export default ({ Vue, options, router, siteData }) => {
 
       addHeaderLogo();
 
+      // ---- Global client-side error handlers (temporary for debugging) ----
+      // Many try/catch blocks silence errors; add global handlers to surface
+      // runtime errors and promise rejections in production so we can see
+      // why features like search may fail only on GitHub Pages.
+      try {
+        // Avoid installing multiple times
+        if (!window.__enhanceAppGlobalErrorHandlersInstalled) {
+          window.__enhanceAppGlobalErrorHandlersInstalled = true;
+
+          window.addEventListener("error", (event) => {
+            try {
+              // Log full error info to console for visibility
+              // eslint-disable-next-line no-console
+              console.error("[Global Error]", {
+                message: event.message,
+                filename: event.filename,
+                lineno: event.lineno,
+                colno: event.colno,
+                error: event.error && event.error.stack ? event.error.stack : event.error,
+              });
+
+              const combined = String(event.message || "") + " " + String(event.filename || "") + " " + String(event.error && event.error.stack ? event.error.stack : "");
+              if (/search|index|@vuepress\/plugin-search|plugin-search/i.test(combined)) {
+                // eslint-disable-next-line no-console
+                console.warn("[Global Error][Search-related] Detected potential search/plugin error:", combined);
+              }
+            } catch (e) {
+              try {
+                // eslint-disable-next-line no-console
+                console.error("[Global Error] handler failed", e);
+              } catch (err) {}
+            }
+          });
+
+          window.addEventListener("unhandledrejection", (event) => {
+            try {
+              // eslint-disable-next-line no-console
+              console.error("[Unhandled Rejection] reason:", event.reason);
+              const combined = String(event.reason || "");
+              if (/search|index|@vuepress\/plugin-search|plugin-search/i.test(combined)) {
+                // eslint-disable-next-line no-console
+                console.warn("[Unhandled Rejection][Search-related] Detected potential search/plugin error:", combined);
+              }
+            } catch (e) {
+              try {
+                // eslint-disable-next-line no-console
+                console.error("[unhandledrejection handler] failed", e);
+              } catch (err) {}
+            }
+          });
+        }
+      } catch (e) {
+        try {
+          console.error("[enhanceApp] failed to install global error handlers", e);
+        } catch (err) {}
+      }
+      // ------------------------------------------------------------------
+
       // ページロード完了後と SPA 遷移後に少し待って再試行する（最大5回）
       let logoAttempts = 0;
       const retryAddLogo = () => {
