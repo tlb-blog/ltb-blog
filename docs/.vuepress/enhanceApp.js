@@ -231,13 +231,30 @@ export default ({ Vue, options, router, siteData }) => {
                 filename: event.filename,
                 lineno: event.lineno,
                 colno: event.colno,
-                error: event.error && event.error.stack ? event.error.stack : event.error,
+                error:
+                  event.error && event.error.stack
+                    ? event.error.stack
+                    : event.error,
               });
 
-              const combined = String(event.message || "") + " " + String(event.filename || "") + " " + String(event.error && event.error.stack ? event.error.stack : "");
-              if (/search|index|@vuepress\/plugin-search|plugin-search/i.test(combined)) {
+              const combined =
+                String(event.message || "") +
+                " " +
+                String(event.filename || "") +
+                " " +
+                String(
+                  event.error && event.error.stack ? event.error.stack : ""
+                );
+              if (
+                /search|index|@vuepress\/plugin-search|plugin-search/i.test(
+                  combined
+                )
+              ) {
                 // eslint-disable-next-line no-console
-                console.warn("[Global Error][Search-related] Detected potential search/plugin error:", combined);
+                console.warn(
+                  "[Global Error][Search-related] Detected potential search/plugin error:",
+                  combined
+                );
               }
             } catch (e) {
               try {
@@ -252,9 +269,16 @@ export default ({ Vue, options, router, siteData }) => {
               // eslint-disable-next-line no-console
               console.error("[Unhandled Rejection] reason:", event.reason);
               const combined = String(event.reason || "");
-              if (/search|index|@vuepress\/plugin-search|plugin-search/i.test(combined)) {
+              if (
+                /search|index|@vuepress\/plugin-search|plugin-search/i.test(
+                  combined
+                )
+              ) {
                 // eslint-disable-next-line no-console
-                console.warn("[Unhandled Rejection][Search-related] Detected potential search/plugin error:", combined);
+                console.warn(
+                  "[Unhandled Rejection][Search-related] Detected potential search/plugin error:",
+                  combined
+                );
               }
             } catch (e) {
               try {
@@ -266,7 +290,10 @@ export default ({ Vue, options, router, siteData }) => {
         }
       } catch (e) {
         try {
-          console.error("[enhanceApp] failed to install global error handlers", e);
+          console.error(
+            "[enhanceApp] failed to install global error handlers",
+            e
+          );
         } catch (err) {}
       }
       // ------------------------------------------------------------------
