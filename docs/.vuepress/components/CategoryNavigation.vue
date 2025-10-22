@@ -43,6 +43,11 @@
         AI
       </v-btn>
 
+      <v-btn text :to="'/post/shose/'">
+        <i class="bi bi-shoe-prints me-1"></i>
+        シューズ
+      </v-btn>
+
       <!-- カテゴリドロップダウン -->
       <v-menu offset-y>
         <template v-slot:activator="{ on, attrs }">
@@ -85,6 +90,15 @@
             </v-list-item-icon>
             <v-list-item-content>
               <v-list-item-title>AI</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+
+          <v-list-item :to="'/post/shose/'">
+            <v-list-item-icon>
+              <i class="bi bi-shoe-prints"></i>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title>シューズ</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
 
@@ -163,6 +177,15 @@
           </v-list-item-content>
         </v-list-item>
 
+        <v-list-item :to="'/post/shose/'">
+          <v-list-item-icon>
+            <i class="bi bi-shoe-prints"></i>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title>シューズ</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
         <v-list-item :to="'/post/'">
           <v-list-item-icon>
             <i class="bi bi-three-dots"></i>
@@ -218,5 +241,14 @@ export default {
   font-size: 18px;
   width: 24px;
   text-align: center;
+}
+
+.nav-icon {
+  display: inline-block;
+  width: 20px;
+  text-align: center;
+  margin-right: 6px;
+  font-size: 18px;
+  line-height: 1;
 }
 </style>
