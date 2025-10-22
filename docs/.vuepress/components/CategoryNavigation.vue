@@ -44,7 +44,7 @@
       </v-btn>
 
       <v-btn text :to="'/post/shose/'">
-        <i class="bi bi-shoe-prints me-1"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="bi bi-shoe-prints me-1" aria-hidden="true"><path d="M2 13c1-3 6-5 11-5 2 0 5 1 7 2v3c-2-1-5-2-8-2-4 0-8 1-10 2z"/><path d="M4 17a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM7 18a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM10 18a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg>
         シューズ
       </v-btn>
 
@@ -95,7 +95,7 @@
 
           <v-list-item :to="'/post/shose/'">
             <v-list-item-icon>
-              <i class="bi bi-shoe-prints"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="bi bi-shoe-prints" aria-hidden="true"><path d="M2 13c1-3 6-5 11-5 2 0 5 1 7 2v3c-2-1-5-2-8-2-4 0-8 1-10 2z"/><path d="M4 17a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM7 18a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM10 18a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg>
             </v-list-item-icon>
             <v-list-item-content>
               <v-list-item-title>シューズ</v-list-item-title>
@@ -179,7 +179,7 @@
 
         <v-list-item :to="'/post/shose/'">
           <v-list-item-icon>
-            <i class="bi bi-shoe-prints"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="bi bi-shoe-prints" aria-hidden="true"><path d="M2 13c1-3 6-5 11-5 2 0 5 1 7 2v3c-2-1-5-2-8-2-4 0-8 1-10 2z"/><path d="M4 17a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM7 18a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM10 18a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg>
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title>シューズ</v-list-item-title>
