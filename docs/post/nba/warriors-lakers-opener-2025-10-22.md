@@ -2,10 +2,9 @@
 title: "NBA開幕戦：ウォリアーズがレイカーズを破る - バトラーとカリーが活躍、ドンチッチは43得点"
 date: 2025-10-22
 category: nba
-image: "/article_images/warriors-lakers-opener-2025-10-22.jpg"
+image: "/article_images/warriors-lakers-opener-2025-10-22.png"
+description: "ウォリアーズが119-109でレイカーズを下した開幕戦の試合概要、バトラーとカリーの活躍とドンチッチの43得点をまとめます。"
 ---
-
-![ウォリアーズ対レイカーズ](file:///home/ubuntu/upload/search_images/pomSCnVO2gJS.jpg)
 
 **【2025年10月22日】** NBA 2025-26シーズンの開幕戦ダブルヘッダーの第2試合では、ゴールデンステート・ウォリアーズがロサンゼルス・レイカーズを119-109で破りました。レブロン・ジェームズが欠場する中、レイカーズのルカ・ドンチッチが素晴らしいパフォーマンスを見せましたが、ウォリアーズのチームとしての強さが光りました。
 
@@ -15,8 +14,8 @@ image: "/article_images/warriors-lakers-opener-2025-10-22.jpg"
 
 ### ウォリアーズの主要選手
 
-*   **ジミー・バトラーIII**: ウォリアーズを牽引し、チーム最多の31得点を記録しました。
-*   **ステフィン・カリー**: 17年目のシーズンを迎えたカリーは、23得点を加え、チームの勝利に貢献しました。彼のリーダーシップとベテランとしての存在感は健在です。
+* **ジミー・バトラーIII**: ウォリアーズを牽引し、チーム最多の31得点を記録しました。
+* **ステフィン・カリー**: 17年目のシーズンを迎えたカリーは、23得点を加え、チームの勝利に貢献しました。彼のリーダーシップとベテランとしての存在感は健在です。
 
 ウォリアーズはフィールドゴール成功率49%、スリーポイント成功率43%、フリースロー成功率90%という高いシュート精度を見せました。
 
@@ -30,6 +29,5 @@ image: "/article_images/warriors-lakers-opener-2025-10-22.jpg"
 
 ## 参照
 
-*   [NBA.com - Live Updates: Warriors defeat Lakers after third-quarter flurry](https://www.nba.com/news/live-updates-warriors-lakers-season-opener)
-*   [Reuters - Jimmy Butler III, Warriors down LeBron James-less Lakers in opener](https://www.reuters.com/sports/jimmy-butler-iii-warriors-down-lebron-james-less-lakers-opener--flm-2025-10-22/)
-
+* [NBA.com - Live Updates: Warriors defeat Lakers after third-quarter flurry](https://www.nba.com/news/live-updates-warriors-lakers-season-opener)
+* [Reuters - Jimmy Butler III, Warriors down LeBron James-less Lakers in opener](https://www.reuters.com/sports/jimmy-butler-iii-warriors-down-lebron-james-less-lakers-opener--flm-2025-10-22/)

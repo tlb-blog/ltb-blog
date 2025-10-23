@@ -3,6 +3,7 @@ title: "NBA開幕戦：サンダーがロケッツとの激戦を制す - 2度�
 date: 2025-10-22
 category: nba
 image: "/article_images/thunder-2ot-opener-2025-10-22.png"
+description: "2025-26開幕戦でサンダーが125-124でロケッツを下した、2度の延長に及ぶ激戦の概要と主要選手の活躍。"
 tags: ["NBA", "サンダー", "ロケッツ", "SGA", "延長戦", "試合レビュー"]
 ---
 
