@@ -352,7 +352,13 @@ export default ({ Vue, options, router, siteData }) => {
             <a href="${basePath}post/ai/"><i class="bi bi-robot me-2" aria-hidden="true"></i><span>AI</span></a>
             <a href="${basePath}post/health/"><i class="bi bi-activity me-2" aria-hidden="true"></i><span>健康</span></a>
             <a href="${basePath}post/nba/"><i class="bi bi-trophy me-2" aria-hidden="true"></i><span>NBA</span></a>
-            <a href="${basePath}post/shose/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="bi bi-shoe-prints me-2" aria-hidden="true"><path d="M2 13c1-3 6-5 11-5 2 0 5 1 7 2v3c-2-1-5-2-8-2-4 0-8 1-10 2z"/><path d="M4 17a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM7 18a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM10 18a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg><span>シューズ</span></a>
+            <a href="${basePath}post/shose/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="bi bi-shoe-prints me-2" aria-hidden="true">
+                <path d="M2.5 14c1-3.5 6-6 10-6 2.5 0 5 1 7 3v2c-2-1-5-2-8-2-4 0-7 1-9 3z"/>
+                <path d="M3.5 15.5c1-.6 3-1 6-1 2 0 3.5.4 5 .9" fill="none" stroke="currentColor" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="7.2" cy="9.6" r="0.45"/>
+                <circle cx="9.0" cy="9.3" r="0.45"/>
+                <circle cx="10.6" cy="9.1" r="0.45"/>
+              </svg><span>シューズ</span></a>
           `;
 
         // まず非表示状態で挿入しておき、次フレームでクラスを付与してフェードイン
