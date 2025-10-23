@@ -2,7 +2,7 @@
 title: "ウェンバンヤマが40得点の大活躍でフラッグのNBAデビューを台無しに"
 date: 2025-10-23
 category: nba
-image: "/article_images/wembanyama-flagg-debut-2025-10-23.png"
+image: "/article_images/wembanyama-flagg-spurs-debut-2025-10-23.png"
 description: "ビクター・ウェンバンヤマが40得点・15リバウンドの圧巻のパフォーマンスで、スパーズがマーベリックスに125-92で快勝。フラッグのデビューは影に。"
 tags: ["NBA", "ウェンバンヤマ", "スパーズ", "フラッグ", "開幕戦", "試合レビュー"]
 ---
