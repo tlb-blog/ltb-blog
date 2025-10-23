@@ -245,13 +245,13 @@ export default {
 }
 
 .me-1 {
-  margin-right: 4px;
+  margin-right: 8px; /* increased spacing between icon and label */
 }
 
 /* Icon spacing for list items */
 .v-list-item-icon .fa, .v-list-item-icon .nav-icon {
   font-size: 18px;
-  width: 24px;
+  width: 28px; /* slightly wider to add breathing room */
   text-align: center;
 }
 
