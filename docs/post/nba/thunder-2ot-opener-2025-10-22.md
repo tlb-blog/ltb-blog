@@ -2,10 +2,15 @@
 title: "NBA開幕戦：サンダーがロケッツとの激戦を制す - 2度の延長戦の末に勝利"
 date: 2025-10-22
 category: nba
-image: "file:///home/ubuntu/upload/search_images/aU5GM54ZyrQl.jpg"
+image: "/article_images/thunder-2ot-opener-2025-10-22.png"
+tags:
+	- NBA
+	- サンダー
+	- ロケッツ
+	- SGA
+	- 延長戦
+	- 試合レビュー
 ---
-
-![サンダー対ロケッツ](file:///home/ubuntu/upload/search_images/aU5GM54ZyrQl.jpg)
 
 **【2025年10月22日】** 2025-26 NBAシーズンの開幕戦は、オクラホマシティ・サンダーとヒューストン・ロケッツによる息をのむような激戦となりました。2度の延長戦にもつれ込んだ末、サンダーが125-124でロケッツを下し、本拠地で勝利を飾りました。
 
