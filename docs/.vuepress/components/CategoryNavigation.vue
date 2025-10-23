@@ -19,32 +19,33 @@
     <!-- デスクトップ用ナビゲーション -->
     <v-toolbar-items class="hidden-sm-and-down">
       <v-btn text :to="'/'">
-        <i class="bi bi-house me-1"></i>
+        <i class="fa-solid fa-house me-1"></i>
         ホーム
       </v-btn>
 
       <v-btn text :to="'/health/'">
-        <i class="bi bi-activity me-1"></i>
+        <i class="fa-solid fa-heart me-1"></i>
         健康
       </v-btn>
 
       <v-btn text :to="'/parenting/'">
-        <i class="bi bi-person-hearts me-1"></i>
+        <i class="fa-solid fa-children me-1"></i>
         子育て
       </v-btn>
 
       <v-btn text :to="'/nba/'">
-        <i class="bi bi-trophy me-1"></i>
+        <i class="fa-solid fa-trophy me-1"></i>
         NBA
       </v-btn>
 
       <v-btn text :to="'/ai/'">
-        <i class="bi bi-robot me-1"></i>
+        <i class="fa-solid fa-robot me-1"></i>
         AI
       </v-btn>
 
       <v-btn text :to="'/post/shose/'">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="bi bi-sneaker me-1" aria-hidden="true">
+        <!-- FA has no free sneaker icon; keep inline SVG fallback -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="nav-icon me-1" aria-hidden="true">
           <path d="M2.5 14s2-2 6-2c3 0 6 1 9 2 0 0 1 0.5 1 2 0 0-2 1-5 1-3 0-6-1-9-1-2.5 0-3.5-1-3.5-1z" />
           <path d="M5 10c2-1 6-2 9-1 1 0 2 1 2 1" />
           <path d="M7 8.5c0-.5 1-1 2-1s2 0 3 0" />
@@ -66,7 +67,7 @@
         <v-list>
           <v-list-item :to="'/health/'">
             <v-list-item-icon>
-              <i class="bi bi-activity"></i>
+              <i class="fa-solid fa-heart"></i>
             </v-list-item-icon>
             <v-list-item-content>
               <v-list-item-title>健康</v-list-item-title>
@@ -75,7 +76,7 @@
 
           <v-list-item :to="'/parenting/'">
             <v-list-item-icon>
-              <i class="bi bi-person-hearts"></i>
+              <i class="fa-solid fa-children"></i>
             </v-list-item-icon>
             <v-list-item-content>
               <v-list-item-title>子育て</v-list-item-title>
@@ -84,7 +85,7 @@
 
           <v-list-item :to="'/nba/'">
             <v-list-item-icon>
-              <i class="bi bi-trophy"></i>
+              <i class="fa-solid fa-trophy"></i>
             </v-list-item-icon>
             <v-list-item-content>
               <v-list-item-title>NBA</v-list-item-title>
@@ -93,7 +94,7 @@
 
           <v-list-item :to="'/ai/'">
             <v-list-item-icon>
-              <i class="bi bi-robot"></i>
+              <i class="fa-solid fa-robot"></i>
             </v-list-item-icon>
             <v-list-item-content>
               <v-list-item-title>AI</v-list-item-title>
@@ -102,7 +103,7 @@
 
           <v-list-item :to="'/post/shose/'">
             <v-list-item-icon>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="bi bi-shoe-prints" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="nav-icon" aria-hidden="true">
                 <path d="M2.5 14c1-3.5 6-6 10-6 2.5 0 5 1 7 3v2c-2-1-5-2-8-2-4 0-7 1-9 3z"/>
                 <path d="M3.5 15.5c1-.6 3-1 6-1 2 0 3.5.4 5 .9" fill="none" stroke="currentColor" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"/>
                 <circle cx="7.2" cy="9.6" r="0.45"/>
@@ -143,7 +144,7 @@
       <v-list>
         <v-list-item :to="'/'">
           <v-list-item-icon>
-            <i class="bi bi-house"></i>
+            <i class="fa-solid fa-house"></i>
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title>ホーム</v-list-item-title>
@@ -156,7 +157,7 @@
 
         <v-list-item :to="'/health/'">
           <v-list-item-icon>
-            <i class="bi bi-activity"></i>
+            <i class="fa-solid fa-heart"></i>
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title>健康</v-list-item-title>
@@ -165,7 +166,7 @@
 
         <v-list-item :to="'/parenting/'">
           <v-list-item-icon>
-            <i class="bi bi-person-hearts"></i>
+            <i class="fa-solid fa-children"></i>
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title>子育て</v-list-item-title>
@@ -174,7 +175,7 @@
 
         <v-list-item :to="'/nba/'">
           <v-list-item-icon>
-            <i class="bi bi-trophy"></i>
+            <i class="fa-solid fa-trophy"></i>
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title>NBA</v-list-item-title>
@@ -183,7 +184,7 @@
 
         <v-list-item :to="'/ai/'">
           <v-list-item-icon>
-            <i class="bi bi-robot"></i>
+            <i class="fa-solid fa-robot"></i>
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title>AI</v-list-item-title>
@@ -207,7 +208,7 @@
 
         <v-list-item :to="'/post/'">
           <v-list-item-icon>
-            <i class="bi bi-three-dots"></i>
+            <i class="fa-solid fa-ellipsis"></i>
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title>その他</v-list-item-title>
@@ -245,8 +246,8 @@ export default {
   border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
 }
 
-/* Bootstrap Icons styling */
-.bi {
+/* Font Awesome + SVG icon styling */
+.fa, .fa-solid {
   font-size: 16px;
   vertical-align: middle;
 }
@@ -256,7 +257,7 @@ export default {
 }
 
 /* Icon spacing for list items */
-.v-list-item-icon .bi {
+.v-list-item-icon .fa, .v-list-item-icon .nav-icon {
   font-size: 18px;
   width: 24px;
   text-align: center;

@@ -348,18 +348,22 @@ export default ({ Vue, options, router, siteData }) => {
         const nav = document.createElement("div");
         nav.className = "category-nav";
         nav.innerHTML = `
-            <a href="${basePath}"><i class="bi bi-house me-5" aria-hidden="true"></i><span>ホーム</span></a>
-            <a href="${basePath}post/ai/"><i class="bi bi-robot me-2" aria-hidden="true"></i><span>AI</span></a>
-            <a href="${basePath}post/health/"><i class="bi bi-activity me-2" aria-hidden="true"></i><span>健康</span></a>
-            <a href="${basePath}post/nba/"><i class="bi bi-trophy me-2" aria-hidden="true"></i><span>NBA</span></a>
-            <a href="${basePath}post/shose/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="bi bi-sneaker me-2" aria-hidden="true">
+            <a href="${basePath}"><i class="fa-solid fa-house me-5" aria-hidden="true"></i><span>ホーム</span></a>
+            <a href="${basePath}post/ai/"><i class="fa-solid fa-robot me-2" aria-hidden="true"></i><span>AI</span></a>
+            <a href="${basePath}post/health/"><i class="fa-solid fa-heart me-2" aria-hidden="true"></i><span>健康</span></a>
+            <a href="${basePath}post/nba/"><i class="fa-solid fa-trophy me-2" aria-hidden="true"></i><span>NBA</span></a>
+            <a href="${basePath}post/shose/">
+              <!-- Font Awesome free doesn't include a sneaker; keep inline SVG as fallback -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="nav-icon me-2" aria-hidden="true">
                 <path d="M2.5 14s2-2 6-2c3 0 6 1 9 2 0 0 1 0.5 1 2 0 0-2 1-5 1-3 0-6-1-9-1-2.5 0-3.5-1-3.5-1z" />
                 <path d="M5 10c2-1 6-2 9-1 1 0 2 1 2 1" />
                 <path d="M7 8.5c0-.5 1-1 2-1s2 0 3 0" />
                 <line x1="8" y1="10.2" x2="9.5" y2="10" />
                 <line x1="9.5" y1="10" x2="11" y2="9.8" />
                 <line x1="11" y1="9.8" x2="12.5" y2="9.6" />
-              </svg><span>シューズ</span></a>
+              </svg>
+              <span>シューズ</span>
+            </a>
           `;
 
         // まず非表示状態で挿入しておき、次フレームでクラスを付与してフェードイン
