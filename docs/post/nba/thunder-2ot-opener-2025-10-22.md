@@ -33,4 +33,3 @@ SGAは試合後、「気力、決意、そしてディフェンス。コート�
 
 - [NBA.com - Live Updates: Thunder win double overtime thriller](https://www.nba.com/news/live-updates-nba-tip-off-2025)
 - [Reuters - Thunder open title defense by winning 2-OT thriller vs. Rockets](https://www.reuters.com/sports/basketball/thunder-open-title-defense-by-winning-2-ot-thriller-vs-rockets--flm-2025-10-22/)
-

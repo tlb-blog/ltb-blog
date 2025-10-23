@@ -95,12 +95,29 @@
 
           <v-list-item :to="'/post/shose/'">
             <v-list-item-icon>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="nav-icon" aria-hidden="true">
-                <path d="M2.5 14c1-3.5 6-6 10-6 2.5 0 5 1 7 3v2c-2-1-5-2-8-2-4 0-7 1-9 3z"/>
-                <path d="M3.5 15.5c1-.6 3-1 6-1 2 0 3.5.4 5 .9" fill="none" stroke="currentColor" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="7.2" cy="9.6" r="0.45"/>
-                <circle cx="9.0" cy="9.3" r="0.45"/>
-                <circle cx="10.6" cy="9.1" r="0.45"/>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="1em"
+                height="1em"
+                fill="currentColor"
+                class="nav-icon"
+                aria-hidden="true"
+              >
+                <path
+                  d="M2.5 14c1-3.5 6-6 10-6 2.5 0 5 1 7 3v2c-2-1-5-2-8-2-4 0-7 1-9 3z"
+                />
+                <path
+                  d="M3.5 15.5c1-.6 3-1 6-1 2 0 3.5.4 5 .9"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="0.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <circle cx="7.2" cy="9.6" r="0.45" />
+                <circle cx="9.0" cy="9.3" r="0.45" />
+                <circle cx="10.6" cy="9.1" r="0.45" />
               </svg>
             </v-list-item-icon>
             <v-list-item-content>
@@ -184,15 +201,32 @@
         </v-list-item>
 
         <v-list-item :to="'/post/shose/'">
-            <v-list-item-icon>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="bi bi-shoe-prints" aria-hidden="true">
-                <path d="M2.5 14c1-3.5 6-6 10-6 2.5 0 5 1 7 3v2c-2-1-5-2-8-2-4 0-7 1-9 3z"/>
-                <path d="M3.5 15.5c1-.6 3-1 6-1 2 0 3.5.4 5 .9" fill="none" stroke="currentColor" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="7.2" cy="9.6" r="0.45"/>
-                <circle cx="9.0" cy="9.3" r="0.45"/>
-                <circle cx="10.6" cy="9.1" r="0.45"/>
-              </svg>
-            </v-list-item-icon>
+          <v-list-item-icon>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="1em"
+              height="1em"
+              fill="currentColor"
+              class="bi bi-shoe-prints"
+              aria-hidden="true"
+            >
+              <path
+                d="M2.5 14c1-3.5 6-6 10-6 2.5 0 5 1 7 3v2c-2-1-5-2-8-2-4 0-7 1-9 3z"
+              />
+              <path
+                d="M3.5 15.5c1-.6 3-1 6-1 2 0 3.5.4 5 .9"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="0.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <circle cx="7.2" cy="9.6" r="0.45" />
+              <circle cx="9.0" cy="9.3" r="0.45" />
+              <circle cx="10.6" cy="9.1" r="0.45" />
+            </svg>
+          </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title>シューズ</v-list-item-title>
           </v-list-item-content>
@@ -239,7 +273,8 @@ export default {
 }
 
 /* Font Awesome + SVG icon styling */
-.fa, .fa-solid {
+.fa,
+.fa-solid {
   font-size: 16px;
   vertical-align: middle;
 }
@@ -249,7 +284,8 @@ export default {
 }
 
 /* Icon spacing for list items */
-.v-list-item-icon .fa, .v-list-item-icon .nav-icon {
+.v-list-item-icon .fa,
+.v-list-item-icon .nav-icon {
   font-size: 18px;
   width: 28px; /* slightly wider to add breathing room */
   text-align: center;
