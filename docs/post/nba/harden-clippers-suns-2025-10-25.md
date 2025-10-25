@@ -2,12 +2,10 @@
 title: "ハーデンが30得点、クリッパーズがサンズを圧倒しホーム開幕戦を飾る"
 date: 2025-10-24
 category: nba
-image: "/article_images/james_harden_clippers.jpg"
+image: "/article_images/harden-clippers-suns-2025-10-25.png"
 description: "ジェームズ・ハーデンが30得点を挙げ、クリッパーズが129-102でサンズを圧倒してホーム開幕戦を飾った試合のレポート。"
 tags: ["NBA", "クリッパーズ", "サンズ", "ハーデン", "レナード", "試合レビュー"]
 ---
-
-![ジェームズ・ハーデン](/article_images/james_harden_clippers.jpg)
 
 **【2025年10月24日】** ロサンゼルス・クリッパーズは、ホーム開幕戦でフェニックス・サンズを129-102で圧倒し、シーズン初勝利を挙げました。**ジェームズ・ハーデン**が30得点、**カワイ・レナード**が27得点を記録し、チームを牽引しました[1]。
 
@@ -30,4 +28,3 @@ tags: ["NBA", "クリッパーズ", "サンズ", "ハーデン", "レナード",
 ## 参照
 
 [1] Associated Press. 「Harden scores 30 points to help Clippers rout Suns 129-102 in home opener」. *AP News*. October 25, 2025. [https://apnews.com/article/suns-clippers-score-5ef0ae5d506e30f6735ccd28a552a8ba](https://apnews.com/article/suns-clippers-score-5ef0ae5d506e30f6735ccd28a552a8ba)
-
