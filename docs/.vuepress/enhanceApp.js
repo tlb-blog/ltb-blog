@@ -336,6 +336,31 @@ export default ({ Vue, options, router, siteData }) => {
         requestAnimationFrame(() => retryAddLogo());
       });
 
+      // Fix: some environments set document.title to the string 'undefined'
+      // (for example when the theme sets document.title = this.$title where
+      // $title is undefined). Normalize it to a sensible value so the
+      // browser tab and any alt attributes don't show 'undefined'. Use
+      // siteData.title as a fallback when available.
+      const normalizeDocumentTitle = () => {
+        try {
+          if (typeof document !== "undefined") {
+            if (document.title === "undefined" || typeof document.title === "undefined") {
+              document.title = (siteData && siteData.title) || "";
+            }
+          }
+        } catch (e) {
+          try {
+            console.error("[enhanceApp] normalizeDocumentTitle failed", e);
+          } catch (err) {}
+        }
+      };
+
+      // Run immediately and after each SPA navigation
+      normalizeDocumentTitle();
+      try {
+        router.afterEach(() => requestAnimationFrame(() => normalizeDocumentTitle()));
+      } catch (e) {}
+
       const addCategoryNav = () => {
         // 既存のナビゲーションがあれば何もしない
         if (document.querySelector(".category-nav")) return;
