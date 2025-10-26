@@ -344,7 +344,10 @@ export default ({ Vue, options, router, siteData }) => {
       const normalizeDocumentTitle = () => {
         try {
           if (typeof document !== "undefined") {
-            if (document.title === "undefined" || typeof document.title === "undefined") {
+            if (
+              document.title === "undefined" ||
+              typeof document.title === "undefined"
+            ) {
               document.title = (siteData && siteData.title) || "";
             }
           }
@@ -358,7 +361,9 @@ export default ({ Vue, options, router, siteData }) => {
       // Run immediately and after each SPA navigation
       normalizeDocumentTitle();
       try {
-        router.afterEach(() => requestAnimationFrame(() => normalizeDocumentTitle()));
+        router.afterEach(() =>
+          requestAnimationFrame(() => normalizeDocumentTitle())
+        );
       } catch (e) {}
 
       const addCategoryNav = () => {
