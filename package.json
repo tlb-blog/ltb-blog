@@ -5,6 +5,7 @@
     "scripts": {
         "dev": "vuepress dev docs",
         "build": "vuepress build docs",
+        "postbuild": "node ./scripts/generate-sitemap.js && node ./scripts/generate-rss.js",
         "git:sync": "powershell -ExecutionPolicy Bypass -File ./scripts/git-sync.ps1 -Message"
     },
     "dependencies": {

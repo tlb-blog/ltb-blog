@@ -1,3 +1,5 @@
+const SITE_HOSTNAME = process.env.SITE_HOSTNAME || "https://example.com";
+
 module.exports = {
   // base を環境変数 `BASE_URL` から読み取れるようにしておくと
   // - ローカル開発では '/' を使い、
@@ -44,6 +46,12 @@ module.exports = {
         maxSuggestions: 10,
       },
     ],
+    // NOTE: sitemap.xml / rss.xml は依存プラグインを導入せず
+    // ビルド後に scripts/generate-sitemap.js と
+    // scripts/generate-rss.js を実行して生成します。
+    // ビルド時に SITE_HOSTNAME を実際の公開ホスト名に設定してください。
+    // 例: Windows の場合
+    //   $env:SITE_HOSTNAME = "https://yourdomain.example"; npm run build
   ],
 
   // ヘッド要素の設定
