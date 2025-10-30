@@ -27,15 +27,30 @@ jobs:
         with:
           node-version: "18"
 
+      - name: Cache node modules
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - name: Install dependencies
-        run: npm install
+        run: |
+          if [ -f package-lock.json ]; then npm ci; else npm install; fi
 
       - name: Build VuePress site
         run: npm run build
         env:
           CI: true
-          # Actions 実行環境ではリポジトリ名を base に設定
-          BASE_URL: "/${{ github.event.repository.name }}/"
+          SITE_HOSTNAME: https://tlb-blog.github.io
+          BASE_URL: /ltb-blog/
+
+      - name: Generate sitemap and RSS
+        run: |
+          # Ensure postbuild output exists; run explicitly for reliability
+          node ./scripts/generate-sitemap.js || echo "sitemap generation failed"
+          node ./scripts/generate-rss.js || echo "rss generation failed"
 
       - name: Apply path patches
         run: |
